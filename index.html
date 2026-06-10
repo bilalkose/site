@@ -327,7 +327,22 @@ header.nav.scrolled{
 
 /* ============================================================ HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
-  background:radial-gradient(120% 90% at 50% 0%,#1c130a 0%,var(--ink) 55%)}
+  background:#0b0805}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;
+  background-image:url('/assets/bk-hero-1400.jpg');
+  background-size:cover;background-position:center 40%;
+  animation:heroBgBreathe 8s ease-in-out infinite;
+  transform-origin:center center}
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,
+    rgba(11,8,5,.55) 0%,
+    rgba(11,8,5,.35) 35%,
+    rgba(11,8,5,.55) 65%,
+    rgba(11,8,5,.92) 100%)}
+@keyframes heroBgBreathe{
+  0%,100%{transform:scale(1);opacity:.85}
+  50%{transform:scale(1.03);opacity:1}
+}
 #sandCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .hero-glow{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:900px;height:900px;
   background:radial-gradient(circle,rgba(231,185,94,.18) 0%,rgba(231,185,94,0) 62%);z-index:0;filter:blur(20px)}
@@ -370,9 +385,8 @@ header.nav.scrolled{
 .hero-text{display:flex;flex-direction:column;gap:14px}
 .hero-text .eyebrow{margin:0}
 .hero-text h1{margin:0}
-@media (max-width:680px){
-  .hero-top{flex-direction:column;align-items:flex-start;gap:24px}
-  .hero-emblem{width:100px;height:100px}
+@media(max-width:680px){
+  .hero-top{flex-direction:column;align-items:flex-start;gap:20px}
 }
 .hero h1{font-size:clamp(46px,8vw,108px);font-weight:300;max-width:15ch;margin:26px 0 0;letter-spacing:-.025em}
 .hero h1 em{font-style:italic;color:var(--sand-light)}
@@ -616,7 +630,7 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="#home" class="brand">
-      <span class="brand-logo"><img src="/assets/bk-logo.jpg" alt="BK — Bilal Köse" width="44" height="44" /><span class="brand-glow" aria-hidden="true"></span></span>
+      <span class="brand-logo"><img src="/assets/bk-logo-200.jpg" alt="BK — Bilal Köse" width="44" height="44" /><span class="brand-glow" aria-hidden="true"></span></span>
       <span class="brand-text">
         <span class="b1">Bilal Köse</span>
         <span class="b2">Live Sand Artist</span>
@@ -639,24 +653,18 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
 
 <!-- ============================ HERO ============================ -->
 <section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
   <canvas id="sandCanvas"></canvas>
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-emblem anim d1" aria-hidden="true">
-      <img src="/assets/bk-logo-400.jpg" alt="" width="130" height="130" />
-      <span class="hero-emblem-shimmer"></span>
-      <span class="hero-emblem-particle p1"></span>
-      <span class="hero-emblem-particle p2"></span>
-      <span class="hero-emblem-particle p3"></span>
-    </div>
-    <span class="eyebrow anim d2">Live Sand Art · As seen at Harrods, Soho Theatre &amp; Oxford</span>
-    <h1 class="anim d3">A story told in <em>every grain</em> of sand.</h1>
-    <p class="lead anim d4">I'm Bilal Köse. I turn light and sand into live performances that move a room — bespoke shows for weddings, brands, and the moments people never forget. Drawn entirely by hand, live, never the same twice.</p>
-    <div class="hero-cta anim d4">
+    <span class="eyebrow anim d1">Live Sand Art · As seen at Harrods, Soho Theatre &amp; Oxford</span>
+    <h1 class="anim d2">A story told in <em>every grain</em> of sand.</h1>
+    <p class="lead anim d3">I'm Bilal Köse. I turn light and sand into live performances that move a room — bespoke shows for weddings, brands, and the moments people never forget. Drawn entirely by hand, live, never the same twice.</p>
+    <div class="hero-cta anim d3">
       <a href="#book" class="btn btn-primary">Check My Availability →</a>
       <a href="#portfolio" class="btn btn-ghost">Watch a Performance</a>
     </div>
-    <div class="hero-meta anim d4">
+    <div class="hero-meta anim d3">
       <span><b>15+</b> years</span><span class="dot">·</span>
       <span><b>5★</b> client rated</span><span class="dot">·</span>
       <span><b>From £450</b> · bespoke quotes</span>
