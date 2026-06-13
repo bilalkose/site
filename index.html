@@ -624,6 +624,22 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
   .wrap,.nav-inner,.hero-inner{padding-left:22px;padding-right:22px}
   .rev-form,.book-form{padding:28px}
 }
+/* ====== SUCCESS MODAL ====== */
+.success-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease}
+.success-modal.open{opacity:1}
+.success-modal.closing{opacity:0}
+.success-backdrop{position:absolute;inset:0;background:rgba(11,8,5,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.success-card{position:relative;background:linear-gradient(180deg,#1c130a 0%,#0f0a06 100%);border:1px solid rgba(231,185,94,.25);border-radius:var(--r);padding:48px 36px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 30px 80px -10px rgba(0,0,0,.6),0 0 0 1px rgba(231,185,94,.08);transform:scale(.94) translateY(12px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.success-modal.open .success-card{transform:scale(1) translateY(0)}
+.success-icon{width:56px;height:56px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,#e7b95e,#c39341);display:flex;align-items:center;justify-content:center;font-size:30px;color:#0b0805;font-weight:600;box-shadow:0 8px 24px -6px rgba(231,185,94,.4)}
+.success-card h3{font-family:var(--serif);font-size:24px;line-height:1.3;color:var(--cream);margin-bottom:14px}
+.success-card p{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:28px;font-weight:300}
+.success-card .btn{display:inline-block;margin-bottom:16px}
+.success-dismiss{display:block;background:none;border:none;color:var(--muted-2);font-size:13px;cursor:pointer;letter-spacing:.05em;padding:8px;margin:0 auto;text-transform:uppercase;transition:.2s}
+.success-dismiss:hover{color:var(--cream)}
+.success-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted-2);font-size:28px;line-height:1;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s}
+.success-close:hover{color:var(--sand);background:rgba(231,185,94,.08)}
+@media(max-width:480px){.success-card{padding:40px 24px 28px}.success-card h3{font-size:20px}}
 </style>
 </head>
 <body>
@@ -1136,17 +1152,43 @@ renderReviews();
 
 /* ============================================================ BOOKING / NEWSLETTER success message
    Netlify Forms handles the actual submission natively (POST to the same URL).
-   When the form redirects back with ?success=booking or ?success=newsletter, we show a confirmation. */
+   When the form redirects back with ?success=booking or ?success=newsletter, we show a modal. */
 (function(){
   const params = new URLSearchParams(location.search);
   const s = params.get('success');
-  if(s === 'booking'){
-    const msg = document.getElementById('bMsgOut');
-    if(msg){msg.classList.add('show'); msg.scrollIntoView({behavior:'smooth', block:'center'});}
+  if(!s) return;
+
+  const isBooking = s === 'booking';
+  const title = isBooking ? 'Thank you — your enquiry is in.' : 'Welcome — you are subscribed.';
+  const body = isBooking
+    ? "I'll personally read your message and get back to you within 24 hours, usually much sooner. In the meantime, follow along for performances and behind-the-scenes work."
+    : "You'll receive occasional updates about upcoming performances and new work. No spam, ever.";
+
+  const modal = document.createElement('div');
+  modal.className = 'success-modal';
+  modal.innerHTML = `
+    <div class="success-backdrop"></div>
+    <div class="success-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <button class="success-close" aria-label="Close">×</button>
+      <div class="success-icon">✓</div>
+      <h3 id="successTitle">${title}</h3>
+      <p>${body}</p>
+      <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" class="btn btn-primary">Follow on Instagram →</a>
+      <button class="success-dismiss">Close</button>
+    </div>`;
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+
+  function close(){
+    modal.classList.add('closing');
+    document.body.style.overflow = '';
+    setTimeout(()=>{modal.remove(); history.replaceState({}, '', location.pathname);}, 300);
   }
-  if(s === 'newsletter'){
-    alert('Thank you — you are subscribed.');
-  }
+  modal.querySelector('.success-close').addEventListener('click', close);
+  modal.querySelector('.success-dismiss').addEventListener('click', close);
+  modal.querySelector('.success-backdrop').addEventListener('click', close);
+  document.addEventListener('keydown', function esc(e){if(e.key==='Escape'){close();document.removeEventListener('keydown', esc);}});
+  requestAnimationFrame(()=>modal.classList.add('open'));
 })();
 
 /* ============================================================ FAQ accordion */
