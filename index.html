@@ -640,6 +640,12 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
 .success-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted-2);font-size:28px;line-height:1;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s}
 .success-close:hover{color:var(--sand);background:rgba(231,185,94,.08)}
 @media(max-width:480px){.success-card{padding:40px 24px 28px}.success-card h3{font-size:20px}}
+
+/* Event cards as links */
+a.ev{text-decoration:none;color:inherit;display:block;position:relative}
+a.ev:hover{transform:translateY(-3px);border-color:rgba(231,185,94,.35);box-shadow:0 18px 40px -16px rgba(0,0,0,.6)}
+.ev-more{display:inline-block;margin-top:14px;color:var(--sand);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:.25s}
+a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
 </style>
 </head>
 <body>
@@ -755,8 +761,8 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
       <p>Every performance is built from scratch around your event. These are the moments I'm most often invited into.</p>
     </div>
     <div class="events-grid">
-      <div class="ev reveal"><div class="ico">❦</div><h3>Weddings &amp; Love Stories</h3><p>Your journey — from the first meeting to "I do" — animated live as your guests watch your love story take shape in sand.</p><span class="tag">Most popular</span></div>
-      <div class="ev reveal ev-wide"><div class="ico">◆</div><h3>Corporate &amp; Brand</h3><p>Launches, award ceremonies, gala dinners and conferences. Two distinct formats — choose one, or combine both for maximum impact.</p>
+      <a class="ev reveal" href="/services/weddings.html"><div class="ico">❦</div><h3>Weddings &amp; Love Stories</h3><p>Your journey — from the first meeting to "I do" — animated live as your guests watch your love story take shape in sand.</p><span class="tag">Most popular</span><span class="ev-more">Learn more →</span></a>
+      <a class="ev reveal ev-wide" href="/services/corporate.html"><div class="ico">◆</div><h3>Corporate &amp; Brand</h3><p>Launches, award ceremonies, gala dinners and conferences. Two distinct formats — choose one, or combine both for maximum impact.</p>
         <div class="ev-formats">
           <div class="ev-fmt">
             <span class="ev-fmt-name">Ambient &amp; Interactive</span>
@@ -767,11 +773,10 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
             <p>A bespoke themed narrative, designed specifically around your brand, product or campaign, performed live for your audience to watch together. Can be repeated 2–3 times across the event. Ideal for launches, award ceremonies and gala dinners.</p>
           </div>
         </div>
-        <span class="tag">Brand storytelling</span></div>
-      <div class="ev reveal"><div class="ico">✦</div><h3>Charity &amp; Community</h3><p>Performances that move both a room and a cause — fundraisers, cultural festivals and community celebrations.</p><span class="tag">Sand art for good</span></div>
-      <div class="ev reveal"><div class="ico">✎</div><h3>Schools &amp; Workshops</h3><p>Hands-on creative sessions and performances for children and adults — universities, schools and care homes.</p><span class="tag">Educational</span></div>
-      <div class="ev reveal"><div class="ico">✺</div><h3>Celebrations &amp; Milestones</h3><p>Birthdays, anniversaries and the once-in-a-lifetime moments, told the way they deserve to be remembered.</p><span class="tag">Private events</span></div>
-      <div class="ev reveal"><div class="ico">✸</div><h3>Festivals &amp; Stage</h3><p>A captivating feature act for theatres, festivals and cultural events — a mesmerising visual spectacle for a packed audience.</p><span class="tag">Live feature act</span></div>
+        <span class="tag">Brand storytelling</span><span class="ev-more">Learn more →</span></a>
+      <a class="ev reveal" href="/services/charity.html"><div class="ico">✦</div><h3>Charity &amp; Community</h3><p>Performances that move both a room and a cause — fundraisers, cultural festivals and community celebrations.</p><span class="tag">Sand art for good</span><span class="ev-more">Learn more →</span></a>
+      <a class="ev reveal" href="/services/schools.html"><div class="ico">✎</div><h3>Schools &amp; Workshops</h3><p>Hands-on creative sessions and performances for children and adults — universities, schools and care homes.</p><span class="tag">Educational</span><span class="ev-more">Learn more →</span></a>
+      <a class="ev reveal" href="/services/celebrations.html"><div class="ico">✺</div><h3>Celebrations &amp; Milestones</h3><p>Birthdays, anniversaries and the once-in-a-lifetime moments, told the way they deserve to be remembered.</p><span class="tag">Private events</span><span class="ev-more">Learn more →</span></a>
     </div>
     <div style="text-align:center;margin-top:54px" class="reveal">
       <a href="#book" class="btn btn-primary">Enquire about your event →</a>
@@ -976,6 +981,18 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
           <div class="field"><label for="bGuests">Guests (approx.)</label><input id="bGuests" name="guests" type="text" placeholder="e.g. 120"></div>
         </div>
         <div class="field"><label for="bMsg">Tell me about your event</label><textarea id="bMsg" name="message" rows="4" placeholder="Your story, the vibe you're after, anything else…"></textarea></div>
+        <div class="field"><label for="bSource">How did you find me? <span style="color:var(--muted-2);font-weight:300">(optional)</span></label>
+          <select id="bSource" name="how_found">
+            <option value="">— Select —</option>
+            <option value="Google search">Google search</option>
+            <option value="Instagram">Instagram</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Bark">Bark</option>
+            <option value="Recommendation">Recommendation / word of mouth</option>
+            <option value="Saw a performance">Saw a performance</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
         <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Send enquiry →</button>
         <div class="form-msg" id="bMsgOut">Thank you — your enquiry is on its way. I'll personally reply within 24 hours.</div>
       </form>
