@@ -441,9 +441,9 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:680px){
-  .nav-links{position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;background:var(--ink-2);flex-direction:column;
-    justify-content:center;align-items:flex-start;padding:60px 40px;gap:22px;transform:translateX(100%);transition:.4s;
-    border-left:1px solid var(--line);z-index:1001}
+  .nav-links{position:fixed;inset:0 0 0 auto;width:82%;max-width:360px;background:#0f0a06;flex-direction:column;
+    justify-content:flex-start;align-items:flex-start;padding:90px 36px 40px;gap:20px;transform:translateX(100%);transition:.4s;
+    border-left:1px solid var(--line);z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .nav-links.open{transform:none}
   .nav-links a{font-size:18px}
   .nav-links .nav-cta{margin-top:10px}
@@ -489,10 +489,10 @@ a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
 .nav-dropdown-menu a{display:block;padding:11px 16px;border-radius:8px;color:var(--muted);font-size:14.5px;white-space:nowrap;transition:.2s}
 .nav-dropdown-menu a:hover{background:rgba(231,185,94,.08);color:var(--sand);padding-left:20px}
 @media(max-width:900px){
-  .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;min-width:0;background:none;border:none;box-shadow:none;padding:4px 0 4px 16px}
+  .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;min-width:0;background:none;border:none;box-shadow:none;padding:6px 0 6px 14px;margin-top:6px;border-left:1px solid rgba(231,185,94,.2)}
   .nav-dropdown:hover .nav-dropdown-menu{transform:none}
   .nav-caret{display:none}
-  .nav-dropdown-menu a{padding:8px 0;font-size:14px}
+  .nav-dropdown-menu a{padding:9px 0;font-size:15px;color:var(--muted)}
   .nav-dropdown-menu a:hover{padding-left:6px;background:none}
 }
 </style>
@@ -777,8 +777,13 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
 const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('open')});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open')}));
+burger.addEventListener('click',()=>{
+  const willOpen = !navLinks.classList.contains('open');
+  burger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open');document.body.style.overflow='';}));
 
 /* active link on scroll */
 const secs=[...document.querySelectorAll('section[id]')];
