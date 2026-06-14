@@ -618,11 +618,12 @@ footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80p
 }
 @media (max-width:680px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:82%;max-width:360px;background:#0f0a06;flex-direction:column;
-    justify-content:flex-start;align-items:flex-start;padding:90px 36px 40px;gap:20px;transform:translateX(100%);transition:.4s;
+    justify-content:flex-start;align-items:flex-start;padding:90px 36px 40px;gap:18px;transform:translateX(100%);transition:.4s;
     border-left:1px solid var(--line);z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .nav-links.open{transform:none}
+  .nav-links>li{display:block;width:100%}
   .nav-links a{font-size:18px}
-  .nav-links .nav-cta{margin-top:10px}
+  .nav-links .nav-cta{margin-top:10px;display:inline-block}
   .burger{display:flex;z-index:1002}
   .events-grid,.gallery,.rev-grid,.stats-grid,.steps,.foot-grid,.row2,.pkg-grid{grid-template-columns:1fr}
   .ev-wide{grid-column:auto}
@@ -665,10 +666,11 @@ a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
 .nav-dropdown-menu a{display:block;padding:11px 16px;border-radius:8px;color:var(--muted);font-size:14.5px;white-space:nowrap;transition:.2s}
 .nav-dropdown-menu a:hover{background:rgba(231,185,94,.08);color:var(--sand);padding-left:20px}
 @media(max-width:900px){
-  .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;min-width:0;background:none;border:none;box-shadow:none;padding:6px 0 6px 14px;margin-top:6px;border-left:1px solid rgba(231,185,94,.2)}
+  .nav-dropdown{width:100%}
+  .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;min-width:0;width:100%;background:none;border:none;box-shadow:none;padding:6px 0 6px 14px;margin-top:6px;border-left:1px solid rgba(231,185,94,.2)}
   .nav-dropdown:hover .nav-dropdown-menu{transform:none}
   .nav-caret{display:none}
-  .nav-dropdown-menu a{padding:9px 0;font-size:15px;color:var(--muted)}
+  .nav-dropdown-menu a{padding:9px 0;font-size:15px;color:var(--muted);white-space:normal}
   .nav-dropdown-menu a:hover{padding-left:6px;background:none}
 }
 </style>
