@@ -484,6 +484,20 @@ a.ev:hover{transform:translateY(-3px);border-color:rgba(231,185,94,.35);box-shad
 .ev-more{display:inline-block;margin-top:14px;color:var(--sand);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:.25s}
 a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
 
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:5px}
+.nav-caret{font-size:9px;transition:transform .25s;opacity:.7}
+.nav-dropdown{position:relative}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:248px;background:linear-gradient(180deg,#1c130a,#120c07);border:1px solid rgba(231,185,94,.18);border-radius:12px;padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transition:.28s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 60px -12px rgba(0,0,0,.7);z-index:200}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
+.nav-dropdown:hover .nav-caret{transform:rotate(180deg)}
+.nav-dropdown-menu li{display:block;margin:0}
+.nav-dropdown-menu a{display:block;padding:11px 16px;border-radius:8px;color:var(--muted);font-size:14.5px;white-space:nowrap;transition:.2s}
+.nav-dropdown-menu a:hover{background:rgba(231,185,94,.08);color:var(--sand);padding-left:20px}
+/* Mobilde dropdown alt menüsünü gizle, Performances normal link gibi davransın */
+@media (max-width:680px){
+  .nav-dropdown-menu{display:none}
+  .nav-caret{display:none}
+}
 </style>
 <style>
 .svc-hero{position:relative;min-height:58vh;display:flex;align-items:flex-end;padding:110px 0 56px;overflow:hidden}
@@ -571,7 +585,16 @@ a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
     <nav>
       <ul class="nav-links" id="navLinks">
         <li><a href="/#what">The Art</a></li>
-        <li><a href="/#events">Performances</a></li>
+        <li class="nav-dropdown">
+          <a href="/#events" class="nav-drop-toggle">Performances <span class="nav-caret">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/services/weddings.html">Weddings &amp; Love Stories</a></li>
+            <li><a href="/services/corporate.html">Corporate &amp; Brand</a></li>
+            <li><a href="/services/charity.html">Charity &amp; Community</a></li>
+            <li><a href="/services/schools.html">Schools &amp; Workshops</a></li>
+            <li><a href="/services/celebrations.html">Celebrations &amp; Milestones</a></li>
+          </ul>
+        </li>
         <li><a href="/#portfolio">Portfolio</a></li>
         <li><a href="/#reviews">Reviews</a></li>
         <li><a href="/#packages">Pricing</a></li>
