@@ -339,8 +339,8 @@
   .tab.is-active{color:#1a1206;background:var(--ember);border-color:transparent;font-weight:600;}
   .gallery-wrap{max-width:1080px;margin:0 auto;position:relative;}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:var(--row);gap:var(--gap);}
-  .gallery.is-collapsed{max-height:calc(var(--row) * 2 + var(--gap));overflow:hidden;}
-  .gallery-fade{position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,transparent,var(--void));pointer-events:none;opacity:0;transition:opacity .35s ease;}
+  .gallery.is-collapsed{max-height:calc(var(--row) * 2 + var(--gap) + 95px);overflow:hidden;}
+  .gallery-fade{position:absolute;left:0;right:0;bottom:0;height:190px;background:linear-gradient(180deg,transparent,var(--void) 78%);pointer-events:none;opacity:0;transition:opacity .35s ease;}
   .gallery-wrap.show-fade .gallery-fade{opacity:1;}
   .tile{position:relative;overflow:hidden;border-radius:4px;border:1px solid var(--line);text-decoration:none;color:inherit;background:linear-gradient(150deg,#1c130a,#0b0805);}
   .tile--feature{grid-column:span 2;grid-row:span 2;}
@@ -356,8 +356,8 @@
   .tile:hover .tile__play span{background:var(--ember);transform:scale(1.08);}
   .tile__play svg{width:18px;height:18px;margin-left:3px;}
   .tile--ph{background:radial-gradient(70% 90% at 30% 20%,rgba(217,148,58,.22),transparent 60%),radial-gradient(90% 100% at 80% 100%,rgba(122,74,22,.3),transparent 65%),linear-gradient(150deg,#1c130a,#0b0805);}
-  .port__more{text-align:center;margin-top:1.8rem;}
-  .more-btn{font-family:inherit;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:.85rem 1.8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:border-color .3s ease,color .3s ease,transform .25s ease;}
+  .port__more{text-align:center;margin-top:-46px;position:relative;z-index:4;}
+  .more-btn{font-family:inherit;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:rgba(11,8,5,.85);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:2px;padding:.85rem 1.8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:border-color .3s ease,color .3s ease,transform .25s ease;}
   .more-btn:hover{border-color:var(--sand-mid);color:var(--sand-hi);transform:translateY(-2px);}
   .more-btn .chev{transition:transform .3s ease;}
   .more-btn.is-open .chev{transform:rotate(180deg);}
@@ -368,15 +368,30 @@
   .reviews__head{max-width:760px;margin:0 auto;position:relative;z-index:1;}
   .reviews__lead{color:var(--mute);font-size:clamp(.96rem,1.6vw,1.05rem);margin:1.6rem 0 .4rem;}
   .reviews__word{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:clamp(2.8rem,8vw,5.2rem);line-height:1;margin:0;color:var(--sand-hi);text-shadow:0 6px 50px rgba(217,148,58,.25);}
-  .reviews__grid{max-width:1040px;margin:clamp(2rem,4vw,2.8rem) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.6vw,1.2rem);position:relative;z-index:1;}
-  .quote{border:1px solid var(--line);border-radius:4px;padding:clamp(1.7rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;}
+  .reviews__carousel{max-width:1080px;margin:clamp(2rem,4vw,2.8rem) auto 0;position:relative;z-index:1;}
+  .reviews__viewport{overflow:hidden;}
+  .reviews__track{display:flex;gap:clamp(.9rem,1.6vw,1.2rem);transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;}
+  .quote{flex:0 0 calc((100% - 2 * clamp(.9rem,1.6vw,1.2rem)) / 3);border:1px solid var(--line);border-radius:4px;padding:clamp(1.7rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;box-sizing:border-box;}
   .quote__mark{font-family:"Cormorant Garamond",serif;font-size:2.6rem;line-height:.6;color:var(--ember);opacity:.55;margin-bottom:.6rem;}
   .quote .stars{color:var(--ember);font-size:.8rem;letter-spacing:.12em;margin-bottom:.9rem;}
-  .quote__text{font-size:1.08rem;line-height:1.62;color:var(--cream);margin:0 0 1.3rem;font-style:italic;}
+  .quote__text{font-size:1.04rem;line-height:1.62;color:var(--cream);margin:0 0 1.3rem;font-style:italic;}
   .quote__by{margin-top:auto;font-size:.8rem;color:var(--mute);}
   .quote__by b{color:var(--sand-hi);font-weight:600;font-style:normal;}
-  .quote--ph .quote__text{color:var(--mute);}
-  .quote--ph::after{content:"Replace with a real review";position:absolute;top:10px;right:12px;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sand-mid);opacity:.55;}
+  .reviews__arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(11,8,5,.7);backdrop-filter:blur(6px);color:var(--cream);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:border-color .3s ease,background .3s ease,color .3s ease;}
+  .reviews__arrow:hover{border-color:var(--ember);color:var(--ember);background:rgba(11,8,5,.9);}
+  .reviews__arrow--prev{left:-12px;}
+  .reviews__arrow--next{right:-12px;}
+  .reviews__dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.6rem;}
+  .reviews__dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:background .3s ease,width .3s ease;}
+  .reviews__dot.is-active{background:var(--ember);width:22px;border-radius:5px;}
+  @media(max-width:880px){
+    .quote{flex:0 0 calc((100% - clamp(.9rem,1.6vw,1.2rem)) / 2);}
+    .reviews__arrow--prev{left:4px;}
+    .reviews__arrow--next{right:4px;}
+  }
+  @media(max-width:560px){
+    .quote{flex:0 0 100%;}
+  }
   .reviews__cta{max-width:680px;margin:clamp(2.2rem,4vw,3rem) auto 0;text-align:center;padding-top:clamp(2rem,4vw,2.8rem);border-top:1px solid var(--line);position:relative;z-index:1;}
   .reviews__rating{font-size:1.1rem;letter-spacing:.15em;color:var(--ember);margin-bottom:.7rem;}
   .reviews__trust{color:var(--mute);font-size:.95rem;line-height:1.6;margin:0 0 1.8rem;}
@@ -482,7 +497,6 @@
     .flow{flex-direction:column;align-items:center;gap:2.6rem;}
     .arrow{display:none;}
     .gallery{grid-template-columns:repeat(2,1fr);--row:190px;}
-    .reviews__grid{grid-template-columns:1fr;}
   }
   @media (max-width:720px){
     .proof{grid-template-columns:repeat(2,1fr);gap:2.4rem 1rem;}
@@ -700,11 +714,11 @@
     </div>
     <div class="gallery-wrap">
       <div class="gallery is-collapsed">
-        <a class="tile tile--feature" data-cat="stage" href="https://www.youtube.com/watch?v=bXm58QeLCpQ" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/bXm58QeLCpQ/hqdefault.jpg" alt="Bilal Köse live sand art showreel" loading="lazy">
+        <a class="tile tile--feature" data-cat="stage" href="https://www.youtube.com/watch?v=P_Ucwh7_svs" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/P_Ucwh7_svs/hqdefault.jpg" alt="Bilal Köse live sand art performance" loading="lazy">
           <div class="tile__scrim"></div>
           <div class="tile__play" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="#f5ecda"><path d="M5 3l16 9-16 9z"/></svg></span></div>
-          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Showreel</span></div>
+          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Live performance</span></div>
         </a>
         <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" target="_blank" rel="noopener">
           <img src="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy">
@@ -761,11 +775,51 @@
       <p class="reviews__lead">The same word comes up again and again:</p>
       <p class="reviews__word">magical.</p>
     </div>
-    <div class="reviews__grid">
-      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">Paste one of your favourite Google or Bark reviews here. One or two sentences reads best.</blockquote><figcaption class="quote__by"><b>Client name</b> · Wedding, 2025</figcaption></figure>
-      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">A second short quote — ideally a corporate or brand client, to show range.</blockquote><figcaption class="quote__by"><b>Client name</b> · Corporate event</figcaption></figure>
-      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">A third quote — a charity, school or celebration works well to round it out.</blockquote><figcaption class="quote__by"><b>Client name</b> · Charity gala</figcaption></figure>
+    <div class="reviews__carousel">
+      <button class="reviews__arrow reviews__arrow--prev" id="revPrev" aria-label="Previous reviews">‹</button>
+      <div class="reviews__viewport">
+        <div class="reviews__track" id="revTrack">
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Bilal is fabulous! A very creative storyteller, talented and sentimental, with attention to detail and big-picture vision. I will hire again and highly recommend!</blockquote>
+          <figcaption class="quote__by"><b>Sophia R.</b> · Private event</figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Our guests were amazed. It was a wonderful feeling to sit and watch our love story and share it with everyone.</blockquote>
+          <figcaption class="quote__by"><b>Pedro</b> · Wedding</figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Simply breathtaking. A stunning display of love and reunion that left our guests in awe. They couldn't wait to get his contact details.</blockquote>
+          <figcaption class="quote__by"><b>Joseph S.</b> · Charity event</figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Truly a unique and magical experience. We watched in amazement as each scene unfolded, and thank you for the personalised calligraphy gift.</blockquote>
+          <figcaption class="quote__by"><b>Helen M.</b> · Celebration</figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Absolutely magical and unlike anything I have seen before. It had everyone spellbound, an unforgettable experience.</blockquote>
+          <figcaption class="quote__by"><b>Moira D.</b> · Evening event</figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Truly captivating. The elegance and creativity added a unique artistic touch to the night. Highly recommend.</blockquote>
+          <figcaption class="quote__by"><b>Dianna L.</b> · Charity event</figcaption>
+        </figure>
+        </div>
+      </div>
+      <button class="reviews__arrow reviews__arrow--next" id="revNext" aria-label="Next reviews">›</button>
     </div>
+    <div class="reviews__dots" id="revDots" aria-hidden="true"></div>
     <div class="reviews__cta">
       <div class="reviews__rating" aria-hidden="true">★★★★★</div>
       <p class="reviews__trust">Rated <b>5★</b> — Elite Pro on Bark, and top-rated on Google.</p>
@@ -1049,6 +1103,47 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   }));
   window.addEventListener('resize',()=>{if(!expanded)refresh();});
   refresh();
+})();
+
+/* ---------- Reviews carousel ---------- */
+(function(){
+  const track=document.getElementById('revTrack');
+  if(!track) return;
+  const slides=Array.from(track.children);
+  const prev=document.getElementById('revPrev'), next=document.getElementById('revNext'), dotsWrap=document.getElementById('revDots');
+  let perView=3, index=0, timer=null;
+  function calcPerView(){const w=window.innerWidth;perView=w<=560?1:(w<=880?2:3);}
+  function maxIndex(){return Math.max(0, slides.length - perView);}
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    for(let i=0;i<=maxIndex();i++){
+      const d=document.createElement('button');
+      d.className='reviews__dot'+(i===index?' is-active':'');
+      d.setAttribute('aria-label','Go to review '+(i+1));
+      d.addEventListener('click',()=>{index=i;render();restart();});
+      dotsWrap.appendChild(d);
+    }
+  }
+  function render(){
+    if(index>maxIndex()) index=maxIndex();
+    if(index<0) index=0;
+    const gap=parseFloat(getComputedStyle(track).gap)||16;
+    const slideW=slides[0].getBoundingClientRect().width+gap;
+    track.style.transform='translateX('+(-index*slideW)+'px)';
+    Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===index));
+  }
+  function go(dir){index+=dir; if(index>maxIndex()) index=0; if(index<0) index=maxIndex(); render();}
+  function start(){timer=setInterval(()=>go(1),5000);}
+  function stop(){clearInterval(timer);}
+  function restart(){stop();start();}
+  next.addEventListener('click',()=>{go(1);restart();});
+  prev.addEventListener('click',()=>{go(-1);restart();});
+  const carousel=track.closest('.reviews__carousel');
+  carousel.addEventListener('mouseenter',stop);
+  carousel.addEventListener('mouseleave',start);
+  let rt=null;
+  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{calcPerView();buildDots();render();},150);});
+  calcPerView();buildDots();render();start();
 })();
 
 /* ---------- FAQ accordion ---------- */
