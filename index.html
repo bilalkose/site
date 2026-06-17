@@ -2,6 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sand Art UK — Live Sand Art Performances by Bilal Köse</title>
+<meta name="description" content="Bespoke live sand art performances for weddings, corporate events and celebrations across the UK & worldwide. As seen at Harrods, Soho Theatre & the University of Oxford. From £450. Based in Worksop." />
+<meta name="theme-color" content="#0b0805" />
+<link rel="canonical" href="https://bilalkose.co.uk/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bilalkose.co.uk/" />
+<meta property="og:title" content="Sand Art UK — Live Sand Art Performances by Bilal Köse" />
+<meta property="og:description" content="Bespoke live sand art for weddings, brands, charities and celebrations across the UK & worldwide. As seen at Harrods, Soho Theatre & the University of Oxford." />
+<meta property="og:image" content="https://bilalkose.co.uk/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sand Art UK — Live Sand Art Performances by Bilal Köse" />
+<meta name="twitter:description" content="Live sand art for weddings, brands, charities and celebrations across the UK & worldwide." />
+<meta name="twitter:image" content="https://bilalkose.co.uk/assets/og-image.jpg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQSB564V5B"></script>
 <script>
@@ -10,33 +28,9 @@
   gtag('js', new Date());
   gtag('config', 'G-QQSB564V5B');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sand Art UK — Live Sand Art Performances by Bilal Köse | Weddings &amp; Corporate Events</title>
-<meta name="description" content="Bespoke live sand art performances for weddings, corporate events and celebrations across the UK & worldwide. As seen at Harrods, Soho Theatre & the University of Oxford. From £450. Based in Worksop." />
-<meta name="author" content="Bilal Köse — Sand Art UK" />
-
-<!-- Open Graph / social -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bilalkose.co.uk/" />
-<meta property="og:site_name" content="Sand Art UK" />
-<meta property="og:title" content="Sand Art UK — Live Sand Art Performances by Bilal Köse" />
-<meta property="og:description" content="A story told in every grain of sand. Live sand art for weddings, brands, charities and celebrations across the UK & worldwide. As seen at Harrods, Soho Theatre & Oxford." />
-<meta property="og:image" content="https://bilalkose.co.uk/assets/og-image.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sand Art UK — Live Sand Art Performances by Bilal Köse" />
-<meta name="twitter:description" content="Live sand art for weddings, brands, charities and celebrations across the UK & worldwide." />
-<meta name="twitter:image" content="https://bilalkose.co.uk/assets/og-image.jpg" />
-<link rel="canonical" href="https://bilalkose.co.uk/" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-<meta name="theme-color" content="#0b0805" />
-
-<!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-
-<!-- Schema.org structured data — helps Google understand the business, services, and FAQ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -213,1092 +207,931 @@
   ]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-/* ============================================================
-   SAND ART UK — design system
-   ============================================================ */
-:root{
-  --ink:#0b0805;
-  --ink-2:#130d07;
-  --ink-3:#1b130b;
-  --panel:#15100a;
-  --line:rgba(231,185,94,.16);
-  --line-soft:rgba(246,238,224,.08);
+  :root{
+    --void:#0b0805; --void-2:#140d06; --ember:#d9943a;
+    --sand-hi:#f0d49a; --sand-mid:#c89a55; --sand-lo:#8a5e2c;
+    --cream:#f5ecda; --mute:#c9b79a; --line:rgba(245,236,218,.14);
+    --row:218px; --gap:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--void);color:var(--cream);font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img{max-width:100%;}
 
-  --sand:#e7b95e;
-  --sand-light:#f3dca6;
-  --sand-deep:#b8822f;
-  --ember:#dd9442;
-  --glow:rgba(231,185,94,.55);
+  .eyebrow{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ember);font-weight:600;margin:0 0 1.2rem;}
+  .h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.06;margin:0;color:var(--cream);letter-spacing:.005em;}
+  .h2 em{font-style:italic;color:var(--sand-hi);}
+  .sec{padding:clamp(4rem,9vw,7rem) 1.5rem;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  .center{text-align:center;}
 
-  --cream:#f6efe1;
-  --muted:rgba(246,239,225,.62);
-  --muted-2:rgba(246,239,225,.4);
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(11,8,5,.82);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);}
+  .nav__inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.5rem;}
+  .nav__logo{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;text-decoration:none;color:var(--cream);line-height:1;display:flex;flex-direction:column;}
+  .nav__logo span{font-family:"Hanken Grotesk";font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-top:.25rem;}
+  .nav__links{display:flex;align-items:center;gap:1.6rem;}
+  .nav__links a{font-size:.85rem;text-decoration:none;color:var(--mute);transition:color .3s ease;}
+  .nav__links a:hover{color:var(--cream);}
+  .nav__drop{position:relative;}
+  .nav__menu{position:absolute;top:120%;left:0;background:var(--void-2);border:1px solid var(--line);border-radius:4px;padding:.6rem;min-width:230px;display:none;flex-direction:column;gap:.2rem;box-shadow:0 24px 60px rgba(0,0,0,.5);}
+  .nav__menu a{padding:.55rem .7rem;border-radius:3px;font-size:.82rem;}
+  .nav__menu a:hover{background:rgba(255,255,255,.04);color:var(--sand-hi);}
+  .nav__drop:hover .nav__menu{display:flex;}
+  .nav__cta{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-decoration:none;background:linear-gradient(180deg,var(--ember),#c07e26);color:#1a1206;padding:.6rem 1.1rem;border-radius:2px;transition:transform .25s ease;}
+  .nav__cta:hover{transform:translateY(-2px);}
+  .nav__burger{display:none;background:transparent;border:1px solid var(--line);color:var(--cream);font-size:1.2rem;line-height:1;padding:.4rem .65rem;border-radius:3px;cursor:pointer;}
+  .nav__mobile{display:none;flex-direction:column;padding:.5rem 1.5rem 1.2rem;border-top:1px solid var(--line);}
+  .nav__mobile a{padding:.7rem 0;text-decoration:none;color:var(--mute);border-bottom:1px solid rgba(245,236,218,.07);font-size:.95rem;}
+  .nav__mobile a:hover{color:var(--cream);}
 
-  --serif:"Fraunces", Georgia, "Times New Roman", serif;
-  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  @media (max-width:900px){
+    .nav{backdrop-filter:none;background:var(--void);}
+    .nav__links,.nav__cta{display:none;}
+    .nav__drop{display:none;}
+    .nav__burger{display:block;}
+    .nav__mobile.is-open{display:flex;}
+  }
 
-  --maxw:1200px;
-  --r:14px;
-}
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:calc(100svh - 60px);overflow:hidden;display:flex;align-items:center;justify-content:center;isolation:isolate;}
+  .hero__glow{position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;background:radial-gradient(120% 90% at 50% 78%,rgba(217,148,58,.42) 0%,rgba(122,74,22,.22) 32%,rgba(20,13,6,0) 62%),radial-gradient(140% 120% at 50% 50%,var(--void-2) 0%,var(--void) 70%);}
+  .hero__canvas{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;display:block;}
+  .hero__veil{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,.55) 0%,rgba(11,8,5,0) 28%),radial-gradient(130% 100% at 50% 50%,rgba(11,8,5,0) 46%,rgba(11,8,5,.72) 100%);}
+  .hero__inner{position:relative;z-index:3;width:min(820px,90vw);text-align:center;padding:6vh 0;pointer-events:none;}
+  .hero__inner a{pointer-events:auto;}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.7rem,7.4vw,5.4rem);line-height:1.02;margin:0 0 1.5rem;color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.45);}
+  .hero h1 em{font-style:italic;color:var(--sand-hi);}
+  .hero .lede{max-width:46ch;margin:0 auto 2.4rem;font-size:clamp(.98rem,1.9vw,1.12rem);line-height:1.65;color:var(--mute);}
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.6rem;}
+  .btn{font-family:inherit;font-size:.92rem;font-weight:600;padding:.92rem 1.7rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .25s ease,background .25s ease,border-color .25s ease,color .25s ease;}
+  .btn--primary{background:linear-gradient(180deg,var(--ember),#c07e26);color:#1a1206;border:1px solid transparent;}
+  .btn--primary:hover{transform:translateY(-2px);background:linear-gradient(180deg,#e6a04b,#cf8a2c);}
+  .btn--ghost{background:transparent;color:var(--cream);border:1px solid var(--line);}
+  .btn--ghost:hover{transform:translateY(-2px);border-color:var(--sand-mid);color:var(--sand-hi);}
+  .btn:focus-visible{outline:2px solid var(--sand-hi);outline-offset:3px;}
+  .hero .stats{display:flex;gap:.6rem 1.1rem;justify-content:center;align-items:center;flex-wrap:wrap;font-size:.82rem;color:var(--mute);}
+  .hero .stats b{color:var(--cream);font-weight:600;}
+  .hero .dot{width:3px;height:3px;border-radius:50%;background:var(--ember);opacity:.8;}
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--sans);
-  background:var(--ink);
-  color:var(--cream);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-}
+  /* ============ CREDIBILITY ============ */
+  .cred{padding:0 1.5rem 3.5rem;text-align:center;}
+  .handoff{height:78px;background:radial-gradient(80% 130% at 50% -20%,rgba(217,148,58,.30) 0%,rgba(122,74,22,.10) 38%,rgba(11,8,5,0) 70%);}
+  .marquee{position:relative;overflow:hidden;padding:.4rem 0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);}
+  .marquee__track{display:flex;align-items:center;width:max-content;animation:scroll 48s linear infinite;}
+  .marquee:hover .marquee__track{animation-play-state:paused;}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+  .venue{font-size:.92rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);white-space:nowrap;padding:0 1.5rem;transition:color .35s ease;}
+  .venue:hover{color:var(--sand-hi);}
+  .vsep{color:var(--ember);opacity:.5;font-size:.7rem;}
+  .proof{max-width:980px;margin:3rem auto 0;padding-top:2.5rem;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem 1rem;}
+  .stat{display:flex;flex-direction:column;align-items:center;gap:.5rem;position:relative;}
+  .stat__num{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:var(--sand-hi);}
+  .stat__label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);line-height:1.5;max-width:18ch;}
+  .stat+.stat::before{content:"";position:absolute;left:calc(-.5rem - 1px);top:6px;bottom:6px;width:1px;background:var(--line);}
 
-/* grain overlay */
-body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+  /* ============ THE ART ============ */
+  .art__grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+  .art__media{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:4/5;border:1px solid rgba(217,148,58,.22);box-shadow:0 30px 90px rgba(0,0,0,.55);background:linear-gradient(160deg,#1a1206,#0b0805);}
+  .art__media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .art__media::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,0) 52%,rgba(11,8,5,.5) 100%);}
+  .art__body h2{margin-bottom:1.6rem;}
+  .art__body p{font-size:clamp(.98rem,1.6vw,1.06rem);line-height:1.72;color:var(--mute);margin:0 0 1.1rem;max-width:48ch;}
+  .art__body p:last-child{margin-bottom:0;}
 
-h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-section{position:relative}
+  /* ============ PROCESS ============ */
+  .phead{max-width:680px;margin:0 auto clamp(3rem,6vw,4.4rem);}
+  .flow{max-width:1080px;margin:0 auto;display:flex;align-items:flex-start;justify-content:center;gap:clamp(.3rem,1.4vw,1rem);}
+  .step{flex:1 1 0;max-width:230px;text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .step__icon{width:clamp(50px,6.5vw,66px);height:auto;color:var(--sand-hi);margin:0 auto 1.2rem;display:block;transition:color .35s ease,transform .35s ease;}
+  .step:hover .step__icon{color:var(--ember);transform:translateY(-4px);}
+  .step__title{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);font-weight:600;margin:0 0 .8rem;}
+  .step__desc{font-size:.9rem;line-height:1.6;color:var(--mute);margin:0;max-width:24ch;}
+  .arrow{flex:0 0 auto;width:clamp(26px,3.6vw,44px);height:auto;color:var(--ember);opacity:.75;margin-top:clamp(18px,2.6vw,26px);}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.eyebrow{
-  font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--sand);
-  font-weight:500;display:inline-flex;align-items:center;gap:12px;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--sand);opacity:.7}
+  /* ============ PERFORMANCES ============ */
+  .perf__head{max-width:700px;margin:0 auto clamp(2.6rem,5vw,4rem);}
+  .perf__intro{color:var(--mute);max-width:54ch;margin:1.2rem auto 0;line-height:1.65;font-size:clamp(.96rem,1.6vw,1.05rem);}
+  .perf__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.8vw,1.4rem);}
+  .card{display:flex;flex-direction:column;padding:clamp(1.5rem,2.5vw,2.1rem);border:1px solid var(--line);border-radius:4px;background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,0));text-decoration:none;color:inherit;position:relative;overflow:hidden;min-height:210px;transition:border-color .35s ease,transform .35s ease,box-shadow .35s ease;}
+  .card:hover{border-color:rgba(217,148,58,.55);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.45);}
+  .card:focus-visible{outline:2px solid var(--sand-hi);outline-offset:3px;}
+  .card--feature{grid-column:span 2;}
+  .card--feature::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:radial-gradient(90% 130% at 14% 0%,rgba(217,148,58,.12),transparent 58%);}
+  .card__top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;position:relative;z-index:1;}
+  .card__mark{color:var(--ember);font-size:1.5rem;line-height:1;}
+  .card__tag{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand-mid);border:1px solid var(--line);border-radius:100px;padding:.35rem .7rem;white-space:nowrap;}
+  .card--feature .card__tag{color:#1a1206;background:var(--ember);border-color:transparent;font-weight:600;}
+  .card__title{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(1.35rem,2.4vw,1.7rem);line-height:1.12;margin:0 0 .7rem;color:var(--cream);position:relative;z-index:1;}
+  .card--feature .card__title{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .card__desc{font-size:.92rem;line-height:1.6;color:var(--mute);margin:0;position:relative;z-index:1;max-width:46ch;}
+  .card__more{margin-top:auto;padding-top:1.5rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sand-hi);font-weight:600;display:inline-flex;align-items:center;gap:.45rem;position:relative;z-index:1;}
+  .card__more .ar{transition:transform .35s ease;}
+  .card:hover .card__more .ar{transform:translateX(5px);}
+  .perf__foot{text-align:center;margin-top:2.4rem;}
 
-.btn{
-  display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:none;
-  font-family:var(--sans);font-size:14px;letter-spacing:.05em;font-weight:500;
-  padding:15px 30px;border-radius:100px;transition:.35s cubic-bezier(.2,.7,.3,1);
-  text-transform:uppercase;white-space:nowrap;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--sand-light),var(--sand) 55%,var(--sand-deep));
-  color:#231603;box-shadow:0 10px 40px -12px var(--glow);
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 55px -14px var(--glow)}
-.btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
-.btn-ghost:hover{border-color:var(--sand);color:var(--sand-light);background:rgba(231,185,94,.05)}
+  /* ============ PORTFOLIO ============ */
+  .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .5rem;max-width:760px;margin:0 auto clamp(2rem,4vw,2.6rem);}
+  .tab{font-family:inherit;font-size:.78rem;letter-spacing:.06em;color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:100px;padding:.55rem 1.1rem;cursor:pointer;transition:color .3s ease,border-color .3s ease,background .3s ease;}
+  .tab:hover{color:var(--cream);border-color:var(--sand-mid);}
+  .tab.is-active{color:#1a1206;background:var(--ember);border-color:transparent;font-weight:600;}
+  .gallery-wrap{max-width:1080px;margin:0 auto;position:relative;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:var(--row);gap:var(--gap);}
+  .gallery.is-collapsed{max-height:calc(var(--row) * 2 + var(--gap));overflow:hidden;}
+  .gallery-fade{position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,transparent,var(--void));pointer-events:none;opacity:0;transition:opacity .35s ease;}
+  .gallery-wrap.show-fade .gallery-fade{opacity:1;}
+  .tile{position:relative;overflow:hidden;border-radius:4px;border:1px solid var(--line);text-decoration:none;color:inherit;background:linear-gradient(150deg,#1c130a,#0b0805);}
+  .tile--feature{grid-column:span 2;grid-row:span 2;}
+  .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+  .tile:hover img{transform:scale(1.05);}
+  .tile__scrim{position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,0) 45%,rgba(11,8,5,.82) 100%);}
+  .tile__cap{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.25rem;z-index:2;}
+  .tile__cat{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);font-weight:600;}
+  .tile__title{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--cream);line-height:1.15;}
+  .tile--feature .tile__title{font-size:clamp(1.3rem,2.4vw,1.8rem);}
+  .tile__play{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;z-index:2;}
+  .tile__play span{width:54px;height:54px;border-radius:50%;background:rgba(11,8,5,.45);border:1px solid rgba(240,212,154,.6);display:flex;align-items:center;justify-content:center;transition:background .3s ease,transform .3s ease;}
+  .tile:hover .tile__play span{background:var(--ember);transform:scale(1.08);}
+  .tile__play svg{width:18px;height:18px;margin-left:3px;}
+  .tile--ph{background:radial-gradient(70% 90% at 30% 20%,rgba(217,148,58,.22),transparent 60%),radial-gradient(90% 100% at 80% 100%,rgba(122,74,22,.3),transparent 65%),linear-gradient(150deg,#1c130a,#0b0805);}
+  .port__more{text-align:center;margin-top:1.8rem;}
+  .more-btn{font-family:inherit;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:.85rem 1.8rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:border-color .3s ease,color .3s ease,transform .25s ease;}
+  .more-btn:hover{border-color:var(--sand-mid);color:var(--sand-hi);transform:translateY(-2px);}
+  .more-btn .chev{transition:transform .3s ease;}
+  .more-btn.is-open .chev{transform:rotate(180deg);}
 
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
+  /* ============ REVIEWS ============ */
+  .reviews{position:relative;overflow:hidden;}
+  .reviews__glow{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:min(700px,90%);height:340px;z-index:0;pointer-events:none;background:radial-gradient(closest-side,rgba(217,148,58,.16),transparent 75%);}
+  .reviews__head{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+  .reviews__lead{color:var(--mute);font-size:clamp(.96rem,1.6vw,1.05rem);margin:1.6rem 0 .4rem;}
+  .reviews__word{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:clamp(2.8rem,8vw,5.2rem);line-height:1;margin:0;color:var(--sand-hi);text-shadow:0 6px 50px rgba(217,148,58,.25);}
+  .reviews__grid{max-width:1040px;margin:clamp(2rem,4vw,2.8rem) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.6vw,1.2rem);position:relative;z-index:1;}
+  .quote{border:1px solid var(--line);border-radius:4px;padding:clamp(1.7rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;}
+  .quote__mark{font-family:"Cormorant Garamond",serif;font-size:2.6rem;line-height:.6;color:var(--ember);opacity:.55;margin-bottom:.6rem;}
+  .quote .stars{color:var(--ember);font-size:.8rem;letter-spacing:.12em;margin-bottom:.9rem;}
+  .quote__text{font-size:1.08rem;line-height:1.62;color:var(--cream);margin:0 0 1.3rem;font-style:italic;}
+  .quote__by{margin-top:auto;font-size:.8rem;color:var(--mute);}
+  .quote__by b{color:var(--sand-hi);font-weight:600;font-style:normal;}
+  .quote--ph .quote__text{color:var(--mute);}
+  .quote--ph::after{content:"Replace with a real review";position:absolute;top:10px;right:12px;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sand-mid);opacity:.55;}
+  .reviews__cta{max-width:680px;margin:clamp(2.2rem,4vw,3rem) auto 0;text-align:center;padding-top:clamp(2rem,4vw,2.8rem);border-top:1px solid var(--line);position:relative;z-index:1;}
+  .reviews__rating{font-size:1.1rem;letter-spacing:.15em;color:var(--ember);margin-bottom:.7rem;}
+  .reviews__trust{color:var(--mute);font-size:.95rem;line-height:1.6;margin:0 0 1.8rem;}
+  .reviews__trust b{color:var(--cream);font-weight:600;}
+  .reviews__ig{margin-top:1.4rem;font-size:.88rem;color:var(--mute);}
+  .reviews__ig a{color:var(--sand-hi);text-decoration:none;}
+  .reviews__ig a:hover{text-decoration:underline;}
 
-/* ============================================================ NAV */
-header.nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  transition:background .4s ease,backdrop-filter .4s ease,padding .4s ease,border-color .4s;
-  padding:22px 0;border-bottom:1px solid transparent;
-}
-header.nav.scrolled{
-  background:rgba(11,8,5,.82);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line-soft);padding:14px 0;
-}
-@media (max-width:680px){
-  header.nav,header.nav.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none}
-  header.nav.scrolled{background:#0f0a06}
-}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:14px;line-height:1;text-decoration:none}
-.brand-logo{position:relative;width:44px;height:44px;flex-shrink:0;overflow:hidden}
-.brand-logo img{display:block;width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.brand-glow{position:absolute;inset:0;border-radius:6px;pointer-events:none;z-index:2;
-  background:radial-gradient(circle at 50% 50%, rgba(255,220,140,.0) 30%, rgba(231,185,94,.16) 60%, rgba(231,185,94,0) 75%);
-  animation:logoGlow 5.5s ease-in-out infinite}
-.brand:hover .brand-glow{animation-duration:3s}
-@keyframes logoGlow{
-  0%,100%{opacity:.55;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.04)}
-}
-.brand-text{display:flex;flex-direction:column;line-height:1}
-.brand .b1{font-family:var(--serif);font-size:20px;letter-spacing:.005em;color:var(--cream);font-style:italic;font-weight:300}
-.brand .b2{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--sand);margin-top:6px;font-weight:400}
-.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
-.nav-links a{font-size:13.5px;letter-spacing:.06em;color:var(--muted);transition:.3s;position:relative;padding:4px 0}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--sand);transition:.35s}
-.nav-links a:hover,.nav-links a.active{color:var(--cream)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{padding:11px 24px;font-size:12.5px}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.burger span{width:26px;height:2px;background:var(--cream);transition:.3s}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  /* ============ PRICING ============ */
+  .price__head{max-width:680px;margin:0 auto clamp(2.6rem,5vw,4rem);}
+  .price__intro{color:var(--mute);max-width:54ch;margin:1.2rem auto 0;line-height:1.65;font-size:clamp(.96rem,1.6vw,1.05rem);}
+  .price__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.9rem,1.6vw,1.2rem);align-items:stretch;}
+  .plan{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:5px;padding:clamp(1.6rem,2.4vw,2rem);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));position:relative;}
+  .plan--feature{border-color:rgba(217,148,58,.5);box-shadow:0 24px 70px rgba(0,0,0,.45);}
+  .plan__flag{position:absolute;top:-1px;right:1.4rem;transform:translateY(-50%);background:var(--ember);color:#1a1206;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .7rem;border-radius:100px;}
+  .plan__name{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand-mid);font-weight:600;margin:0 0 .9rem;}
+  .plan__price{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.2rem,4vw,2.9rem);line-height:1;color:var(--cream);display:flex;align-items:baseline;gap:.4rem;}
+  .plan__price small{font-family:"Hanken Grotesk";font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;}
+  .plan__desc{font-size:.9rem;line-height:1.6;color:var(--mute);margin:1rem 0 1.3rem;}
+  .plan__list{list-style:none;padding:0;margin:0 0 1.6rem;display:flex;flex-direction:column;gap:.6rem;}
+  .plan__list li{font-size:.86rem;line-height:1.45;color:var(--cream);padding-left:1.4rem;position:relative;}
+  .plan__list li::before{content:"✦";position:absolute;left:0;top:0;color:var(--ember);font-size:.7rem;}
+  .plan .btn{margin-top:auto;justify-content:center;}
+  .plan--feature .btn{background:linear-gradient(180deg,var(--ember),#c07e26);color:#1a1206;border:1px solid transparent;}
+  .plan:not(.plan--feature) .btn{background:transparent;color:var(--cream);border:1px solid var(--line);}
+  .plan:not(.plan--feature) .btn:hover{border-color:var(--sand-mid);color:var(--sand-hi);}
+  .price__note{text-align:center;color:var(--mute);font-size:.85rem;margin:2.2rem auto 0;max-width:60ch;line-height:1.6;}
 
-/* ============================================================ HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
-  background:#0b0805}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;
-  background-image:url('/assets/bk-hero-1400.jpg');
-  background-size:cover;background-position:65% 40%;
-  opacity:.72;
-  animation:heroBgBreathe 8s ease-in-out infinite;
-  transform-origin:center center}
-.hero-bg::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,
-    rgba(11,8,5,.5) 0%,
-    rgba(11,8,5,.3) 35%,
-    rgba(11,8,5,.5) 65%,
-    rgba(11,8,5,.9) 100%)}
-@keyframes heroBgBreathe{
-  0%,100%{transform:scale(1);opacity:.62}
-  50%{transform:scale(1.07);opacity:.8}
-}
-@media(max-width:680px){
-  .hero-bg{background-position:70% center}
-}
-#sandCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-.hero-glow{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:900px;height:900px;
-  background:radial-gradient(circle,rgba(231,185,94,.18) 0%,rgba(231,185,94,0) 62%);z-index:0;filter:blur(20px)}
-.hero-inner{position:relative;z-index:3;max-width:var(--maxw);margin:0 auto;padding:120px 28px 60px;width:100%}
+  /* ============ ABOUT ============ */
+  .about__grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;}
+  .about__media{position:relative;border-radius:3px;overflow:hidden;aspect-ratio:4/5;border:1px solid rgba(217,148,58,.22);box-shadow:0 30px 90px rgba(0,0,0,.55);background:linear-gradient(160deg,#1a1206,#0b0805);}
+  .about__media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .about__body h2{margin-bottom:1.6rem;}
+  .about__body p{font-size:clamp(.96rem,1.6vw,1.04rem);line-height:1.74;color:var(--mute);margin:0 0 1.1rem;}
+  .about__teaser{margin:1.6rem 0 1.4rem;padding:1.1rem 1.3rem;border-left:2px solid var(--ember);background:rgba(217,148,58,.06);border-radius:0 4px 4px 0;}
+  .about__teaser b{color:var(--sand-hi);}
+  .about__teaser span{display:block;font-size:.9rem;color:var(--mute);line-height:1.55;}
+  .about__sign{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.4rem;color:var(--cream);margin-top:.4rem;}
+  .reel{margin-top:clamp(2.6rem,5vw,3.6rem);max-width:1080px;}
+  .reel h3{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sand-mid);font-weight:600;margin:0 0 1rem;}
+  .reel__frame{position:relative;aspect-ratio:16/9;border-radius:5px;overflow:hidden;border:1px solid var(--line);}
+  .reel__frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 
-/* ============================================================ HERO EMBLEM (animated logo) */
-.hero-emblem{position:relative;width:130px;height:130px;flex-shrink:0;overflow:visible}
-.hero-emblem img{display:block;width:100%;height:100%;object-fit:cover;border-radius:0;position:relative;z-index:2}
-.hero-emblem-shimmer{position:absolute;inset:0;border-radius:10px;pointer-events:none;z-index:3;
-  background:radial-gradient(circle at 50% 50%, rgba(255,225,160,.0) 35%, rgba(231,185,94,.18) 65%, rgba(231,185,94,0) 80%);
-  animation:emblemBreathe 6s ease-in-out infinite}
-@keyframes emblemBreathe{
-  0%,100%{opacity:.5;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.06)}
-}
-.hero-emblem-particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--sand-light);
-  pointer-events:none;z-index:1;box-shadow:0 0 6px 1px rgba(231,185,94,.6);opacity:0}
-.hero-emblem-particle.p1{top:20%;left:-12px;animation:particleDrift1 7s ease-in-out infinite}
-.hero-emblem-particle.p2{top:65%;right:-10px;animation:particleDrift2 9s ease-in-out infinite 2s}
-.hero-emblem-particle.p3{bottom:-8px;left:40%;animation:particleDrift3 8s ease-in-out infinite 4s}
-@keyframes particleDrift1{
-  0%,100%{opacity:0;transform:translate(0,0)}
-  20%{opacity:.9}
-  50%{opacity:.4;transform:translate(-18px,-14px)}
-  80%{opacity:.7;transform:translate(-26px,8px)}
-}
-@keyframes particleDrift2{
-  0%,100%{opacity:0;transform:translate(0,0)}
-  25%{opacity:.8;transform:translate(12px,-6px)}
-  60%{opacity:.5;transform:translate(22px,10px)}
-  85%{opacity:.7;transform:translate(8px,18px)}
-}
-@keyframes particleDrift3{
-  0%,100%{opacity:0;transform:translate(0,0)}
-  30%{opacity:.85;transform:translate(-8px,8px)}
-  70%{opacity:.5;transform:translate(14px,14px)}
-}
+  /* ============ BOOK ============ */
+  .book{position:relative;overflow:hidden;isolation:isolate;}
+  .book__glow{position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;background:radial-gradient(120% 100% at 50% 110%,rgba(217,148,58,.26),rgba(122,74,22,.08) 40%,rgba(11,8,5,0) 70%);}
+  .book__canvas{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;display:block;opacity:.9;}
+  .book__veil{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,.7),rgba(11,8,5,.4) 40%,rgba(11,8,5,.55));}
+  .book__inner{position:relative;z-index:3;max-width:1080px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .book__lead h2{margin-bottom:1.4rem;}
+  .book__lead p{color:var(--mute);line-height:1.7;font-size:clamp(.96rem,1.6vw,1.04rem);margin:0 0 2rem;max-width:42ch;}
+  .book__detail{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:2rem;}
+  .book__detail div span{display:block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand-mid);margin-bottom:.25rem;}
+  .book__detail div a,.book__detail div p{color:var(--cream);text-decoration:none;font-size:1rem;margin:0;}
+  .book__detail div a:hover{color:var(--sand-hi);}
+  .book__quick{display:flex;gap:.8rem;flex-wrap:wrap;}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;background:rgba(11,8,5,.55);border:1px solid var(--line);border-radius:6px;padding:clamp(1.4rem,2.6vw,2rem);backdrop-filter:blur(4px);}
+  .form .full{grid-column:1 / -1;}
+  .form label{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:.4rem;}
+  .form input,.form select,.form textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:3px;padding:.7rem .8rem;color:var(--cream);font-family:inherit;font-size:.92rem;transition:border-color .25s ease;}
+  .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--ember);}
+  .form textarea{resize:vertical;min-height:90px;}
+  .form .hp{position:absolute;left:-9999px;}
+  .form .btn{grid-column:1 / -1;justify-content:center;}
 
-.hero-top{display:flex;align-items:center;gap:34px;margin-bottom:36px}
-.hero-text{display:flex;flex-direction:column;gap:14px}
-.hero-text .eyebrow{margin:0}
-.hero-text h1{margin:0}
-@media(max-width:680px){
-  .hero-top{flex-direction:column;align-items:flex-start;gap:20px}
-}
-.hero h1{font-size:clamp(46px,8vw,108px);font-weight:300;max-width:15ch;margin:26px 0 0;letter-spacing:-.025em}
-.hero h1 em{font-style:italic;color:var(--sand-light)}
-.hero p.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:46ch;margin:30px 0 40px;font-weight:300}
-.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
-.hero-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:34px;font-size:14px;letter-spacing:.04em;color:var(--muted)}
-.hero-meta b{color:var(--sand-light);font-weight:500}
-.hero-meta .dot{color:var(--sand);opacity:.6}
-.hero-fade{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--ink),transparent);z-index:2}
-.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:4;color:var(--muted-2);
-  font-size:11px;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
-.scroll-hint .line{width:1px;height:46px;background:linear-gradient(var(--sand),transparent);animation:drop 2.4s infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}
-  55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  /* ============ FAQ ============ */
+  .faq__head{max-width:680px;margin:0 auto clamp(2.6rem,5vw,3.6rem);}
+  .faq__list{max-width:820px;margin:0 auto;}
+  .faq__item{border-bottom:1px solid var(--line);}
+  .faq__q{width:100%;text-align:left;background:transparent;border:0;color:var(--cream);font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2vw,1.4rem);padding:1.4rem 2.5rem 1.4rem 0;cursor:pointer;position:relative;}
+  .faq__q::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--ember);font-size:1.4rem;transition:transform .3s ease;font-family:"Hanken Grotesk";}
+  .faq__item.is-open .faq__q::after{content:"−";}
+  .faq__a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq__a div{padding:0 0 1.5rem;color:var(--mute);line-height:1.7;font-size:.96rem;}
+  .faq__a em{color:var(--sand-hi);font-style:italic;}
 
-/* hero entrance */
-.hero .anim{opacity:0;transform:translateY(28px);animation:rise .9s forwards cubic-bezier(.2,.7,.3,1)}
-.hero .d1{animation-delay:.15s}.hero .d2{animation-delay:.35s}.hero .d3{animation-delay:.55s}.hero .d4{animation-delay:.75s}
-@keyframes rise{to{opacity:1;transform:none}}
+  /* ============ FOOTER ============ */
+  .foot{border-top:1px solid var(--line);background:var(--void-2);padding:clamp(3rem,6vw,4.5rem) 1.5rem 2rem;}
+  .foot__grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:2.5rem;}
+  .foot__brand h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;margin:0 0 .2rem;color:var(--cream);font-weight:600;}
+  .foot__brand .role{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);}
+  .foot__brand p{color:var(--mute);font-size:.88rem;line-height:1.6;margin:1rem 0 0;max-width:34ch;}
+  .foot h5{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand-mid);margin:0 0 1rem;}
+  .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem;}
+  .foot a{color:var(--mute);text-decoration:none;font-size:.88rem;}
+  .foot a:hover{color:var(--cream);}
+  .foot__news input{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:3px;padding:.6rem .7rem;color:var(--cream);font-family:inherit;font-size:.85rem;margin-bottom:.6rem;}
+  .foot__bottom{max-width:1080px;margin:2.5rem auto 0;padding-top:1.6rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:var(--mute);}
+  .foot__social{display:flex;gap:1rem;}
 
-/* ============================================================ MARQUEE / trust */
-.trust{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:26px 0;background:var(--ink-2);overflow:hidden}
-.trust-label{text-align:center;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted-2);margin-bottom:18px}
-.marquee{display:flex;gap:60px;width:max-content;animation:slide 34s linear infinite}
-.marquee:hover{animation-play-state:paused}
-.marquee span{font-family:var(--serif);font-size:21px;color:var(--muted);white-space:nowrap;font-style:italic}
-.marquee span::after{content:"·";margin-left:60px;color:var(--sand);font-style:normal}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* ============================================================ PACKAGES */
-.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
-.pkg{position:relative;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r);
-  padding:36px 28px 30px;display:flex;flex-direction:column;transition:.45s cubic-bezier(.2,.7,.3,1)}
-.pkg:hover{transform:translateY(-6px);border-color:var(--line)}
-.pkg.feat{border-color:var(--line);background:linear-gradient(180deg,rgba(231,185,94,.07),var(--panel) 40%)}
-.pkg-flag{position:absolute;top:-12px;left:28px;background:linear-gradient(135deg,var(--sand-light),var(--sand-deep));
-  color:#231603;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:6px 16px;border-radius:100px}
-.pkg-name{font-family:var(--serif);font-size:22px;color:var(--cream)}
-.pkg-sub{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--sand);margin-top:4px;letter-spacing:.02em}
-.pkg-price{font-family:var(--serif);font-size:42px;color:var(--sand-light);line-height:1;margin:14px 0 4px;font-style:italic}
-.pkg-price span{font-family:var(--sans);font-size:12px;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-left:6px;vertical-align:middle}
-.pkg>p{color:var(--muted);font-size:14px;font-weight:300;margin:14px 0 22px}
-.pkg-list{list-style:none;margin:0 0 26px;flex:1}
-.pkg-list li{color:var(--muted);font-size:13.5px;padding:9px 0 9px 22px;border-top:1px solid var(--line-soft);position:relative;font-weight:300}
-.pkg-list li::before{content:"✦";position:absolute;left:0;color:var(--sand);font-size:11px}
-.pkg-note{text-align:center;color:var(--muted-2);font-size:13.5px;margin-top:34px;font-weight:300}
-
-/* ============================================================ section shell */
-.sec{padding:120px 0}
-.sec-head{max-width:660px;margin-bottom:64px}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head h2{font-size:clamp(34px,5vw,60px);margin:20px 0 0;font-weight:300}
-.sec-head h2 em{font-style:italic;color:var(--sand-light)}
-.sec-head p{color:var(--muted);font-size:17px;margin-top:22px;font-weight:300}
-
-/* ============================================================ STATS */
-.stats{background:var(--ink-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.stat{padding:54px 26px;text-align:center;border-right:1px solid var(--line-soft)}
-.stat:last-child{border-right:none}
-.stat .num{font-family:var(--serif);font-size:clamp(30px,4vw,46px);color:var(--sand-light);line-height:1;font-style:italic}
-.stat .lbl{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:14px}
-
-/* ============================================================ WHAT IS / process */
-.what{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
-.what-vis{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line)}
-.what-vis img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(.95)}
-.what-vis::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,8,5,.55),transparent 55%)}
-.what-copy p{color:var(--muted);font-size:17px;margin-top:22px;font-weight:300}
-.what-copy .pull{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--cream);margin-top:30px;
-  padding-left:24px;border-left:2px solid var(--sand)}
-
-.process{margin-top:110px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:step}
-.step{position:relative;padding-top:30px;border-top:1px solid var(--line)}
-.step .n{font-family:var(--serif);font-size:15px;color:var(--sand);letter-spacing:.1em}
-.step h4{font-size:23px;margin:14px 0 10px}
-.step p{color:var(--muted);font-size:14.5px;font-weight:300}
-
-/* ============================================================ EVENTS / what you can book */
-.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.ev{position:relative;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r);
-  padding:38px 32px 34px;overflow:hidden;transition:.45s cubic-bezier(.2,.7,.3,1)}
-.ev::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 0% 0%,rgba(231,185,94,.1),transparent 55%);opacity:0;transition:.45s}
-.ev:hover{transform:translateY(-6px);border-color:var(--line)}
-.ev:hover::before{opacity:1}
-.ev .ico{font-family:var(--serif);font-size:30px;color:var(--sand);margin-bottom:18px}
-.ev h3{font-size:25px;margin-bottom:12px}
-.ev p{color:var(--muted);font-size:15px;font-weight:300}
-.ev .tag{display:inline-block;margin-top:20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);
-  border:1px solid var(--line);border-radius:100px;padding:6px 14px}
-.ev-wide{grid-column:span 2;display:flex;flex-direction:column}
-.ev-formats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line-soft)}
-.ev-fmt{display:flex;flex-direction:column}
-.ev-fmt-name{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--sand-light);margin-bottom:8px}
-.ev-fmt p{font-size:14px;line-height:1.55}
-
-/* ============================================================ PORTFOLIO */
-.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
-.filter{background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 22px;border-radius:100px;
-  cursor:pointer;font-family:var(--sans);font-size:13px;letter-spacing:.05em;transition:.3s}
-.filter:hover{color:var(--cream);border-color:var(--sand)}
-.filter.active{background:var(--sand);color:#231603;border-color:var(--sand)}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.gitem{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:1;border:1px solid var(--line-soft)}
-.gitem img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.3,1);filter:brightness(.92)}
-.gitem:hover img{transform:scale(1.07);filter:brightness(1.05)}
-.gitem .cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;
-  background:linear-gradient(to top,rgba(8,5,2,.9),rgba(8,5,2,.1) 55%,transparent);opacity:0;transition:.45s}
-.gitem:hover .cap{opacity:1}
-.gitem .cap .v{font-family:var(--serif);font-size:19px}
-.gitem .cap .s{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand);margin-top:5px}
-.gitem.hide{display:none}
-
-.video-feature{margin-top:60px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:16/9}
-.video-feature iframe{width:100%;height:100%;border:0;display:block}
-
-/* ============================================================ REVIEWS */
-.reviews{background:var(--ink-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.rev{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r);padding:32px 30px;transition:.4s}
-.rev:hover{border-color:var(--line);transform:translateY(-4px)}
-.stars{color:var(--sand);font-size:15px;letter-spacing:3px;margin-bottom:16px}
-.rev .q{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--cream);line-height:1.5}
-.rev .who{margin-top:20px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.rev .who b{color:var(--sand-light);font-weight:500}
-
-.rev-form{margin-top:50px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:40px;max-width:620px}
-.rev-form h4{font-size:24px;margin-bottom:8px}
-.rev-form p{color:var(--muted);font-size:14px;margin-bottom:24px;font-weight:300}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.field input,.field textarea,.field select{
-  width:100%;background:var(--ink);border:1px solid var(--line-soft);border-radius:9px;color:var(--cream);
-  font-family:var(--sans);font-size:15px;padding:13px 16px;transition:.3s;resize:vertical}
-.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--sand)}
-.field select{appearance:none;cursor:pointer}
-.note{font-size:12.5px;color:var(--muted-2);margin-top:14px}
-
-/* ============================================================ ABOUT */
-.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
-.about-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;position:relative}
-.about-photo img{width:100%;height:100%;object-fit:cover}
-.about-copy p{color:var(--muted);font-size:16.5px;margin-top:20px;font-weight:300}
-.about-copy .sig{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--sand-light);margin-top:30px}
-.about-badge{display:flex;align-items:center;gap:18px;margin-top:30px;padding:20px 24px;border:1px solid var(--line);border-radius:var(--r);
-  background:radial-gradient(120% 100% at 0% 0%,rgba(231,185,94,.08),transparent 60%)}
-.about-badge-k{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--sand-light);flex-shrink:0;line-height:1}
-.about-badge-v{font-size:14.5px;color:var(--muted);font-weight:300;line-height:1.5}
-
-/* ============================================================ BOOKING */
-.booking{background:radial-gradient(120% 90% at 50% 0%,#1a120a,var(--ink) 60%)}
-.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.book-form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:42px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.book-side h3{font-size:34px;font-weight:300;margin-bottom:20px}
-.book-side h3 em{font-style:italic;color:var(--sand-light)}
-.book-side p{color:var(--muted);font-weight:300;font-size:16px;margin-bottom:30px}
-.contact-line{display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--line-soft)}
-.contact-line:last-child{border-bottom:1px solid var(--line-soft)}
-.contact-line .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);width:90px;flex-shrink:0}
-.contact-line .v{color:var(--cream);font-size:16px}
-.form-msg{margin-top:18px;padding:14px 18px;border-radius:10px;background:rgba(231,185,94,.1);border:1px solid var(--line);
-  color:var(--sand-light);font-size:14px;display:none}
-.form-msg.show{display:block}
-
-/* ============================================================ FAQ */
-.faq-list{max-width:820px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--line-soft)}
-.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--cream);font-family:var(--serif);
-  font-size:21px;padding:26px 50px 26px 0;cursor:pointer;position:relative;transition:.3s}
-.faq-q:hover{color:var(--sand-light)}
-.faq-q .plus{position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:22px;color:var(--sand);transition:.3s;font-weight:300}
-.faq-q.open .plus{transform:translateY(-50%) rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.faq-a p{color:var(--muted);font-size:15.5px;font-weight:300;padding:0;margin:0 0 14px;max-width:92%}
-.faq-a p:last-child{margin-bottom:26px}
-
-/* ============================================================ FOOTER */
-footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:80px 0 40px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:60px}
-.foot-brand .b1{font-family:var(--serif);font-size:26px}
-.foot-brand .b2{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--sand);margin-top:6px}
-.foot-brand p{color:var(--muted);font-size:14px;margin-top:18px;font-weight:300;max-width:30ch}
-.foot-col h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:18px}
-.foot-col a{display:block;color:var(--muted);font-size:14.5px;padding:6px 0;transition:.3s}
-.foot-col a:hover{color:var(--cream);padding-left:6px}
-.news input{width:100%;background:var(--ink);border:1px solid var(--line-soft);border-radius:9px;color:var(--cream);
-  padding:13px 16px;font-family:var(--sans);font-size:14px;margin-bottom:12px}
-.news input:focus{outline:none;border-color:var(--sand)}
-.news button{width:100%}
-.foot-bottom{border-top:1px solid var(--line-soft);padding-top:30px;display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted-2)}
-.socials{display:flex;gap:10px}
-.socials a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;
-  color:var(--muted);transition:.35s}
-.socials a:hover{border-color:var(--sand);color:var(--sand);transform:translateY(-3px)}
-.socials svg{width:17px;height:17px;fill:currentColor}
-
-/* ============================================================ LIGHTBOX */
-.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(6,4,2,.94);display:none;align-items:center;justify-content:center;padding:40px}
-.lightbox.show{display:flex}
-.lightbox img{max-width:90vw;max-height:82vh;border-radius:10px;border:1px solid var(--line)}
-.lightbox .lb-cap{position:absolute;bottom:34px;left:0;right:0;text-align:center;color:var(--cream);font-family:var(--serif);font-style:italic;font-size:20px}
-.lightbox .lb-close{position:absolute;top:28px;right:34px;font-size:34px;color:var(--cream);cursor:pointer;line-height:1}
-
-/* ============================================================ RESPONSIVE */
-@media (max-width:980px){
-  .what,.about,.book-grid{grid-template-columns:1fr;gap:46px}
-  .stats-grid,.steps{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat{border-bottom:1px solid var(--line-soft)}
-  .events-grid,.gallery,.rev-grid,.pkg-grid{grid-template-columns:repeat(2,1fr)}
-  .ev-wide{grid-column:span 2}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media (max-width:680px){
-  .nav-links{position:fixed;top:0;right:0;bottom:0;left:auto;height:100vh;height:100dvh;width:80%;max-width:340px;background:#0f0a06;flex-direction:column;
-    justify-content:center;align-items:flex-start;padding:80px 40px 40px;gap:24px;transform:translateX(100%);transition:transform .4s ease;
-    border-left:1px solid var(--line);z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}
-  .nav-links.open{transform:translateX(0)}
-  .nav-links>li{display:block;width:100%}
-  .nav-links a{font-size:18px}
-  .nav-links .nav-cta{margin-top:10px;display:inline-block}
-  .burger{display:flex;z-index:1002}
-  .events-grid,.gallery,.rev-grid,.stats-grid,.steps,.foot-grid,.row2,.pkg-grid{grid-template-columns:1fr}
-  .ev-wide{grid-column:auto}
-  .ev-formats{grid-template-columns:1fr;gap:18px}
-  .stat{border-right:none}
-  .sec{padding:84px 0}
-  .wrap,.nav-inner,.hero-inner{padding-left:22px;padding-right:22px}
-  .rev-form,.book-form{padding:28px}
-}
-/* ====== SUCCESS MODAL ====== */
-.success-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease}
-.success-modal.open{opacity:1}
-.success-modal.closing{opacity:0}
-.success-backdrop{position:absolute;inset:0;background:rgba(11,8,5,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.success-card{position:relative;background:linear-gradient(180deg,#1c130a 0%,#0f0a06 100%);border:1px solid rgba(231,185,94,.25);border-radius:var(--r);padding:48px 36px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 30px 80px -10px rgba(0,0,0,.6),0 0 0 1px rgba(231,185,94,.08);transform:scale(.94) translateY(12px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.success-modal.open .success-card{transform:scale(1) translateY(0)}
-.success-icon{width:56px;height:56px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,#e7b95e,#c39341);display:flex;align-items:center;justify-content:center;font-size:30px;color:#0b0805;font-weight:600;box-shadow:0 8px 24px -6px rgba(231,185,94,.4)}
-.success-card h3{font-family:var(--serif);font-size:24px;line-height:1.3;color:var(--cream);margin-bottom:14px}
-.success-card p{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:28px;font-weight:300}
-.success-card .btn{display:inline-block;margin-bottom:16px}
-.success-dismiss{display:block;background:none;border:none;color:var(--muted-2);font-size:13px;cursor:pointer;letter-spacing:.05em;padding:8px;margin:0 auto;text-transform:uppercase;transition:.2s}
-.success-dismiss:hover{color:var(--cream)}
-.success-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted-2);font-size:28px;line-height:1;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s}
-.success-close:hover{color:var(--sand);background:rgba(231,185,94,.08)}
-@media(max-width:480px){.success-card{padding:40px 24px 28px}.success-card h3{font-size:20px}}
-
-/* Event cards as links */
-a.ev{text-decoration:none;color:inherit;display:block;position:relative}
-a.ev:hover{transform:translateY(-3px);border-color:rgba(231,185,94,.35);box-shadow:0 18px 40px -16px rgba(0,0,0,.6)}
-.ev-more{display:inline-block;margin-top:14px;color:var(--sand);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:.25s}
-a.ev:hover .ev-more{color:var(--cream);transform:translateX(4px)}
-
-.nav-drop-toggle{display:inline-flex;align-items:center;gap:5px}
-.nav-caret{font-size:9px;transition:transform .25s;opacity:.7}
-.nav-dropdown{position:relative}
-.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:248px;background:linear-gradient(180deg,#1c130a,#120c07);border:1px solid rgba(231,185,94,.18);border-radius:12px;padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transition:.28s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 60px -12px rgba(0,0,0,.7);z-index:200}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
-.nav-dropdown:hover .nav-caret{transform:rotate(180deg)}
-.nav-dropdown-menu li{display:block;margin:0}
-.nav-dropdown-menu a{display:block;padding:11px 16px;border-radius:8px;color:var(--muted);font-size:14.5px;white-space:nowrap;transition:.2s}
-.nav-dropdown-menu a:hover{background:rgba(231,185,94,.08);color:var(--sand);padding-left:20px}
-/* Mobilde dropdown alt menüsünü gizle, Performances normal link gibi davransın */
-@media (max-width:680px){
-  .nav-dropdown-menu{display:none}
-  .nav-caret{display:none}
-}
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .price__grid{grid-template-columns:repeat(2,1fr);}
+    .foot__grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:900px){
+    .art__grid,.about__grid,.book__inner{grid-template-columns:1fr;gap:2.4rem;}
+    .art__media{aspect-ratio:3/4;max-height:70vh;}
+    .form{grid-template-columns:1fr;}
+  }
+  @media (max-width:860px){
+    .perf__grid{grid-template-columns:repeat(2,1fr);}
+    .flow{flex-direction:column;align-items:center;gap:2.6rem;}
+    .arrow{display:none;}
+    .gallery{grid-template-columns:repeat(2,1fr);--row:190px;}
+    .reviews__grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .proof{grid-template-columns:repeat(2,1fr);gap:2.4rem 1rem;}
+    .stat+.stat::before{display:none;}
+  }
+  @media (max-width:600px){
+    .price__grid{grid-template-columns:1fr;}
+    .foot__grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .perf__grid{grid-template-columns:1fr;}
+    .card--feature{grid-column:span 1;}
+    .gallery{grid-template-columns:1fr;--row:210px;}
+    .tile--feature{grid-column:span 1;grid-row:span 1;}
+    .cta-row{flex-direction:column;align-items:stretch;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .marquee__track{animation-play-state:paused;}
+    .tile:hover img{transform:none;}
+  }
+  /* ===== SUCCESS MODAL ===== */
+  .success-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s ease;}
+  .success-modal.open{opacity:1;}
+  .success-modal.closing{opacity:0;}
+  .success-backdrop{position:absolute;inset:0;background:rgba(11,8,5,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+  .success-card{position:relative;background:linear-gradient(180deg,#1c130a,#0f0a06);border:1px solid rgba(217,148,58,.28);border-radius:8px;padding:48px 36px 36px;max-width:470px;width:100%;text-align:center;box-shadow:0 30px 80px -10px rgba(0,0,0,.6);transform:scale(.94) translateY(12px);transition:transform .35s cubic-bezier(.2,.8,.2,1);}
+  .success-modal.open .success-card{transform:scale(1) translateY(0);}
+  .success-icon{width:56px;height:56px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,var(--sand-hi),var(--ember));display:flex;align-items:center;justify-content:center;font-size:30px;color:#0b0805;font-weight:600;}
+  .success-card h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.7rem;line-height:1.25;color:var(--cream);margin:0 0 14px;}
+  .success-card p{color:var(--mute);font-size:.96rem;line-height:1.65;margin:0 0 26px;}
+  .success-card .btn{display:inline-flex;margin-bottom:14px;}
+  .success-dismiss{display:block;background:none;border:none;color:var(--mute);font-size:.78rem;cursor:pointer;letter-spacing:.05em;padding:8px;margin:0 auto;text-transform:uppercase;transition:color .2s ease;}
+  .success-dismiss:hover{color:var(--cream);}
+  .success-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--mute);font-size:28px;line-height:1;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s;}
+  .success-close:hover{color:var(--ember);background:rgba(217,148,58,.1);}
 </style>
 </head>
-<body>
+<body id="home">
 
-<!-- ============================ NAV ============================ -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#home" class="brand">
-      <span class="brand-logo"><img src="/assets/bk-logo-200.jpg" alt="BK — Bilal Köse" width="44" height="44" /><span class="brand-glow" aria-hidden="true"></span></span>
-      <span class="brand-text">
-        <span class="b1">Bilal Köse</span>
-        <span class="b2">Live Sand Artist</span>
-      </span>
-    </a>
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#what">The Art</a></li>
-        <li class="nav-dropdown">
-          <a href="#events" class="nav-drop-toggle">Performances <span class="nav-caret">▾</span></a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="/services/weddings.html">Weddings &amp; Love Stories</a></li>
-            <li><a href="/services/corporate.html">Corporate &amp; Brand</a></li>
-            <li><a href="/services/charity.html">Charity &amp; Community</a></li>
-            <li><a href="/services/schools.html">Schools &amp; Workshops</a></li>
-            <li><a href="/services/celebrations.html">Celebrations &amp; Milestones</a></li>
-          </ul>
-        </li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#packages">Pricing</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#book" class="btn btn-primary nav-cta">Book Now</a></li>
-      </ul>
-    </nav>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<!-- ============================ HERO ============================ -->
-<section class="hero" id="home">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <canvas id="sandCanvas"></canvas>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <span class="eyebrow anim d1">Live Sand Art · As seen at Harrods, Soho Theatre &amp; Oxford</span>
-    <h1 class="anim d2">A story told in <em>every grain</em> of sand.</h1>
-    <p class="lead anim d3">I'm Bilal Köse, Britain's first established resident sand animation artist. I turn light and sand into live performances that move a room — bespoke shows for weddings, brands, and the moments people never forget. Drawn entirely by hand, live, never the same twice.</p>
-    <div class="hero-cta anim d3">
-      <a href="#book" class="btn btn-primary">Check My Availability →</a>
-      <a href="#about" class="btn btn-ghost">Watch the Showreel</a>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#home">Bilal Köse<span>Live Sand Artist</span></a>
+      <nav class="nav__links">
+        <a href="#what">The Art</a>
+        <span class="nav__drop">
+          <a href="#events">Performances ▾</a>
+          <span class="nav__menu">
+            <a href="https://bilalkose.co.uk/services/weddings">Weddings &amp; Love Stories</a>
+            <a href="https://bilalkose.co.uk/services/corporate">Corporate &amp; Brand</a>
+            <a href="https://bilalkose.co.uk/services/charity">Charity &amp; Community</a>
+            <a href="https://bilalkose.co.uk/services/schools">Schools &amp; Workshops</a>
+            <a href="https://bilalkose.co.uk/services/celebrations">Celebrations &amp; Milestones</a>
+          </span>
+        </span>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#packages">Pricing</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="nav__cta" href="#book">Book Now</a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">≡</button>
     </div>
-    <div class="hero-meta anim d3">
-      <span><b>15+</b> years</span><span class="dot">·</span>
-      <span><b>5★</b> client rated</span><span class="dot">·</span>
-      <span><b>From £450</b> · bespoke quotes</span>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="#what">The Art</a>
+      <a href="#events">Performances</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#packages">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#book">Book Now</a>
     </div>
-  </div>
-  <div class="hero-fade"></div>
-  <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
-</section>
+  </header>
 
-<!-- ============================ TRUST MARQUEE ============================ -->
-<div class="trust">
-  <div class="trust-label">Trusted by venues &amp; brands across the country</div>
-  <div class="marquee" id="marquee">
-    <span>Harrods</span><span>University of Oxford</span><span>Soho Theatre</span><span>Manchester Hall</span>
-    <span>Newcastle Cathedral</span><span>Great North Museum</span><span>Memo Paris</span><span>MACFEST</span>
-    <span>University of Birmingham</span><span>University of Leeds</span><span>University of Reading</span><span>Skimstone Arts</span>
-  </div>
-</div>
-
-<!-- ============================ STATS ============================ -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat reveal"><div class="num">15+</div><div class="lbl">Years of artistry</div></div>
-      <div class="stat reveal"><div class="num">Harrods</div><div class="lbl">Soho · Oxford · Manchester Hall</div></div>
-      <div class="stat reveal"><div class="num">5★</div><div class="lbl">Elite Pro · client rated</div></div>
-      <div class="stat reveal"><div class="num">UK +</div><div class="lbl">Worldwide reach</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ WHAT IS SAND ART ============================ -->
-<section class="sec" id="what">
-  <div class="wrap">
-    <div class="what">
-      <div class="what-vis reveal">
-        <img src="/assets/portfolio/sand-pouring-action.jpg" alt="Live sand art performance close-up" loading="lazy">
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-label="Live sand art by Bilal Köse">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <canvas class="hero__canvas" id="sand" aria-hidden="true"></canvas>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow">Live Sand Art &middot; As seen at Harrods, Soho Theatre &amp; Oxford</p>
+      <h1>A story told in <em>every grain</em> of sand.</h1>
+      <p class="lede">I'm Bilal Köse, Britain's first established resident sand animation artist. I turn light and sand into live performances that move a room — drawn entirely by hand, live, never the same twice.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="#book">Check My Availability →</a>
+        <a class="btn btn--ghost" href="#about">Watch the Showreel</a>
       </div>
-      <div class="what-copy reveal">
-        <span class="eyebrow">What is sand art?</span>
-        <h2 style="font-size:clamp(32px,4.5vw,52px);font-weight:300;margin-top:18px">Live performance, <em>drawn by hand</em>.</h2>
+      <div class="stats">
+        <span><b>15+</b> years</span><span class="dot"></span>
+        <span><b>5★</b> client rated</span><span class="dot"></span>
+        <span><b>From £450</b> &middot; bespoke quotes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CREDIBILITY ===== -->
+  <div class="handoff" aria-hidden="true"></div>
+  <section class="cred">
+    <p class="eyebrow">Trusted by venues &amp; brands across the country</p>
+    <div class="marquee">
+      <div class="marquee__track" id="venueTrack"></div>
+    </div>
+    <div class="proof">
+      <div class="stat"><span class="stat__num">15+</span><span class="stat__label">Years of artistry</span></div>
+      <div class="stat"><span class="stat__num">Harrods</span><span class="stat__label">Soho · Oxford · Manchester Hall</span></div>
+      <div class="stat"><span class="stat__num">5★</span><span class="stat__label">Elite Pro · client rated</span></div>
+      <div class="stat"><span class="stat__num">UK +</span><span class="stat__label">Worldwide reach</span></div>
+    </div>
+  </section>
+
+  <!-- ===== THE ART ===== -->
+  <section class="sec" id="what">
+    <div class="wrap art__grid">
+      <figure class="art__media" style="margin:0;">
+        <img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Live sand art performance close-up — sand poured by hand over a backlit table">
+      </figure>
+      <div class="art__body">
+        <p class="eyebrow">What is sand art?</p>
+        <h2 class="h2">Live performance, <em>drawn by hand</em>.</h2>
         <p>Sand art is a live visual performance. Working over a backlit glass table, I draw with my hands — pouring, sweeping and shaping fine sand into images that flow seamlessly from one scene into the next.</p>
         <p>Projected onto a large screen and set to music, every movement becomes part of a story your audience watches unfold in real time. Nothing is pre-recorded. Each show is created live, in the moment — and never exactly the same twice.</p>
-        <p class="pull">"Not only seen, but truly felt."</p>
       </div>
     </div>
+  </section>
 
-    <!-- HOW IT WORKS -->
-    <div class="process">
-      <div class="sec-head center reveal" style="margin-bottom:48px">
-        <span class="eyebrow" style="justify-content:center">How it works</span>
-        <h2>From your story to the <em>stage</em></h2>
+  <!-- ===== PROCESS ===== -->
+  <section class="sec">
+    <div class="phead center">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2">From your story to the <em>stage</em></h2>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <svg class="step__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h30a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H17l-7 6v-6H5a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z"/><path d="M10 16h20M10 21h13"/><path d="M36 30h22a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H47l-6 5v-5h-5a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3z"/><path d="M41 37h12"/></svg>
+        <h3 class="step__title">Consultation</h3>
+        <p class="step__desc">We talk through your event, your story and the feeling you want to leave in the room.</p>
       </div>
-      <div class="steps">
-        <div class="step reveal"><div class="n">01</div><h4>Consultation</h4><p>We talk through your event, your story and the feeling you want to leave in the room.</p></div>
-        <div class="step reveal"><div class="n">02</div><h4>Storyboard</h4><p>Together we plan the key scenes — the moments, names and symbols that make it yours.</p></div>
-        <div class="step reveal"><div class="n">03</div><h4>Creation</h4><p>I craft a bespoke sand animation and choreograph it to music, rehearsed to the detail.</p></div>
-        <div class="step reveal"><div class="n">04</div><h4>Live Performance</h4><p>On the day, your story comes to life in front of your guests — grain by grain.</p></div>
+      <svg class="arrow" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c14-7 28-7 41 0"/><path d="M37 6l7 6-7 6"/></svg>
+      <div class="step">
+        <svg class="step__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="15" width="36" height="28" rx="3"/><circle cx="13" cy="25" r="3.2"/><path d="M3 39l9-7 7 6 6-5 14 10"/><rect x="45" y="17" width="15" height="10" rx="2"/><rect x="45" y="32" width="15" height="10" rx="2"/></svg>
+        <h3 class="step__title">Storyboard</h3>
+        <p class="step__desc">Together we plan the key scenes — the moments, names and symbols that make it yours.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ EVENTS / WHAT YOU CAN BOOK ============================ -->
-<section class="sec" id="events" style="background:var(--ink-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">What you can book</span>
-      <h2>One art form, <em>every occasion</em></h2>
-      <p>Every performance is built from scratch around your event. These are the moments I'm most often invited into.</p>
-    </div>
-    <div class="events-grid">
-      <a class="ev reveal" href="/services/weddings.html" target="_blank" rel="noopener"><div class="ico">❦</div><h3>Weddings &amp; Love Stories</h3><p>Your journey — from the first meeting to "I do" — animated live as your guests watch your love story take shape in sand.</p><span class="tag">Most popular</span><span class="ev-more">Learn more →</span></a>
-      <a class="ev reveal ev-wide" href="/services/corporate.html" target="_blank" rel="noopener"><div class="ico">◆</div><h3>Corporate &amp; Brand</h3><p>Launches, award ceremonies, gala dinners and conferences. Two distinct formats — choose one, or combine both for maximum impact.</p>
-        <div class="ev-formats">
-          <div class="ev-fmt">
-            <span class="ev-fmt-name">Ambient &amp; Interactive</span>
-            <p>I perform continuously at my sand table throughout your event. Guests visit, watch new imagery being created live, have their names or initials drawn in sand, and leave with a photograph. Ideal for receptions, networking and brand activations.</p>
-          </div>
-          <div class="ev-fmt">
-            <span class="ev-fmt-name">Pre-Prepared Show</span>
-            <p>A bespoke themed narrative, designed specifically around your brand, product or campaign, performed live for your audience to watch together. Can be repeated 2–3 times across the event. Ideal for launches, award ceremonies and gala dinners.</p>
-          </div>
-        </div>
-        <span class="tag">Brand storytelling</span><span class="ev-more">Learn more →</span></a>
-      <a class="ev reveal" href="/services/charity.html" target="_blank" rel="noopener"><div class="ico">✦</div><h3>Charity &amp; Community</h3><p>Performances that move both a room and a cause — fundraisers, cultural festivals and community celebrations.</p><span class="tag">Sand art for good</span><span class="ev-more">Learn more →</span></a>
-      <a class="ev reveal" href="/services/schools.html" target="_blank" rel="noopener"><div class="ico">✎</div><h3>Schools &amp; Workshops</h3><p>Hands-on creative sessions and performances for children and adults — universities, schools and care homes.</p><span class="tag">Educational</span><span class="ev-more">Learn more →</span></a>
-      <a class="ev reveal" href="/services/celebrations.html" target="_blank" rel="noopener"><div class="ico">✺</div><h3>Celebrations &amp; Milestones</h3><p>Birthdays, anniversaries and the once-in-a-lifetime moments, told the way they deserve to be remembered.</p><span class="tag">Private events</span><span class="ev-more">Learn more →</span></a>
-    </div>
-    <div style="text-align:center;margin-top:54px" class="reveal">
-      <a href="#book" class="btn btn-primary">Enquire about your event →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ PORTFOLIO ============================ -->
-<section class="sec" id="portfolio">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Portfolio</span>
-      <h2>Recent <em>highlights</em></h2>
-      <p>A selection of performances from across the UK — from Harrods to Newcastle Cathedral.</p>
-    </div>
-
-    <div class="filters reveal" id="filters">
-      <button class="filter active" data-f="all">All</button>
-      <button class="filter" data-f="wedding">Weddings</button>
-      <button class="filter" data-f="corporate">Corporate</button>
-      <button class="filter" data-f="charity">Charity</button>
-      <button class="filter" data-f="stage">Stage &amp; Festival</button>
-    </div>
-
-    <div class="gallery" id="gallery">
-      <!-- items injected by JS -->
-    </div>
-
-    <!-- VIDEO -->
-    <div class="video-feature reveal">
-      <iframe src="https://www.youtube.com/embed/P_Ucwh7_svs" title="Sand Art UK — live performance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ REVIEWS ============================ -->
-<section class="sec reviews" id="reviews">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Kind words</span>
-      <h2>What people <em>remember</em></h2>
-      <p>The same word comes up again and again: magical.</p>
-    </div>
-
-    <div class="rev-grid" id="revGrid">
-      <!-- reviews injected by JS -->
-    </div>
-
-    <!-- LEAVE A GOOGLE REVIEW -->
-    <div style="display:flex;justify-content:center">
-      <div class="rev-form reveal" style="text-align:center">
-        <h4>Had Bilal at your event?</h4>
-        <p style="max-width:42ch;margin-left:auto;margin-right:auto">Your words help other couples and event planners discover live sand art. It takes less than a minute, and it means the world.</p>
-        <a href="https://g.page/r/CVbVLPvUKtTHEBM/review" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px">Leave a Google Review →</a>
-        <p class="note" style="margin-top:20px">Prefer Instagram? You can also tag me <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" style="color:var(--sand)">@bilalkoseart ↗</a></p>
+      <svg class="arrow" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c14-7 28-7 41 0"/><path d="M37 6l7 6-7 6"/></svg>
+      <div class="step">
+        <svg class="step__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 31c6-9 22-11 30-3"/><path d="M11 46h42l-6 9H17z"/><path d="M23 50h18"/><circle cx="27" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="33" cy="14" r="1.4" fill="currentColor" stroke="none"/><circle cx="31" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="38" cy="22" r="1.4" fill="currentColor" stroke="none"/><circle cx="42" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="32" r="1.4" fill="currentColor" stroke="none"/></svg>
+        <h3 class="step__title">Creation</h3>
+        <p class="step__desc">I craft a bespoke sand animation and choreograph it to music, rehearsed to the detail.</p>
+      </div>
+      <svg class="arrow" viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c14-7 28-7 41 0"/><path d="M37 6l7 6-7 6"/></svg>
+      <div class="step">
+        <svg class="step__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="52" height="32" rx="2"/><circle cx="18" cy="16" r="3"/><path d="M8 34l9-7 6 5 7-6 22 14"/><circle cx="20" cy="48" r="3"/><path d="M15 57a5 5 0 0 1 10 0"/><circle cx="32" cy="47" r="3"/><path d="M27 57a5 5 0 0 1 10 0"/><circle cx="44" cy="48" r="3"/><path d="M39 57a5 5 0 0 1 10 0"/></svg>
+        <h3 class="step__title">Live Performance</h3>
+        <p class="step__desc">On the day, your story comes to life in front of your guests — grain by grain.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================ PACKAGES / PRICING ============================ -->
-<section class="sec" id="packages">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Investment</span>
-      <h2>Simple, <em>transparent</em> pricing</h2>
-      <p>Every show is bespoke, so the final figure depends on your story, location and length. Here's where it begins.</p>
+  <!-- ===== PERFORMANCES ===== -->
+  <section class="sec" id="events">
+    <div class="perf__head center">
+      <p class="eyebrow">What you can book</p>
+      <h2 class="h2">One art form, <em>every occasion</em></h2>
+      <p class="perf__intro">Every performance is built from scratch around your event. These are the moments I'm most often invited into.</p>
     </div>
-    <div class="pkg-grid">
-      <div class="pkg reveal">
-        <div class="pkg-name">Signature Show</div>
-        <div class="pkg-price">£450<span>from</span></div>
-        <p>A live sand art performance crafted around your event — drawn by hand, set to music, projected for every guest to see.</p>
-        <ul class="pkg-list">
+    <div class="wrap perf__grid">
+      <a class="card card--feature" href="https://bilalkose.co.uk/services/weddings">
+        <div class="card__top"><span class="card__mark" aria-hidden="true">❦</span><span class="card__tag">Most popular</span></div>
+        <h3 class="card__title">Weddings &amp; Love Stories</h3>
+        <p class="card__desc">Your journey — from the first meeting to "I do" — animated live as your guests watch your love story take shape in sand.</p>
+        <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="https://bilalkose.co.uk/services/corporate">
+        <div class="card__top"><span class="card__mark" aria-hidden="true">◆</span><span class="card__tag">Brand storytelling</span></div>
+        <h3 class="card__title">Corporate &amp; Brand</h3>
+        <p class="card__desc">Launches, award ceremonies, gala dinners and conferences. Two formats — choose one, or combine both for impact.</p>
+        <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="https://bilalkose.co.uk/services/charity">
+        <div class="card__top"><span class="card__mark" aria-hidden="true">✦</span><span class="card__tag">Sand art for good</span></div>
+        <h3 class="card__title">Charity &amp; Community</h3>
+        <p class="card__desc">Performances that move both a room and a cause — fundraisers, cultural festivals and community celebrations.</p>
+        <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="https://bilalkose.co.uk/services/schools">
+        <div class="card__top"><span class="card__mark" aria-hidden="true">✎</span><span class="card__tag">Educational</span></div>
+        <h3 class="card__title">Schools &amp; Workshops</h3>
+        <p class="card__desc">Hands-on creative sessions and performances for children and adults — universities, schools and care homes.</p>
+        <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="https://bilalkose.co.uk/services/celebrations">
+        <div class="card__top"><span class="card__mark" aria-hidden="true">✺</span><span class="card__tag">Private events</span></div>
+        <h3 class="card__title">Celebrations &amp; Milestones</h3>
+        <p class="card__desc">Birthdays, anniversaries and the once-in-a-lifetime moments, told the way they deserve to be remembered.</p>
+        <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+    <div class="perf__foot"><a class="btn btn--ghost" href="#book">Enquire about your event →</a></div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="sec" id="portfolio">
+    <div class="phead center">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="h2">Recent <em>highlights</em></h2>
+      <p class="perf__intro">A selection of performances from across the UK — from Harrods to Newcastle Cathedral.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Filter portfolio">
+      <button class="tab is-active" data-cat="all">All</button>
+      <button class="tab" data-cat="weddings">Weddings</button>
+      <button class="tab" data-cat="corporate">Corporate</button>
+      <button class="tab" data-cat="charity">Charity</button>
+      <button class="tab" data-cat="stage">Stage &amp; Festival</button>
+    </div>
+    <div class="gallery-wrap">
+      <div class="gallery is-collapsed">
+        <a class="tile tile--feature" data-cat="stage" href="https://www.youtube.com/watch?v=bXm58QeLCpQ" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/bXm58QeLCpQ/hqdefault.jpg" alt="Bilal Köse live sand art showreel" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__play" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="#f5ecda"><path d="M5 3l16 9-16 9z"/></svg></span></div>
+          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Showreel</span></div>
+        </a>
+        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Harrods · Memo Paris</span></div>
+        </a>
+        <a class="tile" data-cat="weddings" href="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" alt="Wedding sand art performance at Manchester Hall" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Weddings</span><span class="tile__title">Manchester Hall</span></div>
+        </a>
+        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" alt="Civic reception sand art with the Mayor at Manchester Hall" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Civic reception</span></div>
+        </a>
+        <a class="tile" data-cat="charity" href="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" alt="Sand calligraphy at the University of Oxford" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Charity</span><span class="tile__title">University of Oxford</span></div>
+        </a>
+        <a class="tile" data-cat="charity" href="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" alt="Children creating sand art at a school workshop" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Charity</span><span class="tile__title">School workshop</span></div>
+        </a>
+        <a class="tile" data-cat="weddings" href="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" alt="Intimate private wedding sand art performance" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Weddings</span><span class="tile__title">Private love story</span></div>
+        </a>
+        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" alt="Gala dinner sand art at Birmingham Council House" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Birmingham Council House</span></div>
+        </a>
+        <a class="tile" data-cat="stage" href="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" target="_blank" rel="noopener">
+          <img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Sand poured by hand over a backlit table" loading="lazy">
+          <div class="tile__scrim"></div>
+          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Drawn live, by hand</span></div>
+        </a>
+      </div>
+      <div class="gallery-fade" aria-hidden="true"></div>
+    </div>
+    <div class="port__more"><button class="more-btn" id="moreBtn"><span class="more-txt">Show more</span><span class="chev" aria-hidden="true">▾</span></button></div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="sec reviews" id="reviews">
+    <div class="reviews__glow" aria-hidden="true"></div>
+    <div class="reviews__head center">
+      <p class="eyebrow">Kind words</p>
+      <h2 class="h2">What people <em>remember</em></h2>
+      <p class="reviews__lead">The same word comes up again and again:</p>
+      <p class="reviews__word">magical.</p>
+    </div>
+    <div class="reviews__grid">
+      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">Paste one of your favourite Google or Bark reviews here. One or two sentences reads best.</blockquote><figcaption class="quote__by"><b>Client name</b> · Wedding, 2025</figcaption></figure>
+      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">A second short quote — ideally a corporate or brand client, to show range.</blockquote><figcaption class="quote__by"><b>Client name</b> · Corporate event</figcaption></figure>
+      <figure class="quote quote--ph" style="margin:0;"><span class="quote__mark" aria-hidden="true">“</span><div class="stars" aria-hidden="true">★★★★★</div><blockquote class="quote__text" style="margin-left:0;border:0;padding:0;">A third quote — a charity, school or celebration works well to round it out.</blockquote><figcaption class="quote__by"><b>Client name</b> · Charity gala</figcaption></figure>
+    </div>
+    <div class="reviews__cta">
+      <div class="reviews__rating" aria-hidden="true">★★★★★</div>
+      <p class="reviews__trust">Rated <b>5★</b> — Elite Pro on Bark, and top-rated on Google.</p>
+      <a class="btn btn--primary" href="https://g.page/r/CVbVLPvUKtTHEBM/review" target="_blank" rel="noopener">Leave a Google Review →</a>
+      <p class="reviews__ig">Prefer Instagram? You can also tag me <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">@bilalkoseart ↗</a></p>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="sec" id="packages">
+    <div class="price__head center">
+      <p class="eyebrow">Investment</p>
+      <h2 class="h2">Simple, <em>transparent</em> pricing</h2>
+      <p class="price__intro">Every show is bespoke, so the final figure depends on your story, location and length. Here's where it begins.</p>
+    </div>
+    <div class="wrap price__grid">
+      <div class="plan">
+        <p class="plan__name">Signature Show</p>
+        <div class="plan__price">£450 <small>from</small></div>
+        <p class="plan__desc">A live sand art performance crafted around your event — drawn by hand, set to music, projected for every guest to see.</p>
+        <ul class="plan__list">
           <li>Bespoke live performance</li>
           <li>My own backlit table &amp; camera</li>
           <li>Choreographed to your chosen music</li>
           <li>UK-wide (travel quoted separately)</li>
         </ul>
-        <a href="#book" class="btn btn-ghost" style="width:100%;justify-content:center">Enquire</a>
+        <a class="btn" href="#book">Enquire</a>
       </div>
-      <div class="pkg reveal feat">
-        <div class="pkg-flag">Most booked</div>
-        <div class="pkg-name">Personalised Story</div>
-        <div class="pkg-price">£700<span>from</span></div>
-        <p>Your own story, drawn live — names, dates, places and symbols woven into a one-of-a-kind narrative performance.</p>
-        <ul class="pkg-list">
+      <div class="plan plan--feature">
+        <span class="plan__flag">Most booked</span>
+        <p class="plan__name">Personalised Story</p>
+        <div class="plan__price">£700 <small>from</small></div>
+        <p class="plan__desc">Your own story, drawn live — names, dates, places and symbols woven into a one-of-a-kind narrative performance.</p>
+        <ul class="plan__list">
           <li>Everything in Signature Show</li>
           <li>Custom storyboard &amp; consultation</li>
           <li>Your personal story or brand narrative</li>
           <li>Personalised calligraphy keepsake</li>
         </ul>
-        <a href="#book" class="btn btn-primary" style="width:100%;justify-content:center">Enquire</a>
+        <a class="btn" href="#book">Enquire</a>
       </div>
-      <div class="pkg reveal">
-        <div class="pkg-name">Corporate &amp; Brand</div>
-        <div class="pkg-sub">Two formats, one artist</div>
-        <div class="pkg-price">£400<span>/ hour</span></div>
-        <p>Live ambient performance for receptions, plus optional pre-prepared branded show. Designed for launches, galas and brand activations.</p>
-        <ul class="pkg-list">
-          <li>Ambient &amp; interactive presence — from £400/hr</li>
+      <div class="plan">
+        <p class="plan__name">Corporate &amp; Brand</p>
+        <div class="plan__price">£400 <small>/ hour</small></div>
+        <p class="plan__desc">Live ambient performance for receptions, plus optional pre-prepared branded show. Designed for launches, galas and activations.</p>
+        <ul class="plan__list">
+          <li>Ambient &amp; interactive — from £400/hr</li>
           <li>Pre-prepared branded show — from £250 add-on</li>
-          <li>Logos, product imagery &amp; campaign themes drawn live</li>
+          <li>Logos &amp; campaign themes drawn live</li>
           <li>Shareable social content for guests</li>
-          <li>As seen at Harrods &amp; major brand launches</li>
         </ul>
-        <a href="#book" class="btn btn-ghost" style="width:100%;justify-content:center">Enquire</a>
+        <a class="btn" href="#book">Enquire</a>
       </div>
-      <div class="pkg reveal">
-        <div class="pkg-name">Charity &amp; Schools</div>
-        <div class="pkg-price">£300<span>from</span></div>
-        <p>Discounted rates for charities, fundraisers, schools and care homes — because some stories deserve to be told regardless.</p>
-        <ul class="pkg-list">
+      <div class="plan">
+        <p class="plan__name">Charity &amp; Schools</p>
+        <div class="plan__price">£300 <small>from</small></div>
+        <p class="plan__desc">Discounted rates for charities, fundraisers, schools and care homes — because some stories deserve to be told regardless.</p>
+        <ul class="plan__list">
           <li>Live performance or workshop</li>
           <li>Tailored to your cause or curriculum</li>
           <li>Hands-on sessions available</li>
           <li>Community &amp; cultural events welcome</li>
         </ul>
-        <a href="#book" class="btn btn-ghost" style="width:100%;justify-content:center">Enquire</a>
+        <a class="btn" href="#book">Enquire</a>
       </div>
     </div>
-    <p class="pkg-note reveal">Travel beyond 60 miles of Worksop is added to your quote. International bookings welcome — just ask.</p>
-  </div>
-</section>
+    <p class="price__note">Travel beyond 60 miles of Worksop is added to your quote. International bookings welcome — just ask.</p>
+  </section>
 
-<!-- ============================ ABOUT ============================ -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="about-photo reveal">
-        <img src="/assets/portfolio/northen-cross-calligraphy.jpg" alt="Bilal Köse with a sand calligraphy artwork" loading="lazy">
-      </div>
-      <div class="about-copy reveal">
-        <span class="eyebrow">The artist</span>
-        <h2 style="font-size:clamp(32px,4.5vw,52px);font-weight:300;margin-top:18px">Meet <em>Bilal Köse</em></h2>
+  <!-- ===== ABOUT ===== -->
+  <section class="sec" id="about">
+    <div class="wrap about__grid">
+      <figure class="about__media" style="margin:0;">
+        <img src="https://bilalkose.co.uk/assets/portfolio/northen-cross-calligraphy.jpg" alt="Bilal Köse with a sand calligraphy artwork">
+      </figure>
+      <div class="about__body">
+        <p class="eyebrow">The artist</p>
+        <h2 class="h2">Meet <em>Bilal Köse</em></h2>
         <p>I'm a UK-based professional sand artist with over 15 years of artistic experience, specialising in live sand art performances for events across the country and beyond. As Britain's first established resident sand animation artist, I'm one of very few performing this art form permanently from within the UK, rather than travelling in for one-off bookings.</p>
         <p>Each performance is carefully tailored to reflect the message, story or values of the event — transforming a single moment into a memorable visual experience. Alongside sand art I also work with calligraphy and traditional techniques, which add depth and originality to every show.</p>
         <p>I regularly perform at universities, theatres, museums, cathedrals, care homes and public venues, and offer educational workshops for children and adults. My goal is simple: to create art that isn't only seen, but truly felt.</p>
-        <div class="about-badge">
-          <span class="about-badge-k">2026</span>
-          <span class="about-badge-v">A big stage is coming this autumn. Follow along on Instagram to watch the journey unfold.</span>
-        </div>
-        <div class="sig">— Bilal Köse</div>
+        <div class="about__teaser"><b>2026 — a big stage is coming this autumn.</b><span>Follow along on Instagram to watch the journey unfold.</span></div>
+        <p class="about__sign">— Bilal Köse</p>
       </div>
     </div>
-    <div class="reveal" style="margin-top:56px">
-      <h3 style="text-align:center;font-size:22px;margin-bottom:24px">Watch the Showreel</h3>
-      <div style="position:relative;width:100%;max-width:760px;margin:0 auto;aspect-ratio:16/9">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:var(--r)"
-          src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0"
-          title="Bilal Köse — Live Sand Art Showreel"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy"></iframe>
+    <div class="reel wrap">
+      <h3>Watch the Showreel</h3>
+      <div class="reel__frame">
+        <iframe src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0" title="Sand Art UK Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================ BOOKING ============================ -->
-<section class="sec booking" id="book">
-  <div class="wrap">
-    <div class="book-grid">
-      <div class="book-side reveal">
-        <span class="eyebrow">Booking</span>
-        <h3 style="margin-top:18px">Let's make it <em>unforgettable</em></h3>
-        <p>Tell me about your event and I'll personally reply — usually within 24 hours — with availability and a tailored quote. No call centre, no middleman. Just me. Performances available across the UK and worldwide.</p>
-        <div class="contact-line"><span class="k">Based</span><span class="v">Worksop, Nottinghamshire</span></div>
-        <div class="contact-line"><span class="k">Phone</span><span class="v"><a href="tel:+447961620053">+44 79 6162 0053</a></span></div>
-        <div class="contact-line"><span class="k">Email</span><span class="v"><a href="mailto:hello@bilalkose.co.uk">hello@bilalkose.co.uk</a></span></div>
-        <div class="contact-line"><span class="k">Social</span><span class="v"><a href="https://www.instagram.com/bilalkoseart/">@bilalkoseart</a></span></div>
-        <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="https://wa.me/447961620053" class="btn btn-ghost" style="padding:12px 22px">WhatsApp</a>
-          <a href="tel:+447961620053" class="btn btn-ghost" style="padding:12px 22px">Call directly</a>
+  <!-- ===== BOOK ===== -->
+  <section class="sec book" id="book">
+    <div class="book__glow" aria-hidden="true"></div>
+    <canvas class="book__canvas" id="bookSand" aria-hidden="true"></canvas>
+    <div class="book__veil" aria-hidden="true"></div>
+    <div class="book__inner">
+      <div class="book__lead">
+        <p class="eyebrow">Booking</p>
+        <h2 class="h2">Let's make it <em>unforgettable</em></h2>
+        <p>Tell me about your event and I'll personally reply — usually within 24 hours — with availability and a tailored quote. No call centre, no middleman. Just me.</p>
+        <div class="book__detail">
+          <div><span>Based</span><p>Worksop, Nottinghamshire</p></div>
+          <div><span>Phone</span><a href="tel:+447961620053">+44 79 6162 0053</a></div>
+          <div><span>Email</span><a href="mailto:hello@bilalkose.co.uk">hello@bilalkose.co.uk</a></div>
+          <div><span>Social</span><a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">@bilalkoseart</a></div>
+        </div>
+        <div class="book__quick">
+          <a class="btn btn--ghost" href="https://wa.me/447961620053" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="tel:+447961620053">Call directly</a>
         </div>
       </div>
 
-      <form class="book-form reveal" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=booking">
-        <input type="hidden" name="form-name" value="booking" />
-        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
-        <div class="field"><label for="bName">Full name *</label><input id="bName" name="name" type="text" placeholder="Your name" required></div>
-        <div class="row2">
-          <div class="field"><label for="bEmail">Email *</label><input id="bEmail" name="email" type="email" placeholder="you@email.com" required></div>
-          <div class="field"><label for="bPhone">Phone</label><input id="bPhone" name="phone" type="tel" placeholder="Optional"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="bType">Event type *</label>
-            <select id="bType" name="event_type" required>
-              <option value="" disabled selected>Choose…</option>
-              <option>Wedding &amp; Love Story</option>
-              <option>Corporate &amp; Brand</option>
-              <option>Charity &amp; Community</option>
-              <option>School / Workshop</option>
-              <option>Birthday / Celebration</option>
-              <option>Festival / Stage</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field"><label for="bDate">Event date</label><input id="bDate" name="event_date" type="date"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="bLocation">Location / venue</label><input id="bLocation" name="location" type="text" placeholder="City or venue"></div>
-          <div class="field"><label for="bGuests">Guests (approx.)</label><input id="bGuests" name="guests" type="text" placeholder="e.g. 120"></div>
-        </div>
-        <div class="field"><label for="bMsg">Tell me about your event</label><textarea id="bMsg" name="message" rows="4" placeholder="Your story, the vibe you're after, anything else…"></textarea></div>
-        <div class="field"><label for="bSource">How did you find me? <span style="color:var(--muted-2);font-weight:300">(optional)</span></label>
-          <select id="bSource" name="how_found">
-            <option value="">— Select —</option>
-            <option value="Google search">Google search</option>
-            <option value="Instagram">Instagram</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Bark">Bark</option>
-            <option value="Recommendation">Recommendation / word of mouth</option>
-            <option value="Saw a performance">Saw a performance</option>
-            <option value="Other">Other</option>
+      <form class="form" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=enquiry">
+        <input type="hidden" name="form-name" value="enquiry">
+        <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div><label>Full name *</label><input type="text" name="name" required></div>
+        <div><label>Email *</label><input type="email" name="email" required></div>
+        <div><label>Phone</label><input type="tel" name="phone"></div>
+        <div><label>Event type *</label>
+          <select name="event_type" required>
+            <option value="">Choose…</option>
+            <option>Wedding &amp; Love Story</option>
+            <option>Corporate &amp; Brand</option>
+            <option>Charity &amp; Community</option>
+            <option>School / Workshop</option>
+            <option>Birthday / Celebration</option>
+            <option>Festival / Stage</option>
+            <option>Other</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Send enquiry →</button>
-        <div class="form-msg" id="bMsgOut">Thank you — your enquiry is on its way. I'll personally reply within 24 hours.</div>
+        <div><label>Event date</label><input type="date" name="date"></div>
+        <div><label>Guests (approx.)</label><input type="number" name="guests" min="0"></div>
+        <div class="full"><label>Location / venue</label><input type="text" name="location"></div>
+        <div class="full"><label>Tell me about your event</label><textarea name="message"></textarea></div>
+        <div class="full"><label>How did you find me? (optional)</label>
+          <select name="source">
+            <option value="">— Select —</option>
+            <option>Google search</option><option>Instagram</option><option>LinkedIn</option>
+            <option>Bark</option><option>Recommendation / word of mouth</option>
+            <option>Saw a performance</option><option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn--primary" type="submit">Send enquiry →</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================ FAQ ============================ -->
-<section class="sec" id="faq" style="background:var(--ink-2);border-top:1px solid var(--line-soft)">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Good to know</span>
-      <h2>Frequently <em>asked</em></h2>
+  <!-- ===== FAQ ===== -->
+  <section class="sec" id="faq">
+    <div class="faq__head center">
+      <p class="eyebrow">Good to know</p>
+      <h2 class="h2">Frequently <em>asked</em></h2>
     </div>
-    <div class="faq-list" id="faqList">
-      <div class="faq-item"><button class="faq-q">Where do you perform? <span class="plus">+</span></button><div class="faq-a"><p>I'm based in Worksop, Nottinghamshire, and travel for performances across the entire UK — and worldwide for the right event. Travel is simply factored into your quote.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How long is a performance? <span class="plus">+</span></button><div class="faq-a"><p>A single live story typically runs 3–6 minutes per piece, with the full feature built around your programme. Many events book multiple scenes or a longer set. We'll shape the timing together during the consultation.</p></div></div>
-      <div class="faq-item"><button class="faq-q">What space and equipment do you need? <span class="plus">+</span></button><div class="faq-a"><p>I bring my own backlit sand table and camera. Ideally we project onto a large screen or wall so every guest can see the detail clearly — most venues and AV teams can provide this, or I can advise. I just need a small staging area and a power socket.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How far in advance should I book? <span class="plus">+</span></button><div class="faq-a"><p>The earlier the better — bespoke pieces take time to design and rehearse, and weekend dates fill quickly. That said, do get in touch even for short-notice events; I'll always try to help.</p></div></div>
-      <div class="faq-item"><button class="faq-q">What's the difference between the Ambient format and a Pre-Prepared Show for corporate events? <span class="plus">+</span></button><div class="faq-a"><p>For corporate bookings, there are two formats to choose from — and they work beautifully together.</p><p>The <em>Ambient &amp; Interactive</em> format means I'm present at my sand table throughout the event, continuously creating new artwork, drawing brand visuals on request, and personalising pieces for individual guests. It's a living, social experience — guests come to the table, watch, interact and photograph their own piece. No fixed schedule, no seated audience required.</p><p>A <em>Pre-Prepared Show</em> is a structured narrative performance, designed in advance around your brand, product or campaign story, and performed live for your audience to watch as a group. It runs 15–20 minutes and can be staged 2–3 times across the evening to ensure all guests have the chance to see it.</p><p>Many corporate clients book the Ambient format as their base and add a Pre-Prepared Show as a centrepiece moment. Get in touch to discuss the right combination for your event.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How much does it cost? <span class="plus">+</span></button><div class="faq-a"><p>Performances start from £450, with personalised story shows from £700 and discounted rates for charities and schools. The final figure depends on your event, location, length and how much bespoke animation is involved. Send your details through the form and you'll receive a clear, tailored quote — no obligation.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Can the performance be personalised? <span class="plus">+</span></button><div class="faq-a"><p>Absolutely — that's the heart of it. Names, dates, places, brand logos, cultural symbols and your own story can all be woven into the sand. I also offer personalised calligraphy as a keepsake.</p></div></div>
+    <div class="faq__list">
+      <div class="faq__item"><button class="faq__q">Where do you perform?</button><div class="faq__a"><div>I'm based in Worksop, Nottinghamshire, and travel for performances across the entire UK — and worldwide for the right event. Travel is simply factored into your quote.</div></div></div>
+      <div class="faq__item"><button class="faq__q">How long is a performance?</button><div class="faq__a"><div>A single live story typically runs 3–6 minutes per piece, with the full feature built around your programme. Many events book multiple scenes or a longer set. We'll shape the timing together during the consultation.</div></div></div>
+      <div class="faq__item"><button class="faq__q">What space and equipment do you need?</button><div class="faq__a"><div>I bring my own backlit sand table and camera. Ideally we project onto a large screen or wall so every guest can see the detail clearly — most venues and AV teams can provide this, or I can advise. I just need a small staging area and a power socket.</div></div></div>
+      <div class="faq__item"><button class="faq__q">How far in advance should I book?</button><div class="faq__a"><div>The earlier the better — bespoke pieces take time to design and rehearse, and weekend dates fill quickly. That said, do get in touch even for short-notice events; I'll always try to help.</div></div></div>
+      <div class="faq__item"><button class="faq__q">What's the difference between the Ambient format and a Pre-Prepared Show?</button><div class="faq__a"><div>For corporate bookings there are two formats that work beautifully together. The <em>Ambient &amp; Interactive</em> format means I'm present at my sand table throughout the event, continuously creating new artwork, drawing brand visuals on request, and personalising pieces for guests. A <em>Pre-Prepared Show</em> is a structured narrative performance, designed in advance around your brand or campaign and performed live for your audience — it runs 15–20 minutes and can be staged 2–3 times across the evening. Many clients book the Ambient format as their base and add a Pre-Prepared Show as a centrepiece.</div></div></div>
+      <div class="faq__item"><button class="faq__q">How much does it cost?</button><div class="faq__a"><div>Performances start from £450, with personalised story shows from £700 and discounted rates for charities and schools. The final figure depends on your event, location, length and how much bespoke animation is involved. Send your details through the form and you'll receive a clear, tailored quote — no obligation.</div></div></div>
+      <div class="faq__item"><button class="faq__q">Can the performance be personalised?</button><div class="faq__a"><div>Absolutely — that's the heart of it. Names, dates, places, brand logos, cultural symbols and your own story can all be woven into the sand. I also offer personalised calligraphy as a keepsake.</div></div></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================ FOOTER ============================ -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="b1" style="font-style:italic">Bilal Köse</div>
-        <div class="b2">Live Sand Artist</div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <h4>Bilal Köse</h4>
+        <div class="role">Live Sand Artist</div>
         <p>Live sand art performances that turn your story into something unforgettable. Available across the UK &amp; worldwide.</p>
       </div>
-      <div class="foot-col">
+      <div>
         <h5>Explore</h5>
-        <a href="#what">The Art</a>
-        <a href="#events">Performances</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#packages">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
+        <ul>
+          <li><a href="#what">The Art</a></li>
+          <li><a href="#events">Performances</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#packages">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
       </div>
-      <div class="foot-col">
+      <div>
         <h5>Contact</h5>
-        <a href="tel:+447961620053">+44 79 6162 0053</a>
-        <a href="mailto:hello@bilalkose.co.uk">hello@bilalkose.co.uk</a>
-        <a href="#book">Book a performance</a>
-        <a href="https://wa.me/447961620053">WhatsApp</a>
+        <ul>
+          <li><a href="tel:+447961620053">+44 79 6162 0053</a></li>
+          <li><a href="mailto:hello@bilalkose.co.uk">hello@bilalkose.co.uk</a></li>
+          <li><a href="#book">Book a performance</a></li>
+          <li><a href="https://wa.me/447961620053" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
       </div>
-      <div class="foot-col news">
+      <div class="foot__news">
         <h5>Newsletter</h5>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:16px;font-weight:300">Promotions &amp; latest performances.</p>
-        <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=newsletter">
-          <input type="hidden" name="form-name" value="newsletter" />
-          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
-          <input type="email" name="email" id="newsEmail" placeholder="Your email" required>
-          <button class="btn btn-primary" type="submit">Subscribe</button>
+        <p style="color:var(--mute);font-size:.85rem;margin:0 0 .9rem;">Promotions &amp; latest performances.</p>
+        <form name="newsletter" method="POST" data-netlify="true" action="/?success=newsletter">
+          <input type="hidden" name="form-name" value="newsletter">
+          <input type="email" name="email" placeholder="Your email" required>
+          <button class="btn btn--ghost" type="submit" style="width:100%;justify-content:center;">Subscribe</button>
         </form>
       </div>
     </div>
-    <div class="foot-bottom">
+    <div class="foot__bottom">
       <span>© <span id="yr"></span> Bilal Köse · Sand Art UK. All rights reserved.</span>
-      <div class="socials">
-        <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.17.4.36 1 .42 2.2.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.17-1 .36-2.2.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.42-.4-.68-.8-.9-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.7-.32.3-.52.62-.7 1.05-.12.3-.28.8-.32 1.7C3.96 8.5 3.96 8.9 3.96 12s0 3.5.07 4.7c.04.9.2 1.4.32 1.7.17.43.37.74.7 1.06.3.32.62.52 1.05.7.3.12.8.28 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.7.32-.3.52-.62.7-1.05.12-.3.28-.8.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.32-1.7-.17-.43-.37-.74-.7-1.06-.3-.32-.62-.52-1.05-.7-.3-.12-.8-.28-1.7-.32C15.5 4 15.1 4 12 4zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06zm0 8.15A3.2 3.2 0 1 0 8.8 12 3.2 3.2 0 0 0 12 15.2zm6.3-8.35a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15z"/></svg></a>
-        <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-        <a href="https://wa.me/447961620053" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51-.17 0-.37-.02-.57-.02-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.55 15.13L2 22l4.96-1.39A10 10 0 1 0 12 2zm0 18.17a8.17 8.17 0 0 1-4.16-1.14l-.3-.18-3.08.86.84-3.01-.19-.31A8.17 8.17 0 1 1 12 20.17z"/></svg></a>
-      </div>
+      <span class="foot__social">
+        <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/447961620053" target="_blank" rel="noopener">WhatsApp</a>
+      </span>
     </div>
-  </div>
-</footer>
-
-<!-- ============================ LIGHTBOX ============================ -->
-<div class="lightbox" id="lightbox">
-  <span class="lb-close" id="lbClose">×</span>
-  <img id="lbImg" src="" alt="">
-  <div class="lb-cap" id="lbCap"></div>
-</div>
+  </footer>
 
 <script>
-/* ============================================================ year */
+/* ---------- Year ---------- */
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-/* ============================================================ nav */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-burger.addEventListener('click',()=>{
-  const willOpen = !navLinks.classList.contains('open');
-  burger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = willOpen ? 'hidden' : '';
-});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open');document.body.style.overflow='';}));
-
-/* active link on scroll */
-const secs=[...document.querySelectorAll('section[id]')];
-const map={what:'what',events:'events',packages:'packages',portfolio:'portfolio',reviews:'reviews',about:'about'};
-addEventListener('scroll',()=>{
-  let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-160)cur=s.id});
-  navLinks.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
-});
-
-/* ============================================================ reveal */
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
-
-/* ============================================================ marquee duplicate for seamless loop */
-const mq=document.getElementById('marquee');mq.innerHTML+=mq.innerHTML;
-
-/* ============================================================ PORTFOLIO data + render */
-const works=[
- {img:'/assets/portfolio/soho-theatre-stage-hall.jpg',v:'Soho Theatre, London',s:'Live on stage',c:'stage'},
- {img:'/assets/portfolio/harrods-memo-paris-london.jpg',v:'Harrods · Memo Paris',s:'Luxury brand launch',c:'corporate'},
- {img:'/assets/portfolio/manchester-hall-mayor.jpg',v:'Manchester Hall',s:'Civic reception with the Mayor',c:'corporate'},
- {img:'/assets/portfolio/manchester-hall-performance.jpg',v:'Manchester Hall',s:'Wedding love story',c:'wedding'},
- {img:'/assets/portfolio/Birmingham-Council-House.jpg',v:'Birmingham Council House',s:'Gala dinner performance',c:'corporate'},
- {img:'/assets/portfolio/private-event-intimate.jpg',v:'Private Residence',s:'Intimate love story',c:'wedding'},
- {img:'/assets/portfolio/gala-event-guest.jpg',v:'Gala Event',s:'Guests watching live sand art',c:'corporate'},
- {img:'/assets/portfolio/Sand-art-performance.jpg',v:'Live Performance',s:'Sand art in action',c:'stage'},
- {img:'/assets/portfolio/Calligraphy-Oxford-University.jpg',v:'University of Oxford',s:'Sand calligraphy at Oxford',c:'charity'},
- {img:'/assets/portfolio/oxford-academy.jpg',v:'The Oxford Academy',s:'School performance',c:'charity'},
- {img:'/assets/portfolio/Workshop-kids-school.jpg',v:'School Workshop',s:'Children creating sand art',c:'charity'},
- {img:'/assets/portfolio/workshop-group-3.jpg',v:'Sand Art Workshop',s:'Participants at light tables',c:'charity'},
- {img:'/assets/portfolio/sand-pouring-action.jpg',v:'Live Performance',s:'The art of sand pouring',c:'stage'},
- {img:'/assets/portfolio/northen-cross-calligraphy.jpg',v:'Northern Cross',s:'Sand calligraphy artwork',c:'corporate'},
- {img:'/assets/portfolio/private-event.jpg',v:'Private Event',s:'Bespoke celebration',c:'wedding'},
- {img:'/assets/portfolio/soho-theatre-stage.jpg',v:'Soho Theatre, London',s:'Stage performance',c:'stage'},
-];
-const gallery=document.getElementById('gallery');
-function renderGallery(){
-  gallery.innerHTML='';
-  works.forEach(w=>{
-    const d=document.createElement('div');d.className='gitem';d.dataset.c=w.c;
-    d.innerHTML=`<img src="${w.img}" alt="${w.v}" loading="lazy"><div class="cap"><span class="v">${w.v}</span><span class="s">${w.s}</span></div>`;
-    d.addEventListener('click',()=>openLB(w.img,w.v+' — '+w.s));
-    gallery.appendChild(d);
-  });
-}
-renderGallery();
-/* filters */
-document.getElementById('filters').addEventListener('click',e=>{
-  if(!e.target.classList.contains('filter'))return;
-  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-  e.target.classList.add('active');const f=e.target.dataset.f;
-  document.querySelectorAll('.gitem').forEach(it=>it.classList.toggle('hide',!(f==='all'||it.dataset.c===f)));
-});
-
-/* ============================================================ lightbox */
-const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
-function openLB(src,cap){lbImg.src=src;lbCap.textContent=cap;lb.classList.add('show')}
-function closeLB(){lb.classList.remove('show')}
-document.getElementById('lbClose').addEventListener('click',closeLB);
-lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
-
-/* ============================================================ REVIEWS data + render */
-const reviews=[
- {st:5,q:"Bilal is fabulous! A very creative storyteller — talented and sentimental, with attention to detail and big-picture vision. I will hire again and highly recommend!",who:"Sophia R.",ev:"Private event"},
- {st:5,q:"Our guests were amazed. It was a wonderful feeling to sit and watch our love story and share it with everyone.",who:"Pedro",ev:"Wedding"},
- {st:5,q:"Simply breathtaking. A stunning display of love and reunion that left our guests in awe — they couldn't wait to get his contact details.",who:"Joseph S.",ev:"Charity event"},
- {st:5,q:"Truly a unique and magical experience. We watched in amazement as each scene unfolded — and thank you for the personalised calligraphy gift.",who:"Helen M.",ev:"Celebration"},
- {st:5,q:"Absolutely magical and unlike anything I have seen before. It had everyone spellbound — an unforgettable experience.",who:"Moira D.",ev:"Evening event"},
- {st:5,q:"Truly captivating. The elegance and creativity added a unique artistic touch to the night. Highly recommend.",who:"Dianna L.",ev:"Charity event"},
-];
-const revGrid=document.getElementById('revGrid');
-function star(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
-function renderReviews(){
-  revGrid.innerHTML='';
-  reviews.forEach(r=>{
-    const d=document.createElement('div');d.className='rev reveal in';
-    d.innerHTML=`<div class="stars">${star(r.st)}</div><div class="q">"${r.q}"</div><div class="who"><b>${r.who}</b> · ${r.ev}</div>`;
-    revGrid.appendChild(d);
-  });
-}
-renderReviews();
-
-/* ============================================================ BOOKING / NEWSLETTER success message
-   Netlify Forms handles the actual submission natively (POST to the same URL).
-   When the form redirects back with ?success=booking or ?success=newsletter, we show a modal. */
+/* ---------- Success modal (after form redirect) ---------- */
 (function(){
   const params = new URLSearchParams(location.search);
   const s = params.get('success');
   if(!s) return;
-
-  const isBooking = s === 'booking';
+  const isBooking = s === 'enquiry';
   const title = isBooking ? 'Thank you — your enquiry is in.' : 'Welcome — you are subscribed.';
   const body = isBooking
     ? "I'll personally read your message and get back to you within 24 hours, usually much sooner. In the meantime, follow along for performances and behind-the-scenes work."
     : "You'll receive occasional updates about upcoming performances and new work. No spam, ever.";
-
   const modal = document.createElement('div');
   modal.className = 'success-modal';
-  modal.innerHTML = `
-    <div class="success-backdrop"></div>
-    <div class="success-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
-      <button class="success-close" aria-label="Close">×</button>
-      <div class="success-icon">✓</div>
-      <h3 id="successTitle">${title}</h3>
-      <p>${body}</p>
-      <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" class="btn btn-primary">Follow on Instagram →</a>
-      <button class="success-dismiss">Close</button>
-    </div>`;
+  modal.innerHTML = '<div class="success-backdrop"></div>'+
+    '<div class="success-card" role="dialog" aria-modal="true">'+
+    '<button class="success-close" aria-label="Close">×</button>'+
+    '<div class="success-icon">✓</div>'+
+    '<h3>'+title+'</h3><p>'+body+'</p>'+
+    '<a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" class="btn btn--primary">Follow on Instagram →</a>'+
+    '<button class="success-dismiss">Close</button></div>';
   document.body.appendChild(modal);
-  document.body.style.overflow = 'hidden';
-
-  function close(){
-    modal.classList.add('closing');
-    document.body.style.overflow = '';
-    setTimeout(()=>{modal.remove(); history.replaceState({}, '', location.pathname);}, 300);
-  }
-  modal.querySelector('.success-close').addEventListener('click', close);
-  modal.querySelector('.success-dismiss').addEventListener('click', close);
-  modal.querySelector('.success-backdrop').addEventListener('click', close);
-  document.addEventListener('keydown', function esc(e){if(e.key==='Escape'){close();document.removeEventListener('keydown', esc);}});
+  document.body.style.overflow='hidden';
+  function close(){modal.classList.add('closing');document.body.style.overflow='';setTimeout(()=>{modal.remove();history.replaceState({},'',location.pathname);},300);}
+  modal.querySelector('.success-close').addEventListener('click',close);
+  modal.querySelector('.success-dismiss').addEventListener('click',close);
+  modal.querySelector('.success-backdrop').addEventListener('click',close);
+  document.addEventListener('keydown',function esc(e){if(e.key==='Escape'){close();document.removeEventListener('keydown',esc);}});
   requestAnimationFrame(()=>modal.classList.add('open'));
 })();
 
-/* ============================================================ FAQ accordion */
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const a=q.nextElementSibling,open=q.classList.contains('open');
-    document.querySelectorAll('.faq-q').forEach(o=>{o.classList.remove('open');o.nextElementSibling.style.maxHeight=null});
-    if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
-  });
-});
-
-/* ============================================================ HERO falling-sand canvas */
+/* ---------- Mobile nav ---------- */
 (function(){
-  const c=document.getElementById('sandCanvas'),x=c.getContext('2d');
-  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  let w,h,parts=[];
-  function size(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;build()}
-  function build(){
-    const n=Math.min(150,Math.round(w/9));
-    parts=Array.from({length:n},()=>spawn(true));
-  }
-  function spawn(init){
-    return{
-      x:Math.random()*w,
-      y:init?Math.random()*h:-10,
-      r:Math.random()*1.7+0.4,
-      sp:Math.random()*0.5+0.2,
-      drift:(Math.random()-0.5)*0.35,
-      a:Math.random()*0.6+0.2,
-      hue:38+Math.random()*14
-    };
-  }
-  function frame(){
-    x.clearRect(0,0,w,h);
-    for(const p of parts){
-      p.y+=p.sp;p.x+=p.drift;p.drift+=(Math.random()-0.5)*0.01;
-      if(p.y>h+5||p.x<-10||p.x>w+10){Object.assign(p,spawn(false))}
-      x.beginPath();
-      x.fillStyle=`hsla(${p.hue},75%,68%,${p.a})`;
-      x.shadowBlur=6;x.shadowColor='rgba(231,185,94,.5)';
-      x.arc(p.x,p.y,p.r,0,6.28);x.fill();
-    }
-    requestAnimationFrame(frame);
-  }
-  size();addEventListener('resize',size);
-  if(!reduce)frame();
-  else{ // static dusting for reduced motion
-    for(const p of parts){x.fillStyle=`hsla(${p.hue},75%,68%,${p.a})`;x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fill();}
-  }
+  const b=document.getElementById('burger'), m=document.getElementById('mobileNav');
+  b.addEventListener('click',()=>{const o=m.classList.toggle('is-open');b.setAttribute('aria-expanded',o);});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('is-open');b.setAttribute('aria-expanded',false);}));
 })();
+
+/* ---------- Venue marquee (built twice for seamless loop) ---------- */
+(function(){
+  const names=["Harrods","University of Oxford","Soho Theatre","Manchester Hall","Newcastle Cathedral","Great North Museum","Memo Paris","MACFEST","University of Birmingham","University of Leeds","University of Reading","Skimstone Arts"];
+  const track=document.getElementById('venueTrack');
+  let html="";
+  for(let r=0;r<2;r++){names.forEach(n=>{html+='<span class="venue">'+n+'</span><span class="vsep">✦</span>';});}
+  track.innerHTML=html;
+})();
+
+/* ---------- Portfolio filter + show more ---------- */
+(function(){
+  const tabs=document.querySelectorAll('.tab'), wrap=document.querySelector('.gallery-wrap'),
+        gallery=document.querySelector('.gallery'), tiles=document.querySelectorAll('.gallery .tile'),
+        btn=document.getElementById('moreBtn'), btnTxt=btn.querySelector('.more-txt');
+  let expanded=false;
+  function collapse(){expanded=false;gallery.classList.add('is-collapsed');btn.classList.remove('is-open');btnTxt.textContent='Show more';}
+  function expand(){expanded=true;gallery.classList.remove('is-collapsed');btn.classList.add('is-open');btnTxt.textContent='Show less';}
+  function refresh(){collapse();const more=gallery.scrollHeight>gallery.clientHeight+2;btn.parentElement.style.display=more?'':'none';wrap.classList.toggle('show-fade',more);}
+  btn.addEventListener('click',()=>{if(expanded){collapse();wrap.classList.add('show-fade');}else{expand();wrap.classList.remove('show-fade');}});
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('is-active'));tab.classList.add('is-active');
+    const c=tab.dataset.cat;
+    tiles.forEach(t=>{t.style.display=(c==='all'||t.dataset.cat===c)?'':'none';});
+    refresh();
+  }));
+  window.addEventListener('resize',()=>{if(!expanded)refresh();});
+  refresh();
+})();
+
+/* ---------- FAQ accordion ---------- */
+(function(){
+  document.querySelectorAll('.faq__item').forEach(item=>{
+    const q=item.querySelector('.faq__q'), a=item.querySelector('.faq__a');
+    q.addEventListener('click',()=>{
+      const open=item.classList.contains('is-open');
+      document.querySelectorAll('.faq__item').forEach(i=>{i.classList.remove('is-open');i.querySelector('.faq__a').style.maxHeight=null;});
+      if(!open){item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px';}
+    });
+  });
+})();
+
+/* ---------- Sand engine (hero = interactive, booking = ambient) ---------- */
+function initSand(canvas, opts){
+  opts=opts||{};
+  const interactive=opts.interactive!==false, useMeteors=opts.meteors!==false,
+        densityDiv=opts.densityDiv||480, cap=opts.cap||4800;
+  const ctx=canvas.getContext('2d',{alpha:true});
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,DPR=1,grains=[],gX=0,gY=0,gR=0,t=0;
+  const trail=[], meteors=[]; let meteorTimer=10, lastX=null,lastY=null;
+  const TR=50, TR2=TR*TR, TRAIL_DECAY=0.012;
+  function rand(a,b){return a+Math.random()*(b-a);}
+  function build(){
+    grains=[];const area=W*H;let n=Math.round(area/densityDiv);n=Math.max(300,Math.min(n,cap));
+    gX=W*0.5;gY=H*0.74;gR=Math.max(W,H)*0.78;
+    for(let i=0;i<n;i++){
+      const x=rand(0,W),y=rand(0,H);
+      const d=Math.hypot(x-gX,y-gY)/gR,lit=Math.max(0,1-d),l2=lit*lit;
+      const r=Math.round(138+(240-138)*l2),g=Math.round(94+(212-94)*l2),b=Math.round(44+(154-44)*l2);
+      const a=0.10+0.55*l2;
+      grains.push({bx:x,by:y,x,y,vx:0,vy:0,size:rand(.6,1.9)*(.7+lit*.8),seed:Math.random()*Math.PI*2,drift:rand(.25,.9),color:'rgba('+r+','+g+','+b+','+a.toFixed(3)+')'});
+    }
+  }
+  function resize(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    const rc=canvas.getBoundingClientRect();W=rc.width;H=rc.height;
+    if(W<2||H<2)return;
+    canvas.width=Math.round(W*DPR);canvas.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);
+    trail.length=0;meteors.length=0;build();if(reduce)drawStatic();
+  }
+  function drawStatic(){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';for(const p of grains){ctx.fillStyle=p.color;ctx.fillRect(p.bx,p.by,p.size,p.size);}ctx.globalCompositeOperation='source-over';}
+  function addTrail(x,y){
+    if(lastX!==null){const dx=x-lastX,dy=y-lastY,dist=Math.hypot(dx,dy),steps=Math.max(1,Math.floor(dist/10));
+      for(let i=1;i<=steps;i++)trail.push({x:lastX+dx*(i/steps),y:lastY+dy*(i/steps),life:1});}
+    else trail.push({x,y,life:1});
+    lastX=x;lastY=y;if(trail.length>120)trail.splice(0,trail.length-120);
+  }
+  function spawnMeteor(){const dir=Math.random()<.5?1:-1;meteors.push({x:dir>0?rand(0,W*.5):rand(W*.5,W),y:rand(H*.04,H*.30),vx:dir*rand(5.5,9.5),vy:rand(1.4,3.2),life:1,decay:1/rand(48,78)});}
+  function frame(){
+    t+=0.006;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+    for(let i=trail.length-1;i>=0;i--){trail[i].life-=TRAIL_DECAY;if(trail[i].life<=0)trail.splice(i,1);}
+    for(const p of grains){
+      const tx=p.bx+Math.sin(t*0.9+p.seed)*p.drift*1.5, ty=p.by+Math.cos(t*0.7+p.seed)*p.drift*1.1;
+      if(interactive){let best=0,nx=0,ny=0;
+        for(let i=0;i<trail.length;i++){const tp=trail[i],dx=p.x-tp.x,dy=p.y-tp.y,d2=dx*dx+dy*dy;
+          if(d2<TR2){const d=Math.sqrt(d2)||.001,f=(1-d/TR)*tp.life;if(f>best){best=f;nx=dx/d;ny=dy/d;}}}
+        if(best>0){p.vx+=nx*best*2.3;p.vy+=ny*best*2.3;}}
+      p.vx+=(tx-p.x)*0.02;p.vy+=(ty-p.y)*0.02;p.vx*=0.9;p.vy*=0.9;p.x+=p.vx;p.y+=p.vy;
+      ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,p.size,p.size);
+    }
+    if(useMeteors){if(--meteorTimer<=0){spawnMeteor();meteorTimer=Math.round(rand(220,520));}
+      for(let i=meteors.length-1;i>=0;i--){const m=meteors[i];m.x+=m.vx;m.y+=m.vy;m.life-=m.decay;
+        if(m.life<=0||m.x<-40||m.x>W+40||m.y>H){meteors.splice(i,1);continue;}
+        const a=Math.sin(Math.max(0,m.life)*Math.PI),tl=9,xp=m.x-m.vx*tl,yp=m.y-m.vy*tl;
+        const gr=ctx.createLinearGradient(m.x,m.y,xp,yp);gr.addColorStop(0,'rgba(248,236,206,'+(a*0.9).toFixed(3)+')');gr.addColorStop(1,'rgba(248,236,206,0)');
+        ctx.strokeStyle=gr;ctx.lineWidth=1.3;ctx.beginPath();ctx.moveTo(m.x,m.y);ctx.lineTo(xp,yp);ctx.stroke();
+        ctx.fillStyle='rgba(255,247,228,'+a.toFixed(3)+')';ctx.fillRect(m.x-1,m.y-1,2.2,2.2);}}
+    ctx.globalCompositeOperation='source-over';requestAnimationFrame(frame);
+  }
+  if(interactive){
+    function fromEvent(cx,cy){const rc=canvas.getBoundingClientRect();if(cy<rc.top||cy>rc.bottom)return;addTrail(cx-rc.left,cy-rc.top);}
+    window.addEventListener('pointermove',e=>fromEvent(e.clientX,e.clientY),{passive:true});
+    window.addEventListener('pointerdown',e=>fromEvent(e.clientX,e.clientY),{passive:true});
+    window.addEventListener('pointerleave',()=>{lastX=null;lastY=null;});
+  }
+  let rt=null;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(resize,150);});
+  resize();if(!reduce)requestAnimationFrame(frame);
+}
+initSand(document.getElementById('sand'),{densityDiv:480,cap:4800,interactive:true,meteors:true});
+initSand(document.getElementById('bookSand'),{densityDiv:1500,cap:700,interactive:false,meteors:false});
 </script>
 </body>
 </html>
