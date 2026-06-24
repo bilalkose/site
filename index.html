@@ -537,7 +537,7 @@
   .featured{padding:clamp(2.5rem,5vw,3.5rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;}
   .featured__label{color:var(--mute);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;margin:0 0 1.8rem;}
   .featured__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(1.4rem,4vw,3rem);max-width:920px;margin:0 auto;padding:0 1.5rem;}
-  .featured__item{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--cream);font-weight:500;letter-spacing:.01em;opacity:.82;transition:opacity .3s ease,color .3s ease;white-space:nowrap;}
+  .featured__item{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--cream);font-weight:500;letter-spacing:.01em;opacity:.82;transition:opacity .3s ease,color .3s ease;white-space:nowrap;text-decoration:none;}
   .featured__item:hover{opacity:1;color:var(--sand-hi);}
   .featured__note{color:var(--mute);font-size:.82rem;margin:1.6rem auto 0;max-width:54ch;line-height:1.6;padding:0 1.5rem;}
 </style>
@@ -925,11 +925,11 @@
   <section class="featured" aria-label="Press and festival features">
     <p class="featured__label">As featured in &amp; commissioned by</p>
     <div class="featured__row">
-      <span class="featured__item">MACFEST</span>
-      <span class="featured__item">UNITY Festival</span>
-      <span class="featured__item">Skimstone Arts</span>
-      <span class="featured__item">Manchester Wire</span>
-      <span class="featured__item">North East Bylines</span>
+      <a class="featured__item" href="https://macfest.org.uk/" target="_blank" rel="noopener">MACFEST</a>
+      <a class="featured__item" href="https://northeastbylines.co.uk/region/north-east/unity-festival-24-explores-hidden-worlds-across-two-unique-venues-in-the-north-east/" target="_blank" rel="noopener">UNITY Festival</a>
+      <a class="featured__item" href="https://www.skimstone.org.uk/" target="_blank" rel="noopener">Skimstone Arts</a>
+      <a class="featured__item" href="https://manchesterwire.co.uk/macfest-brings-another-vibrant-celebration-of-international-creativity-to-manchester/" target="_blank" rel="noopener">Manchester Wire</a>
+      <a class="featured__item" href="https://northeastbylines.co.uk/region/north-east/unity-festival-24-explores-hidden-worlds-across-two-unique-venues-in-the-north-east/" target="_blank" rel="noopener">North East Bylines</a>
     </div>
     <p class="featured__note">Commissioned by Skimstone Arts to create original work for UNITY Festival at the Great North Museum, and a featured performer at MACFEST, the Queen's Award winning Muslim Arts and Culture Festival.</p>
   </section>
