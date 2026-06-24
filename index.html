@@ -533,6 +533,13 @@
   .success-dismiss:hover{color:var(--cream);}
   .success-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--mute);font-size:28px;line-height:1;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s;}
   .success-close:hover{color:var(--ember);background:rgba(217,148,58,.1);}
+  /* ===== AS FEATURED IN ===== */
+  .featured{padding:clamp(2.5rem,5vw,3.5rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;}
+  .featured__label{color:var(--mute);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;margin:0 0 1.8rem;}
+  .featured__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(1.4rem,4vw,3rem);max-width:920px;margin:0 auto;padding:0 1.5rem;}
+  .featured__item{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--cream);font-weight:500;letter-spacing:.01em;opacity:.82;transition:opacity .3s ease,color .3s ease;white-space:nowrap;}
+  .featured__item:hover{opacity:1;color:var(--sand-hi);}
+  .featured__note{color:var(--mute);font-size:.82rem;margin:1.6rem auto 0;max-width:54ch;line-height:1.6;padding:0 1.5rem;}
 </style>
 </head>
 <body id="home">
@@ -619,6 +626,7 @@
         <h2 class="h2">Live performance, <em>drawn by hand</em>.</h2>
         <p>Sand art is a live visual performance. Working over a backlit glass table, I draw with my hands — pouring, sweeping and shaping fine sand into images that flow seamlessly from one scene into the next.</p>
         <p>Projected onto a large screen and set to music, every movement becomes part of a story your audience watches unfold in real time. Nothing is pre-recorded. Each show is created live, in the moment — and never exactly the same twice.</p>
+        <a href="/blog/what-is-live-sand-art.html" class="btn btn--ghost" style="margin-top:8px;">Read the full guide →</a>
       </div>
     </div>
   </section>
@@ -911,6 +919,19 @@
         <iframe src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0" title="Sand Art UK Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+  </section>
+
+  <!-- ===== AS FEATURED IN ===== -->
+  <section class="featured" aria-label="Press and festival features">
+    <p class="featured__label">As featured in &amp; commissioned by</p>
+    <div class="featured__row">
+      <span class="featured__item">MACFEST</span>
+      <span class="featured__item">UNITY Festival</span>
+      <span class="featured__item">Skimstone Arts</span>
+      <span class="featured__item">Manchester Wire</span>
+      <span class="featured__item">North East Bylines</span>
+    </div>
+    <p class="featured__note">Commissioned by Skimstone Arts to create original work for UNITY Festival at the Great North Museum, and a featured performer at MACFEST, the Queen's Award winning Muslim Arts and Culture Festival.</p>
   </section>
 
   <!-- ===== BOOK ===== -->
