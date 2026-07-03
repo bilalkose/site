@@ -453,6 +453,8 @@
   .reviews__head{max-width:760px;margin:0 auto;position:relative;z-index:1;}
   .reviews__lead{color:var(--mute);font-size:clamp(.96rem,1.6vw,1.05rem);margin:1.6rem 0 .4rem;}
   .reviews__word{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:clamp(2.8rem,8vw,5.2rem);line-height:1;margin:0;color:var(--sand-hi);text-shadow:0 6px 50px rgba(217,148,58,.25);}
+  .reviews__count{color:var(--mute);font-size:.8rem;letter-spacing:.08em;margin:1.1rem 0 0;}
+  .reviews__count b{color:var(--ember);font-weight:600;}
   .reviews__carousel{max-width:1080px;margin:clamp(2rem,4vw,2.8rem) auto 0;position:relative;z-index:1;}
   .reviews__viewport{overflow:hidden;}
   .reviews__track{display:flex;gap:clamp(.9rem,1.6vw,1.2rem);transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;}
@@ -919,6 +921,7 @@
       <h2 class="h2">What people <em>remember</em></h2>
       <p class="reviews__lead">The same word comes up again and again:</p>
       <p class="reviews__word">magical.</p>
+      <p class="reviews__count"><b>★★★★★</b> from 8 real client stories</p>
     </div>
     <div class="reviews__carousel">
       <button class="reviews__arrow reviews__arrow--prev" id="revPrev" aria-label="Previous reviews">‹</button>
@@ -1317,45 +1320,87 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   refresh();
 })();
 
-/* ---------- Reviews carousel ---------- */
+/* ---------- Reviews carousel (seamless infinite loop) ---------- */
 (function(){
   const track=document.getElementById('revTrack');
   if(!track) return;
-  const slides=Array.from(track.children);
-  const prev=document.getElementById('revPrev'), next=document.getElementById('revNext'), dotsWrap=document.getElementById('revDots');
-  let perView=3, index=0, timer=null;
+  const realSlides=Array.from(track.children);
+  const realCount=realSlides.length;
+  const BUFFER=3; // masaüstünde en fazla 3 görünür kart; klon tamponu buna göre
+  const prevBtn=document.getElementById('revPrev'), nextBtn=document.getElementById('revNext'), dotsWrap=document.getElementById('revDots');
+
+  // Başa ve sona görünmez klonlar ekle (sonsuz döngü hissi için)
+  const frontClones=realSlides.slice(realCount-BUFFER).map(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');return c;});
+  const backClones=realSlides.slice(0,BUFFER).map(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');return c;});
+  frontClones.forEach(c=>track.insertBefore(c, track.firstChild));
+  backClones.forEach(c=>track.appendChild(c));
+
+  const nodes=Array.from(track.children); // [clone x3][real x8][clone x3]
+  const realStart=BUFFER;
+  const realEnd=BUFFER+realCount; // ilk klon bloğunun başladığı index (üst sınır)
+
+  let perView=3, index=realStart, timer=null;
   function calcPerView(){const w=window.innerWidth;perView=w<=560?1:(w<=880?2:3);}
-  function maxIndex(){return Math.max(0, slides.length - perView);}
+  function maxRealR(){return Math.max(0, realCount - perView);}
+
   function buildDots(){
     dotsWrap.innerHTML='';
-    for(let i=0;i<=maxIndex();i++){
+    for(let r=0;r<=maxRealR();r++){
       const d=document.createElement('button');
-      d.className='reviews__dot'+(i===index?' is-active':'');
-      d.setAttribute('aria-label','Go to review '+(i+1));
-      d.addEventListener('click',()=>{index=i;render();restart();});
+      d.className='reviews__dot';
+      d.setAttribute('aria-label','Go to review '+(r+1));
+      d.addEventListener('click',()=>{index=realStart+r;render(true);restart();});
       dotsWrap.appendChild(d);
     }
   }
-  function render(){
-    if(index>maxIndex()) index=maxIndex();
-    if(index<0) index=0;
-    const gap=parseFloat(getComputedStyle(track).gap)||16;
-    const slideW=slides[0].getBoundingClientRect().width+gap;
-    track.style.transform='translateX('+(-index*slideW)+'px)';
-    Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===index));
+  function updateDots(){
+    const r=((index-realStart)%realCount+realCount)%realCount;
+    const active=Math.min(r, maxRealR());
+    Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===active));
   }
-  function go(dir){index+=dir; if(index>maxIndex()) index=0; if(index<0) index=maxIndex(); render();}
+  function slideWidth(){
+    const gap=parseFloat(getComputedStyle(track).gap)||16;
+    return nodes[0].getBoundingClientRect().width+gap;
+  }
+  function render(animate){
+    track.style.transition=animate?'transform .6s cubic-bezier(.22,.61,.36,1)':'none';
+    track.style.transform='translateX('+(-index*slideWidth())+'px)';
+    updateDots();
+  }
+  function snapIfNeeded(){
+    if(index>=realEnd){
+      index-=realCount;
+      requestAnimationFrame(()=>render(false));
+    }else if(index<=0){
+      index+=realCount;
+      requestAnimationFrame(()=>render(false));
+    }
+  }
+  function go(dir){
+    index+=dir;
+    render(true);
+    track.addEventListener('transitionend', snapIfNeeded, {once:true});
+  }
   function start(){timer=setInterval(()=>go(1),5000);}
   function stop(){clearInterval(timer);}
   function restart(){stop();start();}
-  next.addEventListener('click',()=>{go(1);restart();});
-  prev.addEventListener('click',()=>{go(-1);restart();});
+  nextBtn.addEventListener('click',()=>{go(1);restart();});
+  prevBtn.addEventListener('click',()=>{go(-1);restart();});
   const carousel=track.closest('.reviews__carousel');
   carousel.addEventListener('mouseenter',stop);
   carousel.addEventListener('mouseleave',start);
   let rt=null;
-  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{calcPerView();buildDots();render();},150);});
-  calcPerView();buildDots();render();start();
+  window.addEventListener('resize',()=>{
+    clearTimeout(rt);
+    rt=setTimeout(()=>{
+      calcPerView();buildDots();
+      // Mevcut gerçek konumu koru, taşma varsa güvenli sınıra çek
+      const r=Math.min(Math.max(0,((index-realStart)%realCount+realCount)%realCount),maxRealR());
+      index=realStart+r;
+      render(false);
+    },150);
+  });
+  calcPerView();buildDots();render(false);start();
 })();
 
 /* ---------- FAQ accordion ---------- */
