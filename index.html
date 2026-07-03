@@ -625,6 +625,37 @@
   .featured__item{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--cream);font-weight:500;letter-spacing:.01em;opacity:.82;transition:opacity .3s ease,color .3s ease;white-space:nowrap;text-decoration:none;}
   .featured__item:hover{opacity:1;color:var(--sand-hi);}
   .featured__note{color:var(--mute);font-size:.82rem;margin:1.6rem auto 0;max-width:54ch;line-height:1.6;padding:0 1.5rem;}
+  /* ===== PORTFOLIO ACCORDION ===== */
+  .acc-gallery{display:flex;flex-direction:column;gap:var(--gap);}
+  .acc-gallery.is-collapsed{max-height:calc(var(--row) * 2 + var(--gap) + 95px);overflow:hidden;}
+  .acc-row{display:flex;gap:var(--gap);height:var(--row);}
+  .acc-item{position:relative;flex:1 1 0%;min-width:0;overflow:hidden;border-radius:4px;border:1px solid var(--line);background:linear-gradient(150deg,#1c130a,#0b0805);padding:0;margin:0;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:flex-grow .6s cubic-bezier(.22,.61,.36,1);}
+  .acc-item.is-open{flex-grow:2.4;}
+  .acc-item.is-shrink{flex-grow:.5;}
+  .acc-media{position:absolute;inset:0;display:block;}
+  .acc-media img,.acc-media iframe{width:100%;height:100%;object-fit:cover;display:block;border:0;transition:transform .6s ease;}
+  .acc-item:hover:not(.is-open) .acc-media img{transform:scale(1.05);}
+  .acc-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,0) 45%,rgba(11,8,5,.82) 100%);z-index:1;}
+  .acc-cap{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.25rem;z-index:2;}
+  .acc-cat{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);font-weight:600;}
+  .acc-title{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;color:var(--cream);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:font-size .4s ease;}
+  .acc-item.is-open .acc-title{font-size:1.35rem;}
+  .acc-item.is-shrink .acc-cap{opacity:0;pointer-events:none;}
+  .acc-play{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;z-index:2;transition:opacity .3s ease;}
+  .acc-play-circle{width:54px;height:54px;border-radius:50%;background:rgba(11,8,5,.45);border:1px solid rgba(240,212,154,.6);display:flex;align-items:center;justify-content:center;transition:background .3s ease,transform .3s ease;}
+  .acc-play-circle svg{width:18px;height:18px;margin-left:3px;}
+  .acc-item:hover .acc-play-circle{background:var(--ember);transform:scale(1.08);}
+  .acc-item.is-shrink .acc-play{opacity:0;}
+  .acc-item.is-open .acc-play{display:none;}
+  @media(max-width:880px){
+    .acc-row{flex-direction:row;}
+    .acc-item.is-open{flex-grow:1.8;}
+  }
+  @media(max-width:600px){
+    :root{--row:170px;}
+    .acc-title{font-size:.86rem;}
+    .acc-item.is-open .acc-title{font-size:1.05rem;}
+  }
 </style>
 </head>
 <body id="home">
@@ -812,53 +843,67 @@
       <button class="tab" data-cat="stage">Stage &amp; Festival</button>
     </div>
     <div class="gallery-wrap">
-      <div class="gallery is-collapsed">
-        <a class="tile tile--feature" data-cat="stage" href="https://www.youtube.com/watch?v=P_Ucwh7_svs" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/P_Ucwh7_svs/hqdefault.jpg" alt="Bilal Köse live sand art performance" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__play" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="#f5ecda"><path d="M5 3l16 9-16 9z"/></svg></span></div>
-          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Live performance</span></div>
-        </a>
-        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Harrods · Memo Paris</span></div>
-        </a>
-        <a class="tile" data-cat="weddings" href="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" alt="Wedding sand art performance at Manchester Hall" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Weddings</span><span class="tile__title">Manchester Hall</span></div>
-        </a>
-        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" alt="Civic reception sand art with the Mayor at Manchester Hall" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Civic reception</span></div>
-        </a>
-        <a class="tile" data-cat="charity" href="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" alt="Sand calligraphy at the University of Oxford" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Charity</span><span class="tile__title">University of Oxford</span></div>
-        </a>
-        <a class="tile" data-cat="charity" href="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" alt="Children creating sand art at a school workshop" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Charity</span><span class="tile__title">School workshop</span></div>
-        </a>
-        <a class="tile" data-cat="weddings" href="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" alt="Intimate private wedding sand art performance" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Weddings</span><span class="tile__title">Private love story</span></div>
-        </a>
-        <a class="tile" data-cat="corporate" href="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" alt="Gala dinner sand art at Birmingham Council House" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Corporate</span><span class="tile__title">Birmingham Council House</span></div>
-        </a>
-        <a class="tile" data-cat="stage" href="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" target="_blank" rel="noopener">
-          <img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Sand poured by hand over a backlit table" loading="lazy">
-          <div class="tile__scrim"></div>
-          <div class="tile__cap"><span class="tile__cat">Stage &amp; Festival</span><span class="tile__title">Drawn live, by hand</span></div>
-        </a>
+      <div class="acc-gallery is-collapsed" id="accGallery">
+        <div class="acc-row">
+        <button type="button" class="acc-item" data-cat="stage" data-video="P_Ucwh7_svs" data-alt="Bilal Köse live sand art performance" aria-expanded="false">
+          <span class="acc-media"><img src="https://img.youtube.com/vi/P_Ucwh7_svs/hqdefault.jpg" alt="Bilal Köse live sand art performance" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          <span class="acc-play" aria-hidden="true"><span class="acc-play-circle"><svg viewBox="0 0 24 24" fill="#f5ecda"><path d="M5 3l16 9-16 9z"/></svg></span></span>
+          <span class="acc-cap"><span class="acc-cat">Stage &amp; Festival</span><span class="acc-title">Live performance</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Harrods · Memo Paris</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="weddings" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" alt="Wedding sand art performance at Manchester Hall" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Weddings</span><span class="acc-title">Manchester Hall</span></span>
+        </button>
+        </div>
+        <div class="acc-row">
+        <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" alt="Civic reception sand art with the Mayor at Manchester Hall" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Civic reception</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="charity" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" alt="Sand calligraphy at the University of Oxford" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Charity</span><span class="acc-title">University of Oxford</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="charity" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" alt="Children creating sand art at a school workshop" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Charity</span><span class="acc-title">School workshop</span></span>
+        </button>
+        </div>
+        <div class="acc-row">
+        <button type="button" class="acc-item" data-cat="weddings" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" alt="Intimate private wedding sand art performance" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Weddings</span><span class="acc-title">Private love story</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" alt="Gala dinner sand art at Birmingham Council House" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Birmingham Council House</span></span>
+        </button>
+        <button type="button" class="acc-item" data-cat="stage" aria-expanded="false">
+          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Sand poured by hand over a backlit table" loading="lazy"></span>
+          <span class="acc-scrim" aria-hidden="true"></span>
+          
+          <span class="acc-cap"><span class="acc-cat">Stage &amp; Festival</span><span class="acc-title">Drawn live, by hand</span></span>
+        </button>
+        </div>
       </div>
       <div class="gallery-fade" aria-hidden="true"></div>
     </div>
@@ -1200,7 +1245,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 /* ---------- Portfolio filter + show more ---------- */
 (function(){
   const tabs=document.querySelectorAll('.tab'), wrap=document.querySelector('.gallery-wrap'),
-        gallery=document.querySelector('.gallery'), tiles=document.querySelectorAll('.gallery .tile'),
+        gallery=document.getElementById('accGallery'), tiles=document.querySelectorAll('.acc-item'),
         btn=document.getElementById('moreBtn'), btnTxt=btn.querySelector('.more-txt');
   let expanded=false;
   function collapse(){expanded=false;gallery.classList.add('is-collapsed');btn.classList.remove('is-open');btnTxt.textContent='Show more';}
@@ -1210,10 +1255,48 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   tabs.forEach(tab=>tab.addEventListener('click',()=>{
     tabs.forEach(t=>t.classList.remove('is-active'));tab.classList.add('is-active');
     const c=tab.dataset.cat;
-    tiles.forEach(t=>{t.style.display=(c==='all'||t.dataset.cat===c)?'':'none';});
+    tiles.forEach(t=>{
+      const row=t.closest('.acc-row');
+      t.style.display=(c==='all'||t.dataset.cat===c)?'':'none';
+    });
+    // Açık kalan bir öğe, gizlenen bir satırdaysa kapat
+    tiles.forEach(t=>{if(t.classList.contains('is-open')&&t.style.display==='none')closeRow(t.closest('.acc-row'));});
     refresh();
   }));
   window.addEventListener('resize',()=>{if(!expanded)refresh();});
+
+  /* ---------- Yerinde genişleme (accordion) + video site içi oynatma ---------- */
+  function closeRow(row){
+    row.querySelectorAll('.acc-item').forEach(it=>{
+      it.classList.remove('is-open','is-shrink');
+      it.setAttribute('aria-expanded','false');
+      const vid=it.dataset.video;
+      if(vid){
+        const media=it.querySelector('.acc-media');
+        const altText=it.dataset.alt||'Live sand art performance video';
+        media.innerHTML='<img src="https://img.youtube.com/vi/'+vid+'/hqdefault.jpg" alt="'+altText+'" loading="lazy">';
+      }
+    });
+  }
+  tiles.forEach(item=>{
+    item.addEventListener('click',()=>{
+      const row=item.closest('.acc-row');
+      const wasOpen=item.classList.contains('is-open');
+      closeRow(row);
+      if(!wasOpen){
+        item.classList.add('is-open');
+        item.setAttribute('aria-expanded','true');
+        row.querySelectorAll('.acc-item').forEach(sib=>{if(sib!==item)sib.classList.add('is-shrink');});
+        const vid=item.dataset.video;
+        if(vid){
+          const media=item.querySelector('.acc-media');
+          media.innerHTML='<iframe src="https://www.youtube.com/embed/'+vid+'?rel=0&autoplay=1" title="Sand art performance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+        }
+      }
+    });
+    item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();}});
+  });
+
   refresh();
 })();
 
