@@ -628,12 +628,13 @@
   /* ===== PORTFOLIO ACCORDION ===== */
   .acc-gallery{display:flex;flex-direction:column;gap:var(--gap);}
   .acc-gallery.is-collapsed{max-height:calc(var(--row) * 2 + var(--gap) + 95px);overflow:hidden;}
-  .acc-row{display:flex;gap:var(--gap);height:var(--row);}
+  .acc-row{display:flex;gap:var(--gap);height:var(--row);transition:height .6s cubic-bezier(.22,.61,.36,1);}
+  .acc-row.is-tall{height:calc(var(--row) * 1.65);}
   .acc-item{position:relative;flex:1 1 0%;min-width:0;overflow:hidden;border-radius:4px;border:1px solid var(--line);background:linear-gradient(150deg,#1c130a,#0b0805);padding:0;margin:0;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:flex-grow .6s cubic-bezier(.22,.61,.36,1);}
   .acc-item.is-open{flex-grow:2.4;}
   .acc-item.is-shrink{flex-grow:.5;}
   .acc-media{position:absolute;inset:0;display:block;}
-  .acc-media img,.acc-media iframe{width:100%;height:100%;object-fit:cover;display:block;border:0;transition:transform .6s ease;}
+  .acc-media img,.acc-media iframe{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border:0;transition:transform .6s ease;}
   .acc-item:hover:not(.is-open) .acc-media img{transform:scale(1.05);}
   .acc-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,8,5,0) 45%,rgba(11,8,5,.82) 100%);z-index:1;}
   .acc-cap{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.25rem;z-index:2;}
@@ -1267,6 +1268,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
   /* ---------- Yerinde genişleme (accordion) + video site içi oynatma ---------- */
   function closeRow(row){
+    row.classList.remove('is-tall');
     row.querySelectorAll('.acc-item').forEach(it=>{
       it.classList.remove('is-open','is-shrink');
       it.setAttribute('aria-expanded','false');
@@ -1286,12 +1288,15 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       if(!wasOpen){
         item.classList.add('is-open');
         item.setAttribute('aria-expanded','true');
+        row.classList.add('is-tall');
         row.querySelectorAll('.acc-item').forEach(sib=>{if(sib!==item)sib.classList.add('is-shrink');});
         const vid=item.dataset.video;
         if(vid){
           const media=item.querySelector('.acc-media');
           media.innerHTML='<iframe src="https://www.youtube.com/embed/'+vid+'?rel=0&autoplay=1" title="Sand art performance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
         }
+        // Daraltılmış galeride açılan görsel kırpılmasın diye galeriyi otomatik genişlet
+        if(!expanded){expand();wrap.classList.remove('show-fade');}
       }
     });
     item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();}});
