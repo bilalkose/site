@@ -1,0 +1,11 @@
+# Extension'sız (temiz) URL varyantlarını kanonik .html adreslerine yönlendir
+# Bu, Google'ın aynı sayfayı iki ayrı URL olarak taramasını (ve gösterimleri bölmesini) önler
+
+/blog/what-is-live-sand-art      /blog/what-is-live-sand-art.html      301!
+/blog/sand-artist-cost-uk        /blog/sand-artist-cost-uk.html        301!
+
+/services/weddings               /services/weddings.html               301!
+/services/corporate              /services/corporate.html              301!
+/services/charity                /services/charity.html                301!
+/services/schools                /services/schools.html                301!
+/services/celebrations           /services/celebrations.html           301!
