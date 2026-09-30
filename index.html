@@ -28,6 +28,28 @@
   gtag('js', new Date());
   gtag('config', 'G-QQSB564V5B');
 </script>
+<script>
+/* Lead tracking for Google Analytics and Google Ads */
+(function(){
+  try{
+    var s=new URLSearchParams(location.search).get('success');
+    var key='tracked_'+s;
+    if(s && !sessionStorage.getItem(key)){
+      if(s==='enquiry') gtag('event','generate_lead',{lead_source:'enquiry_form'});
+      if(s==='newsletter') gtag('event','sign_up',{method:'newsletter'});
+      sessionStorage.setItem(key,'1');
+    }
+  }catch(e){}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('wa.me')>-1) gtag('event','contact_whatsapp',{link_url:h,page_path:location.pathname});
+    else if(h.indexOf('tel:')===0) gtag('event','contact_phone',{page_path:location.pathname});
+    else if(h.indexOf('mailto:')===0) gtag('event','contact_email',{page_path:location.pathname});
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
