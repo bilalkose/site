@@ -56,7 +56,7 @@
   "headline": "How Much Does a Sand Artist Cost in the UK? (2026 Guide)",
   "description": "A clear, honest breakdown of UK sand art pricing in 2026: typical costs by event type, what affects the price, and what should be included in a quote.",
   "author": {"@type": "Person", "name": "Bilal Köse", "url": "https://bilalkose.co.uk"},
-  "publisher": {"@type": "Organization", "name": "Sand Art UK", "url": "https://bilalkose.co.uk"},
+  "publisher": {"@type": "Organization", "name": "Bilal Köse Sand Art", "url": "https://bilalkose.co.uk"},
   "mainEntityOfPage": "https://bilalkose.co.uk/blog/sand-artist-cost-uk.html",
   "image": "https://bilalkose.co.uk/assets/og-image.jpg"
 }
@@ -631,6 +631,17 @@
         </div>
       </div>
     </section>
+
+    <section class="article-related" style="border-top:none;padding-top:0;">
+      <div class="wrap">
+        <h4>Further reading</h4>
+        <div class="article-related-grid">
+          <a href="/blog/unique-wedding-entertainment-ideas-uk.html">Unique wedding entertainment ideas</a>
+          <a href="/blog/corporate-event-entertainment-ideas.html">Corporate entertainment ideas</a>
+          <a href="/blog/sand-art-love-story-wedding.html">How a sand art love story is made</a>
+        </div>
+      </div>
+    </section>
   </article>
 
 <footer class="foot">
@@ -672,7 +683,7 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© <span id="yr"></span> Bilal Köse · Sand Art UK. All rights reserved.</span>
+      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a></span>
       <span class="foot__social">
         <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
@@ -726,11 +737,12 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   const track=document.getElementById('venueTrack');
   let html="";
   for(let r=0;r<2;r++){names.forEach(n=>{html+='<span class="venue">'+n+'</span><span class="vsep">✦</span>';});}
-  track.innerHTML=html;
+  if(track) track.innerHTML=html;
 })();
 
 /* ---------- Portfolio filter + show more ---------- */
 (function(){
+  if(!document.getElementById('moreBtn')) return;
   const tabs=document.querySelectorAll('.tab'), wrap=document.querySelector('.gallery-wrap'),
         gallery=document.getElementById('accGallery'), tiles=document.querySelectorAll('.acc-item'),
         btn=document.getElementById('moreBtn'), btnTxt=btn.querySelector('.more-txt');
@@ -888,6 +900,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* ---------- Sand engine (hero = interactive, booking = ambient) ---------- */
 function initSand(canvas, opts){
+  if(!canvas) return;
   opts=opts||{};
   const interactive=opts.interactive!==false, useMeteors=opts.meteors!==false,
         densityDiv=opts.densityDiv||480, cap=opts.cap||4800;
