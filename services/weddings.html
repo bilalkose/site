@@ -698,7 +698,7 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© <span id="yr"></span> Bilal Köse · Sand Art UK. All rights reserved.</span>
+      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a></span>
       <span class="foot__social">
         <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
@@ -752,11 +752,12 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   const track=document.getElementById('venueTrack');
   let html="";
   for(let r=0;r<2;r++){names.forEach(n=>{html+='<span class="venue">'+n+'</span><span class="vsep">✦</span>';});}
-  track.innerHTML=html;
+  if(track) track.innerHTML=html;
 })();
 
 /* ---------- Portfolio filter + show more ---------- */
 (function(){
+  if(!document.getElementById('moreBtn')) return;
   const tabs=document.querySelectorAll('.tab'), wrap=document.querySelector('.gallery-wrap'),
         gallery=document.getElementById('accGallery'), tiles=document.querySelectorAll('.acc-item'),
         btn=document.getElementById('moreBtn'), btnTxt=btn.querySelector('.more-txt');
@@ -914,6 +915,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* ---------- Sand engine (hero = interactive, booking = ambient) ---------- */
 function initSand(canvas, opts){
+  if(!canvas) return;
   opts=opts||{};
   const interactive=opts.interactive!==false, useMeteors=opts.meteors!==false,
         densityDiv=opts.densityDiv||480, cap=opts.cap||4800;
