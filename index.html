@@ -536,6 +536,24 @@
   .about__media img{width:100%;height:100%;object-fit:cover;display:block;}
   .about__body h2{margin-bottom:1.6rem;}
   .about__body p{font-size:clamp(.96rem,1.6vw,1.04rem);line-height:1.74;color:var(--mute);margin:0 0 1.1rem;}
+  /* Performed at / trusted by */
+  .pa{padding:clamp(56px,8vw,96px) 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0805;text-align:center;}
+  .pa .eyebrow{margin-bottom:clamp(32px,4vw,52px);}
+  .pa__grid{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(30px,4vw,52px) clamp(16px,3vw,36px);align-items:center;}
+  .pa__m{color:var(--cream);opacity:.72;transition:opacity .35s,transform .35s;line-height:1.05;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;}
+  .pa__m:hover{opacity:1;transform:translateY(-2px);}
+  .pa__hi{opacity:.96;}
+  .pa__lo{opacity:.55;}
+  .pa__serif{font-family:"Cormorant Garamond",serif;}
+  .pa__sans{font-family:"Hanken Grotesk",sans-serif;}
+  .pa__logo img{height:44px;width:auto;max-width:100%;display:block;}
+  .pa__s,.pa__s2{font-family:"Hanken Grotesk",sans-serif;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;}
+  .pa__s{margin-bottom:5px;}
+  .pa__s2{margin-top:5px;}
+  .pa__rule{width:26px;height:1px;background:currentColor;opacity:.6;margin:6px auto;}
+  @media(max-width:1100px){.pa__grid{grid-template-columns:repeat(4,1fr);}}
+  @media(max-width:700px){.pa__grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:480px){.pa__grid{grid-template-columns:repeat(2,1fr);gap:36px 14px;}.pa__logo img{height:38px;}}
   .about__teaser{margin:1.6rem 0 1.4rem;padding:1.1rem 1.3rem;border-left:2px solid var(--ember);background:rgba(217,148,58,.06);border-radius:0 4px 4px 0;}
   .about__teaser b{color:var(--sand-hi);}
   .about__teaser span{display:block;font-size:.9rem;color:var(--mute);line-height:1.55;}
@@ -744,18 +762,25 @@
 
   <!-- ===== CREDIBILITY ===== -->
   <div class="handoff" aria-hidden="true"></div>
-  <section class="cred">
-    <p class="eyebrow">Trusted by venues &amp; brands across the country</p>
-    <div class="marquee">
-      <div class="marquee__track" id="venueTrack"></div>
-    </div>
-    <div class="proof">
-      <div class="stat"><span class="stat__num">15+</span><span class="stat__label">Years of artistry</span></div>
-      <div class="stat"><span class="stat__num">Harrods</span><span class="stat__label">Soho · Oxford · Manchester Hall</span></div>
-      <div class="stat"><span class="stat__num">5★</span><span class="stat__label">Elite Pro · client rated</span></div>
-      <div class="stat"><span class="stat__num">UK +</span><span class="stat__label">Worldwide reach</span></div>
-    </div>
-  </section>
+  <section class="pa" id="performed-at">
+  <p class="eyebrow">Performed at &amp; trusted by</p>
+  <div class="pa__grid">
+    <div class="pa__m pa__serif pa__hi" style="font-size:1.85rem;letter-spacing:.22em;font-weight:600">HARRODS</div>
+    <div class="pa__m pa__logo pa__hi"><img src="/assets/clients/lt-foods.png" alt="LT Foods" width="179" height="44" loading="lazy"></div>
+    <div class="pa__m pa__serif"><span class="pa__s">University of</span><span style="font-size:1.55rem;font-weight:600;letter-spacing:.06em">OXFORD</span></div>
+    <div class="pa__m pa__sans pa__hi" style="font-size:1.22rem;font-weight:800;letter-spacing:.14em">SOHO<br>THEATRE</div>
+    <div class="pa__m pa__logo pa__hi"><img src="/assets/clients/macfest.png" alt="MACFEST, Muslim Arts and Culture Festival" width="66" height="56" loading="lazy" style="height:56px"></div>
+    <div class="pa__m pa__serif pa__lo" style="font-size:1.4rem;font-style:italic;font-weight:500;white-space:nowrap">Manchester Hall</div>
+    <div class="pa__m pa__serif pa__lo"><span class="pa__s">The</span><span style="font-size:1.1rem;font-weight:600;letter-spacing:.06em">Dialogue Society</span></div>
+    <div class="pa__m pa__serif"><span style="font-size:1.3rem;letter-spacing:.12em;font-weight:600">NEWCASTLE</span><span class="pa__rule"></span><span class="pa__s2" style="margin-top:0">Cathedral</span></div>
+    <div class="pa__m pa__sans"><span style="font-size:.98rem;font-weight:700;letter-spacing:.2em">GREAT NORTH</span><span class="pa__s2">Museum</span></div>
+    <div class="pa__m pa__logo"><img src="/assets/clients/community-fund.png" alt="The National Lottery Community Fund" width="134" height="44" loading="lazy"></div>
+    <div class="pa__m pa__sans pa__hi"><span style="font-size:1.7rem;font-weight:800;letter-spacing:.18em">MEMO</span><span class="pa__s2">Paris</span></div>
+    <div class="pa__m pa__sans pa__hi" style="font-size:1.9rem;font-weight:800;letter-spacing:.08em">IOP</div>
+    <div class="pa__m pa__serif"><span class="pa__s">University of</span><span style="font-size:1.45rem;font-weight:600">Birmingham</span></div>
+    <div class="pa__m pa__serif pa__lo"><span style="font-size:1.55rem;font-style:italic;font-weight:500">Skimstone</span><span class="pa__s2">Arts</span></div>
+  </div>
+</section>
 
   <!-- ===== THE ART ===== -->
   <section class="sec" id="what">
@@ -1085,14 +1110,14 @@
         <p>I'm a UK-based professional sand artist with over 15 years of artistic experience, specialising in live sand art performances for events across the country and beyond. As Britain's first established resident sand animation artist, I'm one of very few performing this art form permanently from within the UK, rather than travelling in for one-off bookings.</p>
         <p>Each performance is carefully tailored to reflect the message, story or values of the event, transforming a single moment into a memorable visual experience. Alongside sand art I also work with calligraphy and traditional techniques, which add depth and originality to every show.</p>
         <p>I regularly perform at universities, theatres, museums, cathedrals, care homes and public venues, and offer educational workshops for children and adults. My goal is simple: to create art that isn't only seen, but truly felt.</p>
-        <div class="about__teaser"><b>Autumn 2026: a big stage is coming.</b><span>Follow along on Instagram to watch the journey unfold.</span></div>
+        <div class="about__teaser"><b>Now booking 2027 weddings and events.</b><span>Popular dates fill early. <a href="#book" style="color:var(--sand-hi)">Check your date</a>, or follow new work on <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener" style="color:var(--sand-hi)">Instagram</a>.</span></div>
         <p class="about__sign">Bilal Köse</p>
       </div>
     </div>
     <div class="reel wrap">
       <h3>Watch the Showreel</h3>
       <div class="reel__frame">
-        <iframe src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0" title="Sand Art UK Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0" title="Bilal Köse Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -1225,7 +1250,7 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© <span id="yr"></span> Bilal Köse · Sand Art UK. All rights reserved.</span>
+      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved.</span>
       <span class="foot__social">
         <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1274,14 +1299,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('is-open');b.setAttribute('aria-expanded',false);}));
 })();
 
-/* ---------- Venue marquee (built twice for seamless loop) ---------- */
-(function(){
-  const names=["Harrods","University of Oxford","Soho Theatre","Manchester Hall","Newcastle Cathedral","Great North Museum","Memo Paris","MACFEST","University of Birmingham","University of Leeds","University of Reading","Skimstone Arts"];
-  const track=document.getElementById('venueTrack');
-  let html="";
-  for(let r=0;r<2;r++){names.forEach(n=>{html+='<span class="venue">'+n+'</span><span class="vsep">✦</span>';});}
-  track.innerHTML=html;
-})();
 
 /* ---------- Portfolio filter + show more ---------- */
 (function(){
