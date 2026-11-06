@@ -478,29 +478,29 @@
   .reviews__word{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:clamp(2.8rem,8vw,5.2rem);line-height:1;margin:0;color:var(--sand-hi);text-shadow:0 6px 50px rgba(217,148,58,.25);}
   .reviews__count{color:var(--mute);font-size:.8rem;letter-spacing:.08em;margin:1.1rem 0 0;}
   .reviews__count b{color:var(--ember);font-weight:600;}
-  .reviews__carousel{max-width:1080px;margin:clamp(2rem,4vw,2.8rem) auto 0;position:relative;z-index:1;}
-  .reviews__viewport{overflow:hidden;}
-  .reviews__track{display:flex;gap:clamp(.9rem,1.6vw,1.2rem);transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;}
-  .quote{flex:0 0 calc((100% - 2 * clamp(.9rem,1.6vw,1.2rem)) / 3);border:1px solid var(--line);border-radius:4px;padding:clamp(1.7rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;box-sizing:border-box;}
+  .reviews__carousel{position:relative;z-index:1;width:100vw;margin:clamp(2rem,4vw,2.8rem) 0 0 calc(50% - 50vw);}
+  .reviews__viewport{overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);}
+  .reviews__track{display:flex;gap:var(--rev-gap,18px);transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform;}
+  .quote{flex:0 0 var(--rev-card,320px);margin:0;border:1px solid var(--line);border-radius:4px;padding:clamp(1.5rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;box-sizing:border-box;transition:opacity .45s ease,filter .45s ease,border-color .3s ease;}
+  .quote.is-dim{opacity:.28;filter:saturate(.6);cursor:pointer;}
+  .quote.is-dim:hover{opacity:.5;border-color:rgba(217,148,58,.45);}
   .quote__mark{font-family:"Cormorant Garamond",serif;font-size:2.6rem;line-height:.6;color:var(--ember);opacity:.55;margin-bottom:.6rem;}
   .quote .stars{color:var(--ember);font-size:.8rem;letter-spacing:.12em;margin-bottom:.9rem;}
   .quote__text{font-size:1.04rem;line-height:1.62;color:var(--cream);margin:0 0 1.3rem;font-style:italic;}
   .quote__by{margin-top:auto;font-size:.8rem;color:var(--mute);}
   .quote__by b{color:var(--sand-hi);font-weight:600;font-style:normal;}
-  .reviews__arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(11,8,5,.7);backdrop-filter:blur(6px);color:var(--cream);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:border-color .3s ease,background .3s ease,color .3s ease;}
-  .reviews__arrow:hover{border-color:var(--ember);color:var(--ember);background:rgba(11,8,5,.9);}
-  .reviews__arrow--prev{left:-12px;}
-  .reviews__arrow--next{right:-12px;}
+  .reviews__arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(11,8,5,.78);backdrop-filter:blur(6px);color:var(--cream);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;transition:border-color .3s ease,background .3s ease,color .3s ease,opacity .3s ease;}
+  .reviews__arrow:hover{border-color:var(--ember);color:var(--ember);background:rgba(11,8,5,.92);}
+  .reviews__arrow--prev{left:var(--rev-arrow,24px);}
+  .reviews__arrow--next{right:var(--rev-arrow,24px);}
   .reviews__dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.6rem;}
   .reviews__dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:background .3s ease,width .3s ease;}
   .reviews__dot.is-active{background:var(--ember);width:22px;border-radius:5px;}
-  @media(max-width:880px){
-    .quote{flex:0 0 calc((100% - clamp(.9rem,1.6vw,1.2rem)) / 2);}
-    .reviews__arrow--prev{left:4px;}
-    .reviews__arrow--next{right:4px;}
-  }
   @media(max-width:560px){
-    .quote{flex:0 0 100%;}
+    .reviews__arrow{width:38px;height:38px;font-size:1rem;top:auto;bottom:-58px;transform:none;}
+    .reviews__arrow--prev{left:calc(50% - 120px);}
+    .reviews__arrow--next{right:calc(50% - 120px);}
+    .reviews__viewport{-webkit-mask-image:none;mask-image:none;}
   }
   .reviews__cta{max-width:680px;margin:clamp(2.2rem,4vw,3rem) auto 0;text-align:center;padding-top:clamp(2rem,4vw,2.8rem);border-top:1px solid var(--line);position:relative;z-index:1;}
   .reviews__rating{font-size:1.1rem;letter-spacing:.15em;color:var(--ember);margin-bottom:.7rem;}
@@ -1371,87 +1371,84 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   refresh();
 })();
 
-/* ---------- Reviews carousel (seamless infinite loop) ---------- */
+/* ---------- Reviews carousel (manual only, faded neighbours both sides, no autoplay) ---------- */
 (function(){
   const track=document.getElementById('revTrack');
   if(!track) return;
-  const realSlides=Array.from(track.children);
-  const realCount=realSlides.length;
-  const BUFFER=3; // masaüstünde en fazla 3 görünür kart; klon tamponu buna göre
+  const viewport=track.parentElement, carousel=track.closest('.reviews__carousel');
+  const real=Array.from(track.children);
+  const count=real.length;
   const prevBtn=document.getElementById('revPrev'), nextBtn=document.getElementById('revNext'), dotsWrap=document.getElementById('revDots');
+  // Sağ ve solda soluk kartlar görünsün diye tüm listeyi başa ve sona kopyala
+  const mk=n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');c.dataset.clone='1';return c;};
+  real.slice().reverse().forEach(n=>track.insertBefore(mk(n),track.firstChild));
+  real.forEach(n=>track.appendChild(mk(n)));
+  const nodes=Array.from(track.children); // [kopya][gerçek][kopya]
+  let perView=3, index=count, cardW=320, gap=18, offset0=0, busy=false;
 
-  // Başa ve sona görünmez klonlar ekle (sonsuz döngü hissi için)
-  const frontClones=realSlides.slice(realCount-BUFFER).map(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');return c;});
-  const backClones=realSlides.slice(0,BUFFER).map(n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');return c;});
-  frontClones.forEach(c=>track.insertBefore(c, track.firstChild));
-  backClones.forEach(c=>track.appendChild(c));
-
-  const nodes=Array.from(track.children); // [clone x3][real x8][clone x3]
-  const realStart=BUFFER;
-  const realEnd=BUFFER+realCount; // ilk klon bloğunun başladığı index (üst sınır)
-
-  let perView=3, index=realStart, timer=null;
-  function calcPerView(){const w=window.innerWidth;perView=w<=560?1:(w<=880?2:3);}
-  function maxRealR(){return Math.max(0, realCount - perView);}
-
+  function layout(){
+    const vw=viewport.clientWidth;
+    perView=vw<=560?1:(vw<=900?2:3);
+    gap=vw<=560?12:18;
+    const peek=vw<=560?30:(vw<=900?70:Math.max(90,(vw-1080)/2));
+    const area=Math.min(1080, vw-2*peek);
+    cardW=(area-(perView-1)*gap)/perView;
+    offset0=(vw-area)/2;
+    track.style.setProperty('--rev-card',cardW+'px');
+    track.style.setProperty('--rev-gap',gap+'px');
+    carousel.style.setProperty('--rev-arrow',Math.max(8,offset0-23)+'px');
+    carousel.style.marginBottom=vw<=560?'64px':'';
+  }
   function buildDots(){
     dotsWrap.innerHTML='';
-    for(let r=0;r<=maxRealR();r++){
+    for(let i=0;i<count;i++){
       const d=document.createElement('button');
       d.className='reviews__dot';
-      d.setAttribute('aria-label','Go to review '+(r+1));
-      d.addEventListener('click',()=>{index=realStart+r;render(true);restart();});
+      d.setAttribute('aria-label','Go to review '+(i+1));
+      d.addEventListener('click',()=>{index=count+i;render(true);});
       dotsWrap.appendChild(d);
     }
   }
-  function updateDots(){
-    const r=((index-realStart)%realCount+realCount)%realCount;
-    const active=Math.min(r, maxRealR());
-    Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===active));
-  }
-  function slideWidth(){
-    const gap=parseFloat(getComputedStyle(track).gap)||16;
-    return nodes[0].getBoundingClientRect().width+gap;
-  }
   function render(animate){
-    track.style.transition=animate?'transform .6s cubic-bezier(.22,.61,.36,1)':'none';
-    track.style.transform='translateX('+(-index*slideWidth())+'px)';
-    updateDots();
+    track.style.transition=animate?'':'none';
+    track.style.transform='translateX('+(offset0-index*(cardW+gap))+'px)';
+    nodes.forEach((c,i)=>c.classList.toggle('is-dim',!(i>=index&&i<index+perView)));
+    const r=((index-count)%count+count)%count;
+    Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===r));
   }
-  function snapIfNeeded(){
-    if(index>=realEnd){
-      index-=realCount;
-      requestAnimationFrame(()=>render(false));
-    }else if(index<=0){
-      index+=realCount;
-      requestAnimationFrame(()=>render(false));
+  // Animasyon bitince görünmeden ortadaki gerçek listeye geri dön (sonsuz döngü)
+  function settle(){
+    busy=false;
+    if(index<count||index>=2*count){
+      index=((index-count)%count+count)%count+count;
+      render(false);
+      track.offsetHeight;
     }
   }
-  function go(dir){
-    index+=dir;
+  function move(delta){
+    if(busy||!delta) return;
+    busy=true;
+    index+=delta;
     render(true);
-    track.addEventListener('transitionend', snapIfNeeded, {once:true});
+    setTimeout(settle,600);
   }
-  function start(){timer=setInterval(()=>go(1),5000);}
-  function stop(){clearInterval(timer);}
-  function restart(){stop();start();}
-  nextBtn.addEventListener('click',()=>{go(1);restart();});
-  prevBtn.addEventListener('click',()=>{go(-1);restart();});
-  const carousel=track.closest('.reviews__carousel');
-  carousel.addEventListener('mouseenter',stop);
-  carousel.addEventListener('mouseleave',start);
+  nextBtn.addEventListener('click',()=>move(1));
+  prevBtn.addEventListener('click',()=>move(-1));
+  nodes.forEach((c,i)=>c.addEventListener('click',()=>{
+    if(!c.classList.contains('is-dim')) return;
+    move(i<index?i-index:i-(index+perView-1));
+  }));
+  let sx=null, sy=null;
+  viewport.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  viewport.addEventListener('touchend',e=>{
+    if(sx===null) return;
+    const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)) move(dx<0?1:-1);
+    sx=null;
+  },{passive:true});
   let rt=null;
-  window.addEventListener('resize',()=>{
-    clearTimeout(rt);
-    rt=setTimeout(()=>{
-      calcPerView();buildDots();
-      // Mevcut gerçek konumu koru, taşma varsa güvenli sınıra çek
-      const r=Math.min(Math.max(0,((index-realStart)%realCount+realCount)%realCount),maxRealR());
-      index=realStart+r;
-      render(false);
-    },150);
-  });
-  calcPerView();buildDots();render(false);start();
+  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{layout();render(false);},150);});
+  layout();buildDots();render(false);
 })();
 
 /* ---------- FAQ accordion ---------- */
