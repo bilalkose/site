@@ -20,14 +20,14 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQSB564V5B"></script>
+<!-- Google Analytics: loaded by /assets/consent.js only after the visitor accepts cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-QQSB564V5B');
 </script>
+<script src="/assets/consent.js" defer></script>
 <script>
 /* Lead tracking for Google Analytics and Google Ads */
 (function(){
@@ -108,8 +108,8 @@
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "bestRating": "5",
-        "ratingCount": "24",
-        "reviewCount": "24"
+        "ratingCount": "17",
+        "reviewCount": "17"
       },
       "knowsAbout": [
         "Sand Art",
@@ -427,6 +427,14 @@
   .card:hover{border-color:rgba(217,148,58,.55);transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.45);}
   .card:focus-visible{outline:2px solid var(--sand-hi);outline-offset:3px;}
   .card--feature{grid-column:span 2;}
+  .card--wide{grid-column:1/-1;min-height:0;}
+  @media (min-width:861px){
+    .card--wide{flex-direction:row;align-items:center;gap:clamp(1.6rem,3vw,2.8rem);}
+    .card--wide .card__top{flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:.8rem;margin:0;}
+    .card--wide .card__title{flex:0 0 auto;margin:0;}
+    .card--wide .card__desc{flex:1 1 auto;max-width:none;}
+    .card--wide .card__more{flex:0 0 auto;margin:0;padding:0;}
+  }
   .card--feature::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:radial-gradient(90% 130% at 14% 0%,rgba(217,148,58,.12),transparent 58%);}
   .card__top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;position:relative;z-index:1;}
   .card__mark{color:var(--ember);font-size:1.5rem;line-height:1;}
@@ -480,9 +488,16 @@
   .reviews__count b{color:var(--ember);font-weight:600;}
   .reviews__carousel{position:relative;z-index:1;width:100vw;margin:clamp(2rem,4vw,2.8rem) 0 0 calc(50% - 50vw);}
   .reviews__viewport{overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);}
-  .reviews__track{display:flex;gap:var(--rev-gap,18px);transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform;}
-  .quote{flex:0 0 var(--rev-card,320px);margin:0;border:1px solid var(--line);border-radius:4px;padding:clamp(1.5rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;box-sizing:border-box;transition:opacity .45s ease,filter .45s ease,border-color .3s ease;}
-  .quote.is-dim{opacity:.28;filter:saturate(.6);cursor:pointer;}
+  .reviews__track{display:flex;gap:var(--rev-gap,18px);transition:transform .7s cubic-bezier(.22,.61,.36,1);will-change:transform;}
+  .quote{flex:0 0 var(--rev-card,320px);margin:0;border:1px solid var(--line);border-radius:4px;padding:clamp(1.5rem,3vw,2.3rem);min-height:240px;background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));display:flex;flex-direction:column;position:relative;box-sizing:border-box;transition:opacity .55s ease,filter .55s ease,transform .7s cubic-bezier(.22,.61,.36,1),border-color .3s ease;}
+  .quote.is-dim{opacity:.26;filter:saturate(.6);cursor:pointer;transform:scale(.965);}
+  .quote.is-dim a{pointer-events:none;}
+  .reviews__track.is-jump .quote{transition:none;}
+  .quote__by{display:flex;flex-direction:column;gap:.55rem;}
+  .quote__src{align-self:flex-start;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .25s ease,border-color .25s ease;}
+  .quote__src:hover{color:var(--ember);border-color:var(--ember);}
+  .reviews__count a{color:inherit;text-decoration:none;transition:color .25s ease;}
+  .reviews__count a:hover{color:var(--sand-hi);}
   .quote.is-dim:hover{opacity:.5;border-color:rgba(217,148,58,.45);}
   .quote__mark{font-family:"Cormorant Garamond",serif;font-size:2.6rem;line-height:.6;color:var(--ember);opacity:.55;margin-bottom:.6rem;}
   .quote .stars{color:var(--ember);font-size:.8rem;letter-spacing:.12em;margin-bottom:.9rem;}
@@ -713,17 +728,18 @@
         <span class="nav__drop">
           <a href="#events">Performances ▾</a>
           <span class="nav__menu">
-            <a href="https://bilalkose.co.uk/services/weddings">Weddings &amp; Love Stories</a>
-            <a href="https://bilalkose.co.uk/services/corporate">Corporate &amp; Brand</a>
-            <a href="https://bilalkose.co.uk/services/charity">Charity &amp; Community</a>
-            <a href="https://bilalkose.co.uk/services/schools">Schools &amp; Workshops</a>
-            <a href="https://bilalkose.co.uk/services/celebrations">Celebrations &amp; Milestones</a>
+            <a href="/services/weddings.html">Weddings &amp; Love Stories</a>
+            <a href="/services/corporate.html">Corporate &amp; Brand</a>
+            <a href="/services/charity.html">Charity &amp; Community</a>
+            <a href="/services/schools.html">Schools &amp; Workshops</a>
+            <a href="/services/celebrations.html">Celebrations &amp; Milestones</a>
           </span>
         </span>
         <a href="#portfolio">Portfolio</a>
         <a href="#reviews">Reviews</a>
         <a href="#packages">Pricing</a>
         <a href="#about">About</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <a class="nav__cta" href="#book">Book Now</a>
       <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">≡</button>
@@ -735,6 +751,7 @@
       <a href="#reviews">Reviews</a>
       <a href="#packages">Pricing</a>
       <a href="#about">About</a>
+        <a href="/blog/">Blog</a>
       <a href="#book">Book Now</a>
     </div>
   </header>
@@ -768,7 +785,7 @@
   <section class="sec" id="what">
     <div class="wrap art__grid">
       <figure class="art__media" style="margin:0;">
-        <img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Live sand art performance close-up, sand poured by hand over a backlit table">
+        <img width="1100" height="1467" src="/assets/portfolio/sand-pouring-action.webp" alt="Live sand art performance close-up, sand poured by hand over a backlit table">
       </figure>
       <div class="art__body">
         <p class="eyebrow">What is a live sand art show?</p>
@@ -842,37 +859,37 @@
       <p class="perf__intro">Every performance is built from scratch around your event. These are the moments I'm most often invited into.</p>
     </div>
     <div class="wrap perf__grid">
-      <a class="card card--feature" href="https://bilalkose.co.uk/services/weddings">
+      <a class="card card--feature" href="/services/weddings.html">
         <div class="card__top"><span class="card__mark" aria-hidden="true">❦</span><span class="card__tag">Most popular</span></div>
         <h3 class="card__title">Weddings &amp; Love Stories</h3>
         <p class="card__desc">Your journey, from the first meeting to "I do", animated live as your guests watch your love story take shape in sand.</p>
         <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
       </a>
-      <a class="card" href="https://bilalkose.co.uk/services/corporate">
+      <a class="card" href="/services/corporate.html">
         <div class="card__top"><span class="card__mark" aria-hidden="true">◆</span><span class="card__tag">Brand storytelling</span></div>
         <h3 class="card__title">Corporate &amp; Brand</h3>
         <p class="card__desc">Launches, award ceremonies, gala dinners and conferences. Two formats. Choose one, or combine both for impact.</p>
         <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
       </a>
-      <a class="card" href="https://bilalkose.co.uk/services/charity">
+      <a class="card" href="/services/charity.html">
         <div class="card__top"><span class="card__mark" aria-hidden="true">✦</span><span class="card__tag">Sand art for good</span></div>
         <h3 class="card__title">Charity &amp; Community</h3>
         <p class="card__desc">Performances that move both a room and a cause: fundraisers, cultural festivals and community celebrations.</p>
         <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
       </a>
-      <a class="card" href="https://bilalkose.co.uk/services/schools">
+      <a class="card" href="/services/schools.html">
         <div class="card__top"><span class="card__mark" aria-hidden="true">✎</span><span class="card__tag">Educational</span></div>
         <h3 class="card__title">Schools &amp; Workshops</h3>
         <p class="card__desc">Hands-on creative sessions and performances for children and adults across universities, schools and care homes.</p>
         <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
       </a>
-      <a class="card" href="https://bilalkose.co.uk/services/celebrations">
+      <a class="card" href="/services/celebrations.html">
         <div class="card__top"><span class="card__mark" aria-hidden="true">✺</span><span class="card__tag">Private events</span></div>
         <h3 class="card__title">Celebrations &amp; Milestones</h3>
         <p class="card__desc">Birthdays, anniversaries and the once-in-a-lifetime moments, told the way they deserve to be remembered.</p>
         <span class="card__more">Learn more <span class="ar" aria-hidden="true">→</span></span>
       </a>
-      <a class="card" href="#book">
+      <a class="card card--wide" href="#book">
         <div class="card__top"><span class="card__mark" aria-hidden="true">✒</span><span class="card__tag">Something different</span></div>
         <h3 class="card__title">Live Name Calligraphy</h3>
         <p class="card__desc">A roaming, interactive touch for your event. I write your guests' names live in flowing sand, or hand them a personalised calligraphy keepsake to take home.</p>
@@ -906,13 +923,13 @@
           <span class="acc-cap"><span class="acc-cat">Stage &amp; Festival</span><span class="acc-title">Live performance</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/harrods-memo-paris-london.jpg" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1467" src="/assets/portfolio/harrods-memo-paris-london.webp" alt="Sand art brand performance for Memo Paris at Harrods" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Harrods · Memo Paris</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="weddings" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-performance.jpg" alt="Wedding sand art performance at Manchester Hall" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1259" src="/assets/portfolio/manchester-hall-performance.webp" alt="Wedding sand art performance at Manchester Hall" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Weddings</span><span class="acc-title">Manchester Hall</span></span>
@@ -920,19 +937,19 @@
         </div>
         <div class="acc-row">
         <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/manchester-hall-mayor.jpg" alt="Civic reception sand art with the Mayor at Manchester Hall" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1423" src="/assets/portfolio/manchester-hall-mayor.webp" alt="Civic reception sand art with the Mayor at Manchester Hall" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Civic reception</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="charity" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Calligraphy-Oxford-University.jpg" alt="Sand calligraphy at the University of Oxford" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="825" src="/assets/portfolio/Calligraphy-Oxford-University.webp" alt="Sand calligraphy at the University of Oxford" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Charity</span><span class="acc-title">University of Oxford</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="charity" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Workshop-kids-school.jpg" alt="Children creating sand art at a school workshop" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1467" src="/assets/portfolio/Workshop-kids-school.webp" alt="Children creating sand art at a school workshop" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Charity</span><span class="acc-title">School workshop</span></span>
@@ -940,19 +957,19 @@
         </div>
         <div class="acc-row">
         <button type="button" class="acc-item" data-cat="weddings" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/private-event-intimate.jpg" alt="Intimate private wedding sand art performance" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1467" src="/assets/portfolio/private-event-intimate.webp" alt="Intimate private wedding sand art performance" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Weddings</span><span class="acc-title">Private love story</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="corporate" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/Birmingham-Council-House.jpg" alt="Gala dinner sand art at Birmingham Council House" loading="lazy"></span>
+          <span class="acc-media"><img width="900" height="1200" src="/assets/portfolio/Birmingham-Council-House.webp" alt="Gala dinner sand art at Birmingham Council House" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Corporate</span><span class="acc-title">Birmingham Council House</span></span>
         </button>
         <button type="button" class="acc-item" data-cat="stage" aria-expanded="false">
-          <span class="acc-media"><img src="https://bilalkose.co.uk/assets/portfolio/sand-pouring-action.jpg" alt="Sand poured by hand over a backlit table" loading="lazy"></span>
+          <span class="acc-media"><img width="1100" height="1467" src="/assets/portfolio/sand-pouring-action.webp" alt="Sand poured by hand over a backlit table" loading="lazy"></span>
           <span class="acc-scrim" aria-hidden="true"></span>
           
           <span class="acc-cap"><span class="acc-cat">Stage &amp; Festival</span><span class="acc-title">Drawn live, by hand</span></span>
@@ -972,7 +989,7 @@
       <h2 class="h2">What people <em>remember</em></h2>
       <p class="reviews__lead">The same word comes up again and again:</p>
       <p class="reviews__word">magical.</p>
-      <p class="reviews__count"><b>★★★★★</b> from 9 real client stories</p>
+      <p class="reviews__count"><a href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener"><b>★★★★★</b> 5.0 on Google from 17 reviews <span aria-hidden="true">↗</span></a></p>
     </div>
     <div class="reviews__carousel">
       <button class="reviews__arrow reviews__arrow--prev" id="revPrev" aria-label="Previous reviews">‹</button>
@@ -982,55 +999,73 @@
           <span class="quote__mark" aria-hidden="true">"</span>
           <div class="stars" aria-hidden="true">★★★★★</div>
           <blockquote class="quote__text">Bilal was fantastic and added a unique, creative element to our awards ceremony. Several attendees specifically highlighted the performance as one of their favourite parts of the evening, and it helped create a memorable experience for our guests. Professional, engaging and highly recommended.</blockquote>
-          <figcaption class="quote__by"><b>Sharon</b> · IOP Conferences Team, Awards ceremony</figcaption>
-        </figure>
-        <figure class="quote">
-          <span class="quote__mark" aria-hidden="true">"</span>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote class="quote__text">Bilal is fabulous! A very creative storyteller, talented and sentimental, with attention to detail and big-picture vision. I will hire again and highly recommend!</blockquote>
-          <figcaption class="quote__by"><b>Sophia R.</b> · Private event</figcaption>
+          <figcaption class="quote__by"><span><b>Sharon</b> · IOP Conferences Team, Awards ceremony</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
         <figure class="quote">
           <span class="quote__mark" aria-hidden="true">"</span>
           <div class="stars" aria-hidden="true">★★★★★</div>
           <blockquote class="quote__text">Our guests were amazed. It was a wonderful feeling to sit and watch our love story and share it with everyone.</blockquote>
-          <figcaption class="quote__by"><b>Pedro</b> · Wedding</figcaption>
-        </figure>
-        <figure class="quote">
-          <span class="quote__mark" aria-hidden="true">"</span>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote class="quote__text">Simply breathtaking. A stunning display of love and reunion that left our guests in awe. They couldn't wait to get his contact details.</blockquote>
-          <figcaption class="quote__by"><b>Joseph S.</b> · Charity event</figcaption>
-        </figure>
-        <figure class="quote">
-          <span class="quote__mark" aria-hidden="true">"</span>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote class="quote__text">Truly a unique and magical experience. We watched in amazement as each scene unfolded, and thank you for the personalised calligraphy gift.</blockquote>
-          <figcaption class="quote__by"><b>Helen M.</b> · Celebration</figcaption>
-        </figure>
-        <figure class="quote">
-          <span class="quote__mark" aria-hidden="true">"</span>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote class="quote__text">Absolutely magical and unlike anything I have seen before. It had everyone spellbound, an unforgettable experience.</blockquote>
-          <figcaption class="quote__by"><b>Moira D.</b> · Evening event</figcaption>
-        </figure>
-        <figure class="quote">
-          <span class="quote__mark" aria-hidden="true">"</span>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <blockquote class="quote__text">Truly captivating. The elegance and creativity added a unique artistic touch to the night. Highly recommend.</blockquote>
-          <figcaption class="quote__by"><b>Dianna L.</b> · Charity event</figcaption>
+          <figcaption class="quote__by"><span><b>Pedro</b> · Wedding</span></figcaption>
         </figure>
         <figure class="quote">
           <span class="quote__mark" aria-hidden="true">"</span>
           <div class="stars" aria-hidden="true">★★★★★</div>
           <blockquote class="quote__text">We are so glad that we hired Bilal for our anniversary party. The sand show was amazing and all our guests loved the personal touch. I will hire him again if available and will recommend him to everyone I know.</blockquote>
-          <figcaption class="quote__by"><b>Saad S.</b> · Anniversary</figcaption>
+          <figcaption class="quote__by"><span><b>Saad S.</b> · Anniversary</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Simply breathtaking. A stunning display of love and reunion that left our guests in awe. They couldn't wait to get his contact details.</blockquote>
+          <figcaption class="quote__by"><span><b>Joseph S.</b> · Charity event</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Bilal is fabulous! A very creative storyteller, talented and sentimental, with attention to detail and big-picture vision. I will hire again and highly recommend!</blockquote>
+          <figcaption class="quote__by"><span><b>Sophia R.</b> · Private event</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Truly a unique and magical experience. We watched in amazement as each scene unfolded, and thank you for the personalised calligraphy gift.</blockquote>
+          <figcaption class="quote__by"><span><b>Helen M.</b> · Celebration</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">I've never experienced art like this in the UK before. It was truly incredible and transported me to a place of peace during the performance. The artist is exceptionally talented and wonderfully humble, which adds even more value to the show.</blockquote>
+          <figcaption class="quote__by"><span><b>Ilhan D.</b> · Audience member</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Absolutely magical and unlike anything I have seen before. It had everyone spellbound, an unforgettable experience.</blockquote>
+          <figcaption class="quote__by"><span><b>Moira D.</b> · Evening event</span></figcaption>
         </figure>
         <figure class="quote">
           <span class="quote__mark" aria-hidden="true">"</span>
           <div class="stars" aria-hidden="true">★★★★★</div>
           <blockquote class="quote__text">I loved the art and the music that comes with it. The combination of these two can touch your soul, and you can feel the emotions within the drawing. I've seen his shows three times, and all three were amazing and stunning. Totally recommend it!</blockquote>
-          <figcaption class="quote__by"><b>Aris A.</b> · Repeat guest, 3 shows</figcaption>
+          <figcaption class="quote__by"><span><b>Aris A.</b> · Repeat guest, 3 shows</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">Truly captivating. The elegance and creativity added a unique artistic touch to the night. Highly recommend.</blockquote>
+          <figcaption class="quote__by"><span><b>Dianna L.</b> · Charity event</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="quote__mark" aria-hidden="true">"</span>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="quote__text">What a beautiful art. I was entranced while watching it. A job that requires great skill. I congratulate you on your art and artistry.</blockquote>
+          <figcaption class="quote__by"><span><b>Halil C.</b> · Audience member</span>
+          <a class="quote__src" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener" aria-label="Read this review on Google">Google review <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
         </div>
       </div>
@@ -1039,9 +1074,9 @@
     <div class="reviews__dots" id="revDots" aria-hidden="true"></div>
     <div class="reviews__cta">
       <div class="reviews__rating" aria-hidden="true">★★★★★</div>
-      <p class="reviews__trust">Rated <b>5★</b>, Elite Pro on Bark, and top-rated on Google.</p>
-      <a class="btn btn--primary" href="https://g.page/r/CVbVLPvUKtTHEBM/review" target="_blank" rel="noopener">Leave a Google Review →</a>
-      <p class="reviews__ig">Prefer Instagram? You can also tag me <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">@bilalkoseart ↗</a></p>
+      <p class="reviews__trust">Rated <b>5.0 on Google</b> from 17 reviews, and <b>Elite Pro</b> on Bark.</p>
+      <a class="btn btn--primary" href="https://g.page/r/CVbVLPvUKtTHEBM" target="_blank" rel="noopener">Read all reviews on Google →</a>
+      <p class="reviews__ig">Worked with me? <a href="https://g.page/r/CVbVLPvUKtTHEBM/review" target="_blank" rel="noopener">Leave a review ↗</a> or tag me <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">@bilalkoseart ↗</a></p>
     </div>
   </section>
 
@@ -1111,7 +1146,7 @@
   <section class="sec" id="about">
     <div class="wrap about__grid">
       <figure class="about__media" style="margin:0;">
-        <img src="https://bilalkose.co.uk/assets/portfolio/northen-cross-calligraphy.jpg" alt="Bilal Köse with a sand calligraphy artwork">
+        <img width="1100" height="825" src="/assets/portfolio/northen-cross-calligraphy.webp" alt="Bilal Köse with a sand calligraphy artwork">
       </figure>
       <div class="about__body">
         <p class="eyebrow">The artist</p>
@@ -1126,7 +1161,7 @@
     <div class="reel wrap">
       <h3>Watch the Showreel</h3>
       <div class="reel__frame">
-        <iframe src="https://www.youtube.com/embed/bXm58QeLCpQ?rel=0" title="Bilal Köse Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/bXm58QeLCpQ?rel=0" title="Bilal Köse Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -1236,6 +1271,7 @@
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#packages">Pricing</a></li>
           <li><a href="#about">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -1259,7 +1295,7 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a></span>
+      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="#" data-cookie-settings style="color:inherit;text-decoration:underline;">Cookie settings</a></span>
       <span class="foot__social">
         <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1359,7 +1395,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
         const vid=item.dataset.video;
         if(vid){
           const media=item.querySelector('.acc-media');
-          media.innerHTML='<iframe src="https://www.youtube.com/embed/'+vid+'?rel=0&autoplay=1" title="Sand art performance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+          media.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+vid+'?rel=0&autoplay=1" title="Sand art performance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
         }
         // Daraltılmış galeride açılan görsel kırpılmasın diye galeriyi otomatik genişlet
         if(!expanded){expand();wrap.classList.remove('show-fade');}
@@ -1371,7 +1407,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   refresh();
 })();
 
-/* ---------- Reviews carousel (manual only, faded neighbours both sides, no autoplay) ---------- */
+/* ---------- Reviews carousel: no autoplay; flows while the mouse rests near the left or right edge ---------- */
 (function(){
   const track=document.getElementById('revTrack');
   if(!track) return;
@@ -1379,12 +1415,14 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   const real=Array.from(track.children);
   const count=real.length;
   const prevBtn=document.getElementById('revPrev'), nextBtn=document.getElementById('revNext'), dotsWrap=document.getElementById('revDots');
-  // Sağ ve solda soluk kartlar görünsün diye tüm listeyi başa ve sona kopyala
+  // Sağda ve solda soluk kartlar görünsün diye tüm listeyi başa ve sona kopyala
   const mk=n=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');c.dataset.clone='1';return c;};
   real.slice().reverse().forEach(n=>track.insertBefore(mk(n),track.firstChild));
   real.forEach(n=>track.appendChild(mk(n)));
   const nodes=Array.from(track.children); // [kopya][gerçek][kopya]
-  let perView=3, index=count, cardW=320, gap=18, offset0=0, busy=false;
+  // pos: en soldaki net kartın sırası (ondalıklı olabilir). Sayfa açılışında ilk yorum.
+  let perView=3, pos=count, cardW=320, gap=18, offset0=0;
+  let flowDir=0, flowSpeed=0, raf=null, lastT=0, startTimer=null, settleTimer=null;
 
   function layout(){
     const vw=viewport.clientWidth;
@@ -1405,38 +1443,94 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       const d=document.createElement('button');
       d.className='reviews__dot';
       d.setAttribute('aria-label','Go to review '+(i+1));
-      d.addEventListener('click',()=>{index=count+i;render(true);});
+      d.addEventListener('click',()=>{stopFlow(false);glideTo(count+i);});
       dotsWrap.appendChild(d);
     }
   }
-  function render(animate){
-    track.style.transition=animate?'':'none';
-    track.style.transform='translateX('+(offset0-index*(cardW+gap))+'px)';
-    nodes.forEach((c,i)=>c.classList.toggle('is-dim',!(i>=index&&i<index+perView)));
-    const r=((index-count)%count+count)%count;
+  function paint(){
+    track.style.transform='translateX('+(offset0-pos*(cardW+gap))+'px)';
+    const first=Math.round(pos);
+    nodes.forEach((c,i)=>c.classList.toggle('is-dim',!(i>=first&&i<first+perView)));
+    const r=((first-count)%count+count)%count;
     Array.from(dotsWrap.children).forEach((d,i)=>d.classList.toggle('is-active',i===r));
   }
-  // Animasyon bitince görünmeden ortadaki gerçek listeye geri dön (sonsuz döngü)
-  function settle(){
-    busy=false;
-    if(index<count||index>=2*count){
-      index=((index-count)%count+count)%count+count;
-      render(false);
-      track.offsetHeight;
-    }
+  // Ortadaki gerçek listeye görünmeden geri dön (sonsuz döngü)
+  function wrap(){
+    if(pos>=count&&pos<2*count) return;
+    pos=((pos-count)%count+count)%count+count;
+    track.classList.add('is-jump');
+    track.style.transition='none';
+    paint();
+    track.offsetHeight;
+    track.classList.remove('is-jump');
+  }
+  // Bir karta yumuşak geçiş
+  function glideTo(target){
+    clearTimeout(settleTimer);
+    track.style.transition='';
+    pos=target;
+    paint();
+    settleTimer=setTimeout(wrap,760);
   }
   function move(delta){
-    if(busy||!delta) return;
-    busy=true;
-    index+=delta;
-    render(true);
-    setTimeout(settle,600);
+    if(!delta) return;
+    stopFlow(false);
+    wrap();
+    track.offsetHeight;
+    glideTo(Math.round(pos)+delta);
   }
+
+  // ---- Kenara yaklaşınca akış (yalnızca fare olan cihazlarda)
+  function frame(t){
+    if(!flowDir){raf=null;return;}
+    const dt=Math.min(50,t-lastT); lastT=t;
+    pos+=flowDir*flowSpeed*dt/1000/(cardW+gap);
+    if(pos<count||pos>=2*count) wrap();
+    paint();
+    raf=requestAnimationFrame(frame);
+  }
+  function startFlow(dir,speed){
+    flowSpeed=speed;
+    if(flowDir===dir) return;
+    clearTimeout(startTimer);
+    startTimer=setTimeout(()=>{
+      clearTimeout(settleTimer);
+      wrap();
+      track.style.transition='none';
+      flowDir=dir; lastT=performance.now();
+      if(!raf) raf=requestAnimationFrame(frame);
+    },flowDir?0:180);
+  }
+  function stopFlow(snap){
+    clearTimeout(startTimer);
+    if(!flowDir) return;
+    const dir=flowDir; flowDir=0;
+    if(snap!==false){
+      track.offsetHeight;
+      glideTo(dir>0?Math.ceil(pos-0.12):Math.floor(pos+0.12));
+    }
+  }
+  const canHover=window.matchMedia('(hover:hover) and (pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(canHover){
+    carousel.addEventListener('mousemove',e=>{
+      const r=viewport.getBoundingClientRect(), x=e.clientX-r.left, vw=r.width;
+      if(vw<=900){stopFlow();return;}
+      const zone=Math.max(150,offset0+30);       // soluk kartların durduğu kenar bölgesi
+      let dir=0, depth=0;
+      if(x<zone){dir=-1;depth=1-x/zone;}
+      else if(x>vw-zone){dir=1;depth=1-(vw-x)/zone;}
+      if(dir) startFlow(dir,70+90*Math.max(0,Math.min(1,depth)));   // kenara yaklaştıkça biraz hızlanır
+      else stopFlow();
+    });
+    carousel.addEventListener('mouseleave',()=>stopFlow());
+  }
+
   nextBtn.addEventListener('click',()=>move(1));
   prevBtn.addEventListener('click',()=>move(-1));
   nodes.forEach((c,i)=>c.addEventListener('click',()=>{
     if(!c.classList.contains('is-dim')) return;
-    move(i<index?i-index:i-(index+perView-1));
+    const first=Math.round(pos);
+    move(i<first?i-first:i-(first+perView-1));
   }));
   let sx=null, sy=null;
   viewport.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
@@ -1447,8 +1541,8 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     sx=null;
   },{passive:true});
   let rt=null;
-  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{layout();render(false);},150);});
-  layout();buildDots();render(false);
+  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{stopFlow(false);pos=Math.round(pos);layout();track.style.transition='none';paint();},150);});
+  layout();buildDots();track.style.transition='none';paint();
 })();
 
 /* ---------- FAQ accordion ---------- */
