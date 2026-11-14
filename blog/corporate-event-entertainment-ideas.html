@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQSB564V5B"></script>
+<!-- Google Analytics: loaded by /assets/consent.js only after the visitor accepts cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-QQSB564V5B');
 </script>
+<script src="/assets/consent.js" defer></script>
 <script>
 /* Lead tracking for Google Analytics and Google Ads */
 (function(){
@@ -404,7 +404,7 @@
 <style>
 .article-hero{position:relative;padding:140px 0 50px;border-bottom:1px solid var(--line);}
 .article-hero .wrap{max-width:820px;}
-.article-back{display:inline-flex;align-items:center;gap:8px;color:var(--mute);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;margin-bottom:24px;transition:color .2s;}
+.article-back{display:flex;width:fit-content;align-items:center;gap:8px;color:var(--mute);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;margin-bottom:24px;transition:color .2s;}
 .article-back:hover{color:var(--ember);}
 .article-eyebrow{display:inline-block;color:var(--ember);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px;}
 .article-hero h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;color:var(--cream);margin:0 0 20px;}
@@ -443,17 +443,18 @@
         <span class="nav__drop">
           <a href="/#events">Performances ▾</a>
           <span class="nav__menu">
-            <a href="https://bilalkose.co.uk/services/weddings">Weddings &amp; Love Stories</a>
-            <a href="https://bilalkose.co.uk/services/corporate">Corporate &amp; Brand</a>
-            <a href="https://bilalkose.co.uk/services/charity">Charity &amp; Community</a>
-            <a href="https://bilalkose.co.uk/services/schools">Schools &amp; Workshops</a>
-            <a href="https://bilalkose.co.uk/services/celebrations">Celebrations &amp; Milestones</a>
+            <a href="/services/weddings.html">Weddings &amp; Love Stories</a>
+            <a href="/services/corporate.html">Corporate &amp; Brand</a>
+            <a href="/services/charity.html">Charity &amp; Community</a>
+            <a href="/services/schools.html">Schools &amp; Workshops</a>
+            <a href="/services/celebrations.html">Celebrations &amp; Milestones</a>
           </span>
         </span>
         <a href="/#portfolio">Portfolio</a>
         <a href="/#reviews">Reviews</a>
         <a href="/#packages">Pricing</a>
         <a href="/#about">About</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <a class="nav__cta" href="/#book">Book Now</a>
       <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">≡</button>
@@ -465,6 +466,7 @@
       <a href="/#reviews">Reviews</a>
       <a href="/#packages">Pricing</a>
       <a href="/#about">About</a>
+        <a href="/blog/">Blog</a>
       <a href="/#book">Book Now</a>
     </div>
   </header>
@@ -472,10 +474,10 @@
   <article>
     <section class="article-hero">
       <div class="wrap">
-        <a href="/" class="article-back">← Back to home</a>
+        <a href="/blog/" class="article-back">← All articles</a>
         <span class="article-eyebrow">Corporate Events</span>
         <h1>Corporate Event Entertainment Ideas That Guests Remember</h1>
-        <div class="article-meta"><span>By Bilal Köse</span><span>·</span><span>6 min read</span></div>
+        <div class="article-meta"><span>By Bilal Köse</span><span>·</span><time datetime="2026-11-05">5 November 2026</time><span>·</span><span>6 min read</span></div>
       </div>
     </section>
 
@@ -566,6 +568,7 @@
           <li><a href="/#reviews">Reviews</a></li>
           <li><a href="/#packages">Pricing</a></li>
           <li><a href="/#about">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </div>
@@ -589,7 +592,7 @@
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a></span>
+      <span>© <span id="yr"></span> Bilal Köse · Infinite Art Ltd. All rights reserved. · <a href="/privacy.html" style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="#" data-cookie-settings style="color:inherit;text-decoration:underline;">Cookie settings</a></span>
       <span class="foot__social">
         <a href="https://www.instagram.com/bilalkoseart/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/bilalkoseuk/" target="_blank" rel="noopener">LinkedIn</a>
